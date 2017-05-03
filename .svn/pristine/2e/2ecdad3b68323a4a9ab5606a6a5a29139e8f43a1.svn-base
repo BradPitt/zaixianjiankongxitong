@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>历史数据查询</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/css/daterangepicker.css" rel="stylesheet" />
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/daterangepicker.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/bootstrap-table-zh-CN.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>历史数据查询</h1>
+        <div id="toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group">
+                    <span>浮标号: </span>
+                    <select name="devicecode" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <span>时间: </span>
+                    <input type="text" class="form-control" name="daterange" value="01/01/2015 - 01/31/2015" />
+                    <input type="hidden" name="beginTime" />
+                    <input type="hidden" name="endTime" />
+                </div>
+                <button id="btn-query" class="btn btn-primary">查询</button>
+            </div>
+        </div>
+        <div id="btn-mtp">
+            <button type="button" class="btn btn-primary" data-mtp="TABBUOYECOLOGY">水质</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYSTATUS">状态</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYHYDROLOGY">波浪</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYHYDROLOGY">海流</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYQIXG">气象</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYQIXG">风</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYQIXG">气压</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYQIXG">气温</button>
+            <button type="button" class="btn btn-default" data-mtp="TABBUOYQIXG">湿度</button>
+        </div>
+        <table id="table"></table>
+    </div>
+
+</body>
+</html>
+<script src="~/js/MonitorLog/monitorLog.js"></script>

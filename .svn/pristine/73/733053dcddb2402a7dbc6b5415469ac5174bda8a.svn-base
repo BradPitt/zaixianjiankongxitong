@@ -3,11 +3,11 @@ using System.Runtime.Serialization;
 namespace Entity
 {
     /// <summary>
-    /// 状态信息表(浮标)
+    /// 状态信息表(岸基站)
     /// </summary>
     [Serializable]
     [DataContract]
-    public class TABBUOYSTATUS
+    public class TABSTATUS
     {
         /// <summary>
         /// DEVICECODE
@@ -30,30 +30,20 @@ namespace Entity
         [DataMember]
         public decimal RECVNUM { get; set; }
         /// <summary>
-        /// LON
+        /// TEMPERATURE
         /// </summary>
         [DataMember]
-        public decimal LON { get; set; }
+        public decimal TEMPERATURE { get; set; }
         /// <summary>
-        /// LAT
+        /// POWERSTATUS
         /// </summary>
         [DataMember]
-        public decimal LAT { get; set; }
+        public decimal POWERSTATUS { get; set; }
         /// <summary>
-        /// AZIMUTH
+        /// FREEMEMO
         /// </summary>
         [DataMember]
-        public decimal AZIMUTH { get; set; }
-        /// <summary>
-        /// VOLTAGE
-        /// </summary>
-        [DataMember]
-        public decimal VOLTAGE { get; set; }
-        /// <summary>
-        /// ANCHOR
-        /// </summary>
-        [DataMember]
-        public decimal ANCHOR { get; set; }
+        public decimal FREEMEMO { get; set; }
         /// <summary>
         /// WATERALARM
         /// </summary>
@@ -65,17 +55,12 @@ namespace Entity
         [DataMember]
         public decimal DOORALARM { get; set; }
         /// <summary>
-        /// GPSALARM
+        /// SMOGALARM
         /// </summary>
         [DataMember]
-        public decimal GPSALARM { get; set; }
+        public decimal SMOGALARM { get; set; }
         /// <summary>
-        /// FREEMEMO
-        /// </summary>
-        [DataMember]
-        public decimal FREEMEMO { get; set; }
-        /// <summary>
-        /// SENSERSTATUS
+        /// 状态量
         /// </summary>
         [DataMember]
         public decimal SENSERSTATUS { get; set; }

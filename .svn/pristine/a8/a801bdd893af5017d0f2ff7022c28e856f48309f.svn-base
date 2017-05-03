@@ -147,7 +147,6 @@
     <Content Include="css\buoy3.css" />
     <Content Include="css\buoyThreeAnalysis.css" />
     <Content Include="css\child.css" />
-    <Content Include="css\daterangepicker.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\login.css" />
     <Content Include="css\main.css" />
@@ -280,9 +279,6 @@
     <Content Include="js\jquery.min.js" />
     <Content Include="js\login.js" />
     <Content Include="js\main.js" />
-    <Content Include="js\moment.min.js" />
-    <Content Include="js\daterangepicker.js" />
-    <Content Include="js\MonitorLog\monitorLog.js" />
     <Content Include="js\mousewheel.min.js" />
     <Content Include="js\script.js" />
     <Content Include="js\scrollbar.min.css" />
