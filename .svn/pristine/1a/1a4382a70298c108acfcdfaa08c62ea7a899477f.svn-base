@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<title>sss</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="Expires" content="0" />
+
+</head>
+<body style="margin: 0;">
+<div id="divPlugin" ></div>
+<!-- <div class="left">
+<input type="button" class="btn" id="beginBtn" value="开始预览" onclick="clickStartRealPlay(2);" />
+					<input type="button" class="btn" value="停止预览" onclick="clickStopRealPlay();" />
+					<input type="button" class="btn" value="全屏" onclick="clickFullScreen();" />
+	<fieldset class="operate">
+		<legend>操作信息</legend>
+		<div id="opinfo" class="opinfo"></div>
+	</fieldset>
+	<fieldset class="callback">
+		<legend>事件回调信息</legend>
+		<div id="cbinfo" class="cbinfo"></div>
+	</fieldset>
+</div> -->
+</body>
+<script src="jquery-1.7.1.min.js"></script>
+<script src="../codebase/webVideoCtrl.js"></script>
+<script >
+//初始化插件
+
+//全局保存当前选中窗口
+var g_iWndIndex = 2; //可以不用设置这个变量，有窗口参数的接口中，不用传值，开发包会默认使用当前选择窗口
+var szIP = "192.168.1.120"
+$(function () {
+
+	
+	// 初始化插件参数及插入插件
+	WebVideoCtrl.I_InitPlugin(274, 220, {
+     iWndowType: 1,
+		cbSelWnd: function (xmlDoc) {
+			g_iWndIndex = $(xmlDoc).find("SelectWnd").eq(0).text();
+			var szInfo = "当前选择的窗口编号：" + g_iWndIndex;
+			//showCBInfo(szInfo);
+		}
+	});
+	WebVideoCtrl.I_InsertOBJECTPlugin("divPlugin");
+
+	clickLogin();
+
+		
+});
+
+//显示操作信息
+function showOPInfo(szInfo) {
+	szInfo = "<div>" + szInfo + "</div>";
+	$("#opinfo").html(szInfo + $("#opinfo").html());
+}
+
+
+
+//登录
+function clickLogin() {
+	var szPort = "80",
+		szUsername = "admin",
+		szPassword = "a12345678";
+
+	if ("" == szIP || "" == szPort) {
+		return;
+	}
+
+	var iRet = WebVideoCtrl.I_Login(szIP, 1, szPort, szUsername, szPassword, {
+		success: function (xmlDoc) {
+			showOPInfo(szIP + " 登录成功！");
+
+			$("#ip").prepend("<option value='" + szIP + "'>" + szIP + "</option>");
+			setTimeout(function () {
+				$("#ip").val(szIP);
+				clickStartRealPlay(1); // 通道
+			}, 10);
+		},
+		error: function () {
+			showOPInfo(szIP + " 登录失败！");
+		}
+	});
+
+	if (-1 == iRet) {
+		showOPInfo(szIP + " 已登录过！");
+	}
+}
+
+
+
+//开始预览
+function clickStartRealPlay(iChannelID) {
+	var oWndInfo = WebVideoCtrl.I_GetWindowStatus(g_iWndIndex),
+		iStreamType = parseInt(1, 10),
+		iChannelID = parseInt(iChannelID, 10),
+		//bZeroChannel = $("#channels option").eq($("#channels").get(0).selectedIndex).attr("bZero") == "true" ? true : false,
+		bZeroChannel = false;
+		szInfo = "";
+
+	if ("" == szIP) {
+		return;
+	}
+
+	if (oWndInfo != null) {// 已经在播放了，先停止
+		WebVideoCtrl.I_Stop();
+	}
+
+	var iRet = WebVideoCtrl.I_StartRealPlay(szIP, {
+		iStreamType: iStreamType,
+		iChannelID: iChannelID,
+		bZeroChannel: bZeroChannel
+	});
+
+	if (0 == iRet) {
+		szInfo = "开始预览成功！";
+	} else {
+		szInfo = "开始预览失败！";
+	}
+	showOPInfo(szIP + " " + szInfo);
+}
+
+
+
+</script>
+</html>

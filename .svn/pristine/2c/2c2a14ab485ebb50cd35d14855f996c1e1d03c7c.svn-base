@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OMAC", "OMAC\OMAC.csproj", "{458E76F3-AF97-4FBA-AC88-C1A01855CBD5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{33766C45-6388-42FD-8D64-7E75C5431697} = {33766C45-6388-42FD-8D64-7E75C5431697}
+		{48F4C0E9-7B98-4B65-BE51-751514451C26} = {48F4C0E9-7B98-4B65-BE51-751514451C26}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{48F4C0E9-7B98-4B65-BE51-751514451C26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{33766C45-6388-42FD-8D64-7E75C5431697}"
+	ProjectSection(ProjectDependencies) = postProject
+		{48F4C0E9-7B98-4B65-BE51-751514451C26} = {48F4C0E9-7B98-4B65-BE51-751514451C26}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{458E76F3-AF97-4FBA-AC88-C1A01855CBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458E76F3-AF97-4FBA-AC88-C1A01855CBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458E76F3-AF97-4FBA-AC88-C1A01855CBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458E76F3-AF97-4FBA-AC88-C1A01855CBD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F4C0E9-7B98-4B65-BE51-751514451C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F4C0E9-7B98-4B65-BE51-751514451C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F4C0E9-7B98-4B65-BE51-751514451C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F4C0E9-7B98-4B65-BE51-751514451C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33766C45-6388-42FD-8D64-7E75C5431697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33766C45-6388-42FD-8D64-7E75C5431697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33766C45-6388-42FD-8D64-7E75C5431697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33766C45-6388-42FD-8D64-7E75C5431697}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,253 @@
+
+ 
+记录时间：2017-05-02 17:16:51,310 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:17:28,713 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:18:39,898 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:18:41,387 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:18:52,793 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:19:10,990 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:20:29,013 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:20:30,997 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:21:03,863 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:23:20,101 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:23:39,817 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.datatime between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.datatime desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:35:07,755 
+线程ID:[21] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:37:27,151 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:38:38,537 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:39:26,130 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:41:52,034 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:44:22,622 
+线程ID:[21] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:53:34,613 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:54:49,660 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:56:06,138 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:56:29,287 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 17:58:52,069 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 134SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date('2017-04-19 00:00:00', 'YYYY-MM-DD HH24:MI:SS') and to_date('2017-05-01 00:00:00', 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 18:01:16,381 
+线程ID:[21] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 145SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 18:01:25,633 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 145SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
+
+ 
+记录时间：2017-05-02 18:14:00,514 
+线程ID:[34] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS: 连接超时
+
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\OMAC\Business\DbAPI.cs:line 145SELECT * FROM ( SELECT a__.*, rownum r__ FROM ( select d.devicename, t.* from TABECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc) a__ WHERE rownum < ((1 * 2) + 1 ) ) WHERE r__ >= (((1-1) * 2) + 1)
+ 
