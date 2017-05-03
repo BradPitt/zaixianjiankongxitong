@@ -1,0 +1,151 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <title>RoleAdd</title>
+</head>
+<body>
+    <div>
+        <input id="rolename" type="text" />
+        <input type="button" onclick="submit()" value="保存" />
+        <input id="check1" type="checkbox" checked="checked" onchange="GetPartTree('1')"/>监测手段
+        <input id="check2" type="checkbox" onchange="GetPartTree('2')"/>业务
+        <input id="check3" type="checkbox" onchange="GetPartTree('3')"/>主管部门
+        <input id="check4" type="checkbox" onchange="GetPartTree('4')"/>管理区域
+        <input id="check5" type="checkbox" onchange="GetPartTree('5')"/>功能
+        <input id="check6" type="checkbox" onchange="GetPartTree('6')"/>展示
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview1"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview2"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview3"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview4"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview5"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div id="treeview6"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+  	<script src="~/js/bootstrap-treeview.js"></script>
+    <script>
+        var funList = new Array();
+        /**
+            *删除数组指定下标或指定对象
+        */
+        Array.prototype.remove = function (obj) {
+            for (var i = 0; i < this.length; i++) {
+                var temp = this[i];
+                if (!isNaN(obj)) {
+                    temp = i;
+                }
+                if (temp == obj) {
+                    for (var j = i; j < this.length; j++) {
+                        this[j] = this[j + 1];
+                    }
+                    this.length = this.length - 1;
+                }
+            }
+        }
+        $(function () {
+
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: "/Api/System/GetFunctionTree?part='1'",
+                success: function (result) {
+                    var data = JSON.parse(result);
+                    $('#treeview1').treeview({
+                        showCheckbox: true,
+                        multiSelect: true,
+                        levels: 6,
+                        data: data,
+                        onNodeChecked: function (event, data) {
+                            funList.push(data.id);
+                        },
+                        onNodeUnchecked: function (event, data) {
+                            if ($.inArray(data.id, funList) != -1) {
+                                funList.remove(data.id);
+                            }
+
+                        }
+                    });
+                }
+            });
+
+        });
+
+        function GetPartTree(part) {
+            if ($('#check' + part)[0].checked == true) {
+                $.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: "/Api/System/GetFunctionTree?part=" + part,
+                    success: function (result) {
+                        var data = JSON.parse(result);
+                        $('#treeview' + part).treeview({
+                            showCheckbox: true,
+                            multiSelect: true,
+                            levels: 6,
+                            data: data,
+                            onNodeChecked: function (event, data) {
+                                funList.push(data.id);
+                            },
+                            onNodeUnchecked: function (event, data) {
+                                if ($.inArray(data.id, funList) != -1) {
+                                    funList.remove(data.id);
+                                }
+                            }
+                        });
+                    }
+                });
+            } else {
+                $('#treeview' + part).html("");
+            }
+
+        }
+
+        function submit() {
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: "/Api/System/SaveRole?roleName=" + $("#rolename").val() + "&funList=" + funList.join(","),
+                success: function (result) {
+                    alert(result.message);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
