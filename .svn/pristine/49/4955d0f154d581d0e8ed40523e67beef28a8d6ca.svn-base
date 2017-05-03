@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using Entity;
+using Newtonsoft.Json;
+
+namespace OMAC.Controllers
+{
+    public class MonitorLogController : ApiController
+    {
+
+        [HttpGet]
+        public string GetShuizhiList([FromUri]Entity.MonitorLog.QueryModel queryModel)
+        {
+            var mlbn = new Business.BN.MonitorLog();
+            var rst = JsonConvert.SerializeObject(mlbn.GetShuizhiList(queryModel)); 
+            return rst;
+        }
+
+    }
+}

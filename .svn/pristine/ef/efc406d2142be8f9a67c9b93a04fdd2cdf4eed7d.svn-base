@@ -1,0 +1,45 @@
+﻿using System;
+using System.Runtime.Serialization;
+namespace Entity
+{
+    [Serializable]
+    [DataContract]
+    public class DEVICEATTACH
+    {
+        /// <summary>
+        /// DEVICECODE
+        /// </summary>
+        [DataMember]
+        public string DEVICECODE { get; set; }
+        /// <summary>
+        /// SEAAREA
+        /// </summary>
+        [DataMember]
+        public string SEAAREA { get; set; }
+        /// <summary>
+        /// PROVINCE
+        /// </summary>
+        [DataMember]
+        public string PROVINCE { get; set; }
+        /// <summary>
+        /// BAY
+        /// </summary>
+        [DataMember]
+        public string BAY { get; set; }
+        /// <summary>
+        /// BUREAUDEVICE
+        /// </summary>
+        [DataMember]
+        public string BUREAUDEVICE { get; set; }
+        /// <summary>
+        /// LOCALDEVICE
+        /// </summary>
+        [DataMember]
+        public string LOCALDEVICE { get; set; }
+        /// <summary>
+        /// SERVICE
+        /// </summary>
+        [DataMember]
+        public string SERVICE { get; set; }
+    }
+}
