@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/map.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_api/library/3.16/3.16/dijit/themes/tundra//tundra.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_api/library/3.16/3.16/esri/css/esri.css" />
+    <script type="text/javascript" src="http://localhost/arcgis_js_api/library/3.16/3.16/init.js"></script>
+    <script type="text/javascript" src="js/mapControl.js"></script>
+    <title>Map</title>
+</head>
+<body onload="initMap('MapDiv');"> 
+    <div id="MapDiv">
+        <div id="ToolBar">
+            <ul>
+                <li><img id="zoomin" src="../img/icon-fd.png" alt="放大" onclick="ZoomIn()" /></li>
+                <li><img id="zoomout" src="../img/icon-sx.png" alt="缩小" onclick="ZoomOut()" /></li>
+                <li><img id="pan" src="../img/icon-py.png" alt="平移" onclick="Pan()" /></li>
+                <li><img id="full" src="../img/icon-qp.png" alt="全屏" onclick="Full()" /></li>
+                <li><img id="zoomprev" src="../img/d-icon-left.png" alt="上一视图" onclick="navToolbar.zoomToPrevExtent();" /></li>
+                <li><img id="zoomnext" src="../img/d-icon-right.png" alt="下一视图" onclick="navToolbar.zoomToNextExtent();" /></li>
+@*                    <li><img id="legend" src="../img/icon-tl.png" alt="图例" onclick="ShowLegend()" /></li>*@
+            </ul>               
+        </div>
+    </div>    
+</body>
+</html>

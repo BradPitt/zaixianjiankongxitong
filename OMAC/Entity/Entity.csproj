@@ -43,6 +43,7 @@
     <Compile Include="DataTablesResult.cs" />
     <Compile Include="MonitorLog\BootstrapTableDataModel.cs" />
     <Compile Include="MonitorLog\QueryModel.cs" />
+    <Compile Include="PageData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnResult.cs" />
     <Compile Include="System\DEPARTMENTINFO.cs" />
