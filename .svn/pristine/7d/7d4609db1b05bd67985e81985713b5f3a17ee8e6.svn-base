@@ -7,16 +7,16 @@ using System.Data;
 namespace Business.BN
 {
     /// <summary>
-    /// 状态信息表(浮标)
+    /// 状态信息表(岸基站)
     /// </summary>
-    public class TABBUOYSTATUS
+    public class TABSTATUS
     {
 
         public bool Exists()
         {
             StringBuilder strSql = new StringBuilder();
             DbAPI dbHelper = new DbAPI();
-            strSql.Append("select count(1) from TABBUOYSTATUS");
+            strSql.Append("select count(1) from TABSTATUS");
             strSql.Append(" where ");
             OracleParameter[] parameters = {
 			};
@@ -37,14 +37,14 @@ namespace Business.BN
         /// <summary>
         /// 增加一条数据
         /// </summary>
-        public void Add(Entity.TABBUOYSTATUS model)
+        public void Add(Entity.TABSTATUS model)
         {
             StringBuilder strSql = new StringBuilder();
             DbAPI dbHelper = new DbAPI();
-            strSql.Append("insert into TABBUOYSTATUS(");
-            strSql.Append("DEVICECODE,DATETIME,SENDNUM,RECVNUM,LON,LAT,AZIMUTH,VOLTAGE,ANCHOR,WATERALARM,DOORALARM,GPSALARM,FREEMEMO,SENSERSTATUS,RESERV0,RESERV1,RESERV2");
+            strSql.Append("insert into TABSTATUS(");
+            strSql.Append("DEVICECODE,DATETIME,SENDNUM,RECVNUM,TEMPERATURE,POWERSTATUS,FREEMEMO,WATERALARM,DOORALARM,SMOGALARM,SENSERSTATUS,RESERV0,RESERV1,RESERV2");
             strSql.Append(") values (");
-            strSql.Append(":DEVICECODE,:DATETIME,:SENDNUM,:RECVNUM,:LON,:LAT,:AZIMUTH,:VOLTAGE,:ANCHOR,:WATERALARM,:DOORALARM,:GPSALARM,:FREEMEMO,:SENSERSTATUS,:RESERV0,:RESERV1,:RESERV2");
+            strSql.Append(":DEVICECODE,:DATETIME,:SENDNUM,:RECVNUM,:TEMPERATURE,:POWERSTATUS,:FREEMEMO,:WATERALARM,:DOORALARM,:SMOGALARM,:SENSERSTATUS,:RESERV0,:RESERV1,:RESERV2");
             strSql.Append(") ");
 
             OracleParameter[] parameters = {
@@ -52,15 +52,12 @@ namespace Business.BN
                         new OracleParameter(":DATETIME", OracleType.DateTime) ,            
                         new OracleParameter(":SENDNUM", OracleType.Number,22) ,            
                         new OracleParameter(":RECVNUM", OracleType.Number,22) ,            
-                        new OracleParameter(":LON", OracleType.Number,16) ,            
-                        new OracleParameter(":LAT", OracleType.Number,16) ,            
-                        new OracleParameter(":AZIMUTH", OracleType.Number,22) ,            
-                        new OracleParameter(":VOLTAGE", OracleType.Number,16) ,            
-                        new OracleParameter(":ANCHOR", OracleType.Number,22) ,            
+                        new OracleParameter(":TEMPERATURE", OracleType.Number,16) ,            
+                        new OracleParameter(":POWERSTATUS", OracleType.Number,22) ,            
+                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
                         new OracleParameter(":WATERALARM", OracleType.Number,22) ,            
                         new OracleParameter(":DOORALARM", OracleType.Number,22) ,            
-                        new OracleParameter(":GPSALARM", OracleType.Number,22) ,            
-                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
+                        new OracleParameter(":SMOGALARM", OracleType.Number,22) ,            
                         new OracleParameter(":SENSERSTATUS", OracleType.Number,22) ,            
                         new OracleParameter(":RESERV0", OracleType.Number,16) ,            
                         new OracleParameter(":RESERV1", OracleType.Number,16) ,            
@@ -72,19 +69,16 @@ namespace Business.BN
             parameters[1].Value = model.DATETIME;
             parameters[2].Value = model.SENDNUM;
             parameters[3].Value = model.RECVNUM;
-            parameters[4].Value = model.LON;
-            parameters[5].Value = model.LAT;
-            parameters[6].Value = model.AZIMUTH;
-            parameters[7].Value = model.VOLTAGE;
-            parameters[8].Value = model.ANCHOR;
-            parameters[9].Value = model.WATERALARM;
-            parameters[10].Value = model.DOORALARM;
-            parameters[11].Value = model.GPSALARM;
-            parameters[12].Value = model.FREEMEMO;
-            parameters[13].Value = model.SENSERSTATUS;
-            parameters[14].Value = model.RESERV0;
-            parameters[15].Value = model.RESERV1;
-            parameters[16].Value = model.RESERV2;
+            parameters[4].Value = model.TEMPERATURE;
+            parameters[5].Value = model.POWERSTATUS;
+            parameters[6].Value = model.FREEMEMO;
+            parameters[7].Value = model.WATERALARM;
+            parameters[8].Value = model.DOORALARM;
+            parameters[9].Value = model.SMOGALARM;
+            parameters[10].Value = model.SENSERSTATUS;
+            parameters[11].Value = model.RESERV0;
+            parameters[12].Value = model.RESERV1;
+            parameters[13].Value = model.RESERV2;
             dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
 
         }
@@ -93,25 +87,22 @@ namespace Business.BN
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Entity.TABBUOYSTATUS model)
+        public bool Update(Entity.TABSTATUS model)
         {
             StringBuilder strSql = new StringBuilder();
             DbAPI dbHelper = new DbAPI();
-            strSql.Append("update TABBUOYSTATUS set ");
+            strSql.Append("update TABSTATUS set ");
 
             strSql.Append(" DEVICECODE = :DEVICECODE , ");
             strSql.Append(" DATETIME = :DATETIME , ");
             strSql.Append(" SENDNUM = :SENDNUM , ");
             strSql.Append(" RECVNUM = :RECVNUM , ");
-            strSql.Append(" LON = :LON , ");
-            strSql.Append(" LAT = :LAT , ");
-            strSql.Append(" AZIMUTH = :AZIMUTH , ");
-            strSql.Append(" VOLTAGE = :VOLTAGE , ");
-            strSql.Append(" ANCHOR = :ANCHOR , ");
+            strSql.Append(" TEMPERATURE = :TEMPERATURE , ");
+            strSql.Append(" POWERSTATUS = :POWERSTATUS , ");
+            strSql.Append(" FREEMEMO = :FREEMEMO , ");
             strSql.Append(" WATERALARM = :WATERALARM , ");
             strSql.Append(" DOORALARM = :DOORALARM , ");
-            strSql.Append(" GPSALARM = :GPSALARM , ");
-            strSql.Append(" FREEMEMO = :FREEMEMO , ");
+            strSql.Append(" SMOGALARM = :SMOGALARM , ");
             strSql.Append(" SENSERSTATUS = :SENSERSTATUS , ");
             strSql.Append(" RESERV0 = :RESERV0 , ");
             strSql.Append(" RESERV1 = :RESERV1 , ");
@@ -123,15 +114,12 @@ namespace Business.BN
                         new OracleParameter(":DATETIME", OracleType.DateTime) ,            
                         new OracleParameter(":SENDNUM", OracleType.Number,22) ,            
                         new OracleParameter(":RECVNUM", OracleType.Number,22) ,            
-                        new OracleParameter(":LON", OracleType.Number,16) ,            
-                        new OracleParameter(":LAT", OracleType.Number,16) ,            
-                        new OracleParameter(":AZIMUTH", OracleType.Number,22) ,            
-                        new OracleParameter(":VOLTAGE", OracleType.Number,16) ,            
-                        new OracleParameter(":ANCHOR", OracleType.Number,22) ,            
+                        new OracleParameter(":TEMPERATURE", OracleType.Number,16) ,            
+                        new OracleParameter(":POWERSTATUS", OracleType.Number,22) ,            
+                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
                         new OracleParameter(":WATERALARM", OracleType.Number,22) ,            
                         new OracleParameter(":DOORALARM", OracleType.Number,22) ,            
-                        new OracleParameter(":GPSALARM", OracleType.Number,22) ,            
-                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
+                        new OracleParameter(":SMOGALARM", OracleType.Number,22) ,            
                         new OracleParameter(":SENSERSTATUS", OracleType.Number,22) ,            
                         new OracleParameter(":RESERV0", OracleType.Number,16) ,            
                         new OracleParameter(":RESERV1", OracleType.Number,16) ,            
@@ -143,19 +131,16 @@ namespace Business.BN
             parameters[1].Value = model.DATETIME;
             parameters[2].Value = model.SENDNUM;
             parameters[3].Value = model.RECVNUM;
-            parameters[4].Value = model.LON;
-            parameters[5].Value = model.LAT;
-            parameters[6].Value = model.AZIMUTH;
-            parameters[7].Value = model.VOLTAGE;
-            parameters[8].Value = model.ANCHOR;
-            parameters[9].Value = model.WATERALARM;
-            parameters[10].Value = model.DOORALARM;
-            parameters[11].Value = model.GPSALARM;
-            parameters[12].Value = model.FREEMEMO;
-            parameters[13].Value = model.SENSERSTATUS;
-            parameters[14].Value = model.RESERV0;
-            parameters[15].Value = model.RESERV1;
-            parameters[16].Value = model.RESERV2;
+            parameters[4].Value = model.TEMPERATURE;
+            parameters[5].Value = model.POWERSTATUS;
+            parameters[6].Value = model.FREEMEMO;
+            parameters[7].Value = model.WATERALARM;
+            parameters[8].Value = model.DOORALARM;
+            parameters[9].Value = model.SMOGALARM;
+            parameters[10].Value = model.SENSERSTATUS;
+            parameters[11].Value = model.RESERV0;
+            parameters[12].Value = model.RESERV1;
+            parameters[13].Value = model.RESERV2;
             int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
             if (rows > 0)
             {
@@ -176,7 +161,7 @@ namespace Business.BN
 
             StringBuilder strSql = new StringBuilder();
             DbAPI dbHelper = new DbAPI();
-            strSql.Append("delete from TABBUOYSTATUS ");
+            strSql.Append("delete from TABSTATUS ");
             strSql.Append(" where ");
             OracleParameter[] parameters = {
 			};
@@ -196,49 +181,47 @@ namespace Business.BN
 
 
         /// <summary>
-        /// 获取浮标的设备状态信息
+        /// 获取岸基站的设备状态信息
         /// </summary>
-        public Entity.TABBUOYSTATUS GetModel(string deviceCode)
+        public Entity.TABSTATUS GetModel(string deviceCode)
         {
 
             StringBuilder strSql = new StringBuilder();
             DbAPI dbHelper = new DbAPI();
-            strSql.Append(" SELECT LON, LAT, AZIMUTH, VOLTAGE, ANCHOR, WATERALARM, DOORALARM, GPSALARM, FREEMEMO, SENSERSTATUS ");
-            strSql.Append(" FROM TABBUOYSTATUS ");
-            strSql.Append(" WHERE DEVICECODE=:DEVICECODE ");
-            strSql.Append(" AND DATETIME=(SELECT MAX(DATETIME) DATETIME FROM TABBUOYSTATUS WHERE DEVICECODE=:DEVICECODE) ");
-
+            strSql.Append(" SELECT SENDNUM, RECVNUM, TEMPERATURE, POWERSTATUS, FREEMEMO, WATERALARM, DOORALARM, SMOGALARM, SENSERSTATUS ");
+            strSql.Append(" FROM TABSTATUS ");
+            strSql.Append(" WHERE DEVICECODE=:DEVICECODE");
+            strSql.Append(" AND DATETIME=(SELECT MAX(DATETIME) DATETIME FROM TABBUOYECOLOGY WHERE DEVICECODE=:DEVICECODE) ");
             OracleParameter[] parameters = {
-                    new OracleParameter(":DEVICECODE",deviceCode)
 			};
 
             dbHelper.OpenConn("");
-            Entity.TABBUOYSTATUS model = new Entity.TABBUOYSTATUS();
+            Entity.TABSTATUS model = new Entity.TABSTATUS();
             DataTable ds = dbHelper.GetDataTable(strSql.ToString(), parameters);
 
             dbHelper.CloseConn();
             if (ds.Rows.Count > 0)
             {
                 //model.DEVICECODE = ds.Rows[0]["DEVICECODE"].ToString();
-                if (ds.Rows[0]["LON"].ToString() != "")
+                if (ds.Rows[0]["SENDNUM"].ToString() != "")
                 {
-                    model.LON = decimal.Parse(ds.Rows[0]["LON"].ToString());
+                    model.SENDNUM = decimal.Parse(ds.Rows[0]["SENDNUM"].ToString());
                 }
-                if (ds.Rows[0]["LAT"].ToString() != "")
+                if (ds.Rows[0]["RECVNUM"].ToString() != "")
                 {
-                    model.LAT = decimal.Parse(ds.Rows[0]["LAT"].ToString());
+                    model.RECVNUM = decimal.Parse(ds.Rows[0]["RECVNUM"].ToString());
                 }
-                if (ds.Rows[0]["AZIMUTH"].ToString() != "")
+                if (ds.Rows[0]["TEMPERATURE"].ToString() != "")
                 {
-                    model.AZIMUTH = decimal.Parse(ds.Rows[0]["AZIMUTH"].ToString());
+                    model.TEMPERATURE = decimal.Parse(ds.Rows[0]["TEMPERATURE"].ToString());
                 }
-                if (ds.Rows[0]["VOLTAGE"].ToString() != "")
+                if (ds.Rows[0]["POWERSTATUS"].ToString() != "")
                 {
-                    model.VOLTAGE = decimal.Parse(ds.Rows[0]["VOLTAGE"].ToString());
+                    model.POWERSTATUS = decimal.Parse(ds.Rows[0]["POWERSTATUS"].ToString());
                 }
-                if (ds.Rows[0]["ANCHOR"].ToString() != "")
+                if (ds.Rows[0]["FREEMEMO"].ToString() != "")
                 {
-                    model.ANCHOR = decimal.Parse(ds.Rows[0]["ANCHOR"].ToString());
+                    model.FREEMEMO = decimal.Parse(ds.Rows[0]["FREEMEMO"].ToString());
                 }
                 if (ds.Rows[0]["WATERALARM"].ToString() != "")
                 {
@@ -248,13 +231,9 @@ namespace Business.BN
                 {
                     model.DOORALARM = decimal.Parse(ds.Rows[0]["DOORALARM"].ToString());
                 }
-                if (ds.Rows[0]["GPSALARM"].ToString() != "")
+                if (ds.Rows[0]["SMOGALARM"].ToString() != "")
                 {
-                    model.GPSALARM = decimal.Parse(ds.Rows[0]["GPSALARM"].ToString());
-                }
-                if (ds.Rows[0]["FREEMEMO"].ToString() != "")
-                {
-                    model.FREEMEMO = decimal.Parse(ds.Rows[0]["FREEMEMO"].ToString());
+                    model.SMOGALARM = decimal.Parse(ds.Rows[0]["SMOGALARM"].ToString());
                 }
                 if (ds.Rows[0]["SENSERSTATUS"].ToString() != "")
                 {
@@ -279,7 +258,7 @@ namespace Business.BN
             DbAPI dbHelper = new DbAPI();
             OracleParameter[] parameters = null;
             strSql.Append("select * ");
-            strSql.Append(" FROM TABBUOYSTATUS ");
+            strSql.Append(" FROM TABSTATUS ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
@@ -301,7 +280,7 @@ namespace Business.BN
                 strSql.Append(" top " + Top.ToString());
             }
             strSql.Append(" * ");
-            strSql.Append(" FROM TABBUOYSTATUS ");
+            strSql.Append(" FROM TABSTATUS ");
             if (strWhere.Trim() != "")
             {
                 strSql.Append(" where " + strWhere);
