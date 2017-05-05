@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Text;
+using System.Web;
 using System.Web.Http;
 
 namespace OMAC.Controllers
@@ -37,6 +39,33 @@ namespace OMAC.Controllers
             return deviceList;
         }
 
-        
+        /// <summary>
+        /// 导出EXCEL
+        /// </summary>
+        /// <param name="queryModel"></param>
+        [HttpGet]
+        public void ExportToExcel([FromUri]Entity.MonitorLog.QueryModel queryModel)
+        {
+            var datatable = new Business.BN.MonitorLog().GetList(queryModel);
+
+            //System.Web.HttpContext.Current.Server.MapPath("/Upload/JYBGFile/" + file.FileName);
+            //Business.NpoiHelper.Export()
+
+
+            //HttpContext curContext = HttpContext.Current;
+            //var strFileName = Guid.NewGuid().ToString("N");
+
+            //// 设置编码和附件格式
+            //curContext.Response.ContentType = "application/vnd.ms-excel";
+            //curContext.Response.ContentEncoding = Encoding.UTF8;
+            //curContext.Response.Charset = "";
+            //curContext.Response.AppendHeader("Content-Disposition",
+            //    "attachment;filename=" + HttpUtility.UrlEncode(strFileName, Encoding.UTF8));
+
+            //curContext.Response.BinaryWrite(Business.NpoiHelper.Export(datatable, "strHeaderText").GetBuffer());
+            //curContext.Response.End();
+        }
+
+
     }
 }

@@ -1,0 +1,34 @@
+﻿using System.Collections.Generic;
+
+namespace Entity.MonitorLog
+{
+    public class ExcelColumns
+    {
+        public static Dictionary<string, string> SqlStatement = new Dictionary<string, string>
+        {
+            // 浮标 - 水质
+            {"TABBUOYECOLOGY0", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""},
+            {"SqlStatement", ""}
+        };
+
+
+
+
+    }
+}

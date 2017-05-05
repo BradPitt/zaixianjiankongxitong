@@ -31,7 +31,7 @@
             </div>
             <div>
                 <button id="btn-query" class="btn btn-primary">查询</button>
-                <a id="btn-excel" class="btn btn-warning" href="javascript::;" target="_blank" role="button">导出Excel</a>
+                <a id="btn-excel" class="btn btn-warning" href="javascript::;" role="button">导出Excel</a>
             </div>
         </div>
 

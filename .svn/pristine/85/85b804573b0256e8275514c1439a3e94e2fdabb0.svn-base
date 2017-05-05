@@ -50,7 +50,7 @@ $(function () {
             $("select[name=\"devicecode\"]").on("change", function () {
                 GetData();
             });
-
+            
         });
 
 
@@ -100,7 +100,7 @@ function InitData() {
         columns: DataColumns[defaultMonitorType]
     });
 
-    var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=" + defaultMonitorType + "&offset=0&limit=65500";
+    var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=asc&offset=0&limit=65500";
     $("#btn-excel").attr("href", href);
 }
 
@@ -113,7 +113,7 @@ function GetData() {
         url: tableDataUrl
     });
 
-    var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=" + defaultMonitorType + "&offset=0&limit=65500";
+    var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=asc&offset=0&limit=65500";
     $("#btn-excel").attr("href", href);
 }
 

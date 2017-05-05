@@ -15,20 +15,12 @@ namespace OMAC.MVCControllers
 
         public void ExportExcel([FromUri]Entity.MonitorLog.QueryModel queryModel)
         {
-            HttpContext curContext = System.Web.HttpContext.Current;
-
             var datatable = new Business.BN.MonitorLog().GetExcelList(queryModel);
-            if (datatable.Rows.Count <= 0)
-            {
-                curContext.Response.Write("<script>alert(\"没有找到匹配的记录!\");</script>");
-                curContext.Response.End();
-                return;
-            }
-
             datatable.Columns["devicename"].Caption = "invisible";
 
+            HttpContext curContext = System.Web.HttpContext.Current;
             var strFileName = "监控历史数据.xls";
-            var strHeaderText = string.Format("{0} {1} 至 {2} 的监控历史数据", datatable.Rows[0]["devicename"], queryModel.beginTime, queryModel.endTime);
+            var strHeaderText = string.Format("{0} {1} 至 {2} 的监控历史数据",datatable.Rows[0]["devicename"], queryModel.beginTime, queryModel.endTime);
 
             curContext.Response.ContentType = "application/vnd.ms-excel";
             curContext.Response.ContentEncoding = Encoding.UTF8;

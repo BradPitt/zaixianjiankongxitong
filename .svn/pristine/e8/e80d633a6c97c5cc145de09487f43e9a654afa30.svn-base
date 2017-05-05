@@ -146,7 +146,6 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\buoy.css" />
     <Content Include="css\buoy3.css" />
-    <Content Include="css\buoyDetail.css" />
     <Content Include="css\buoyThreeAnalysis.css" />
     <Content Include="css\child.css" />
     <Content Include="css\daterangepicker.css" />
