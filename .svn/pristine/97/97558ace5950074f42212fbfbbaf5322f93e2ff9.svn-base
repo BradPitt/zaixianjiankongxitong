@@ -1,0 +1,287 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>浮标同步分析</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/js/echarts.min.js"></script>
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.js"></script>
+    <script src="~/js/bootstrap-datepicker.zh-CN.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul, li, dl, ol {
+            list-style: none;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        .query-panel {
+            margin: 10px 0px 0px 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="query-panel">
+        <div class="form-group">
+            <label for="street" class="control-label col-sm-1">监测要素：</label>
+            <select id="street" class="col-sm-2 select">
+                <option value="">请选择</option>
+                <option value="WATERTEM">水温</option>
+                <option value="SALINITY">盐度</option>
+                <option value="CONDUCTIVITY">电导率</option>
+                <option value="OXYGEN">溶解氧</option>
+                <option value="PH">PH值</option>
+                <option value="TURBIDITY">浊度</option>
+                <option value="UNDERWATERCO2">水下二氧化碳</option>
+                <option value="OXYGENCHEMICAL">化学需氧量</option>
+                <option value="MNO4">高锰酸盐指数</option>
+                <option value="OXYGENBIOLOGY">生化需氧量</option>
+                <option value="NH3N">氨氮（铵盐）</option>
+                <option value="NO3">硝酸盐-氮</option>
+                <option value="NO2">亚硝酸盐-氮</option>
+                <option value="PO4">活性磷酸盐</option>
+                <option value="SIO3">硅酸盐</option>
+                <option value="P">总磷</option>
+                <option value="N">总氮</option>
+                <option value="C">总有机碳</option>
+                <option value="S">硫</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="name" class="control-label col-sm-1">开始时间：</label>
+            <input class="form-control datepicker" style="width: 100%; padding: 6px 12px;" id="startDate" />
+        </div>
+        <div class="form-group">
+            <label for="name" class="control-label col-sm-1">结束时间：</label>
+            <input class="form-control datepicker" style="width: 100%; padding: 6px 12px;" id="endDate" />
+        </div>
+        <button type="button" class="btn btn-blue" style="margin-left: 10px" onclick="query()">
+            查询
+        </button>
+    </div>
+    <div id="main" style="width: 80%; height: 80%;"></div>
+    <input type="hidden" id="deviceCode" value="000001" />
+</body>
+</html>
+<script type="text/javascript">
+    var xData;
+    var totalData;
+    var lastData;
+    var twoData;
+    var legendData = [];
+    var year; // 得到年
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    $(function () {
+        $("#startDate").datepicker({
+            language: 'zh',
+            format: "yyyy-mm-dd",      //格式化日期
+            //weekStart: 1,
+            todayBtn: "linked",
+            autoclose: true,
+            clearBtn: true   // 清除按钮
+        }).on('click', function () {
+            $("#startDate").datepicker("setEndDate", $("#endDate").val())
+        });
+
+        $("#endDate").datepicker({
+            language: 'zh',
+            format: "yyyy-mm-dd",      //格式化日期
+            //weekStart: 1,
+            todayBtn: "linked",
+            autoclose: true,
+            clearBtn: true   // 清除按钮
+        }).on('click', function () {
+            $("#endDate").datepicker("setStartDate", $("#startDate").val())
+        });
+    });
+
+    //根据下拉选择条件更新图表
+    function query() {
+        //var startDate = new Date($('#startDate').val());
+        //var endDate = new Date($('#endDate').val());
+        //var date = endDate.getTime() - startDate.getTime()  //时间差的毫秒数
+        ////计算出相差天数
+        //var days = Math.floor(date / (24 * 3600 * 1000))
+
+        year = $('#startDate').val().substring(0, 4);
+
+        if ($('#startDate').val().substring(0, 4) != $('#endDate').val().substring(0, 4)) {
+            alert("时间不能跨年，请重新选择！");
+            return;
+        }
+
+        $.ajax({
+            url: "/Api/System/GetTongBuFenXi",
+            type: 'get',
+            data: { 'deviceCode': $('#deviceCode').val(), 'strId': $('#street option:selected').val(), 'startDate': $('#startDate').val(), 'endDate': $('#endDate').val() },
+            async: false,
+            success: function (data) {
+                var dtList = eval(data)
+                if (dtList !== null && dtList.count != 0) {
+                    xData = dtList.map(function (data) { return data.DATETIME.replace(/T/g, " ") })
+                    //totalData = dtList.map(function (data) { return data.COUNT ? data.COUNT : 0 })
+                    totalData = dtList.map(function (data) { return data.KEY ? data.KEY : 0 })
+                    lastData = dtList.map(function (data) { return data.KEY2 ? data.KEY2 : 0 })
+                    twoData = dtList.map(function (data) { return data.KEY3 ? data.KEY3 : 0 })
+
+                    // 绑定图例信息
+                    legendData.push(year + '年');
+                    legendData.push((year - 1) + '年');
+                    legendData.push((year - 2) + '年');
+
+                    myChart.clear();// 清空表数据
+                    BindOption();
+
+                    var option = myChart.getOption();
+                    //option.title[0].text = $("#street option:checked").text() + '电梯年增长趋势';
+                    option.xAxis[0].data = xData;
+                    //option.series[0].name = $("#street option:selected").text();
+                    option.series[0].data = totalData;
+                    option.series[1].data = lastData;
+                    option.series[2].data = twoData;
+
+                    myChart.setOption(option);
+                }
+            }
+        });
+    }
+
+    function BindOption() {
+        // 指定图表的配置项和数据
+        option = {
+            title: {
+                text: '同步分析',
+                // subtext: '纯属虚构',
+                //x: 'left'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            //右上角工具条
+            toolbox: {
+                feature: {
+                    //dataView: { show: true, readOnly: false },  // 数据视图
+                    //magicType: { show: true, type: ['line', 'bar'] }, // 视图切换（折线图、柱状图）
+                    restore: { title: '还原', show: true }, // 刷新
+                    saveAsImage: { title: '保存图片', show: true } // 保存图片（IE8-不支持）
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            legend: {
+                //data: ['2017年' + $("#street option:selected").text(), '2016年' + $("#street option:selected").text(), '2015年' + $("#street option:selected").text()],
+                data: legendData,
+                left: "65%",
+                padding: 5,
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    //data: ['2005年', '2006年', '2007年', '2008年', '2009年', '2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年'],
+                    data: xData,
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '要素值',
+                    //min: 0,
+                    //max: 10,
+                    //interval: 1,
+                    //axisLabel: {
+                    //    formatter: '{value} %'
+                    //}
+                }
+            ],
+            series: [
+                {
+                    //name: '2017年' + $("#street option:selected").text(),
+                    name: year + '年',
+                    smooth: true,
+                    type: 'line',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: { label: { show: true }, color: '#ff7f50' },// for legend  
+                        emphasis: { label: { show: true } }
+                    },
+                    //data: [2.0, 2.2, 3.3, 4.5, 6.3, 1.2, 2.3, 2.4, 3.0, 6.5, 2.0, 6.2]
+                    data: totalData
+                },
+                {
+                    //name: '2016年' + $("#street option:selected").text(),
+                    name: (year - 1) + '年',
+                    smooth: true,
+                    type: 'line',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: { label: { show: true }, color: '#00fa9a' },// for legend  
+                        emphasis: { label: { show: true } }
+                    },
+                    //data: [2.0, 2.2, 3.3, 4.5, 6.3, 1.2, 2.3, 2.4, 3.0, 6.5, 2.0, 6.2]
+                    data: lastData
+                },
+                {
+                    //name: '2015年',
+                    name: (year - 2) + '年',
+                    smooth: true,
+                    type: 'line',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: { label: { show: true }, color: '#1e90ff' },// for legend  
+                        emphasis: { label: { show: true } }
+                    },
+                    //data: [2.0, 2.2, 3.3, 4.5, 6.3, 1.2, 2.3, 2.4, 3.0, 6.5, 2.0, 6.2]
+                    data: twoData
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+</script>
+

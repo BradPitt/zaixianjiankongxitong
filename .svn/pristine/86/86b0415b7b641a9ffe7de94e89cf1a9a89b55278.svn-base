@@ -1,0 +1,177 @@
+﻿// 查询的表名
+var monitorType = "";
+var defaultMonitorType = "";
+
+$(function () {
+    // 默认的devicecode
+    var defaultDevicecode = QueryString.devicecode;
+    defaultMonitorType = QueryString.monitorType;
+    var defaultBeginTime = QueryString.beginTime == null ? moment(new Date().addDays(-10)).format("YYYY-MM-DD HH:mm:ss") : QueryString.beginTime;
+    var defaultEndTime = QueryString.endTime == null ? moment(new Date()).format("YYYY-MM-DD HH:mm:ss") : QueryString.endTime;
+
+    // 绑定浮标号下拉框
+    $.getJSON(
+        "/api/monitorlog/GetDeviceList",
+        { "devicecode": defaultDevicecode },
+        function (data) {
+
+            var fbaj = data[0].DEVICETYPE;
+
+            // 标签文字
+            var lbltext = fbaj === 2 ? "浮标号:" : "岸基站:";
+            $("#lbl-fb").text(lbltext);
+
+            // 默认表名参数的值
+            defaultMonitorType = defaultMonitorType == null ? (fbaj === 2 ? "TABBUOYECOLOGY0" : "TABECOLOGY0") : defaultMonitorType;
+            // 默认表名
+            monitorType = defaultMonitorType.slice(0, -1);
+
+            // 按钮
+            $("#btn-mtp").html(ButtonHtmls[fbaj]);
+            $("#btn-mtp>button").attr("class", "btn btn-default");
+            $("#btn-mtp>button[data-mtp=\"" + defaultMonitorType + "\"]").attr("class", "btn btn-primary");
+            $("#btn-mtp>button").on("click", function () {
+                var mtp = $(this).data("mtp");
+                var beginTime = $("input[name=\"daterange\"]").data("daterangepicker").startDate.format("YYYY-MM-DD HH:mm:ss");
+                var endTime = $("input[name=\"daterange\"]").data("daterangepicker").endDate.format("YYYY-MM-DD HH:mm:ss");
+                window.location.href = "index?devicecode=" + $("select[name=\"devicecode\"]").val() + "&monitorType=" + mtp + "&beginTime=" + beginTime + "&endTime=" + endTime;
+            });
+
+            var items = [];
+            $.each(data, function (key, val) {
+                items.push("<option value='" + val.DEVICECODE + "'>" + val.DEVICENAME + "</option>");
+            });
+
+            $("select[name=\"devicecode\"]").html(items.join(""));
+            $("select[name=\"devicecode\"]").val(defaultDevicecode);
+
+            InitData();
+
+            $("select[name=\"devicecode\"]").on("change", function () {
+                GetData();
+            });
+
+            //$("#btn-excel").on("click", function () {
+            //    $.get($("#btn-excel").data("excel"));
+            //});
+
+        });
+
+
+    // 初始化 datetime range picker 控件
+    $("input[name=\"daterange\"]").daterangepicker(
+        {
+            "timePicker": true,
+            "timePicker24Hour": true,
+            "timePickerSeconds": true,
+            "locale": {
+                "format": "YYYY-MM-DD HH:mm:ss",
+                "separator": " - ",
+                "applyLabel": "确定",
+                "cancelLabel": "取消",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": ["日", "一", "二", "三", "四", "五", "六"],
+                "monthNames": ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                "firstDay": 1
+            },
+            startDate: defaultBeginTime,
+            endDate: defaultEndTime
+        }
+    );
+
+    $("#btn-query").on("click", function () {
+        GetData();
+    });
+
+});
+
+function InitData() {
+    var beginTime = $("input[name=\"daterange\"]").data("daterangepicker").startDate.format("YYYY-MM-DD HH:mm:ss");
+    var endTime = $("input[name=\"daterange\"]").data("daterangepicker").endDate.format("YYYY-MM-DD HH:mm:ss");
+    var tableDataUrl = "/api/monitorlog/GetList?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime;
+
+    $("#table").bootstrapTable({
+        striped: true,
+        pagination: true,
+        height: "600",
+        sidePagination: "server",
+        url: tableDataUrl,
+        pageSize: 2,
+        pageList: "[2, 10, 20, 50, 100, 200]",
+        columns: DataColumns[defaultMonitorType]
+    });
+
+   var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=asc&offset=0&limit=65500";
+    $("#btn-excel").attr("href", href);
+    }
+
+function GetData() {
+    var beginTime = $("input[name=\"daterange\"]").data("daterangepicker").startDate.format("YYYY-MM-DD HH:mm:ss");
+    var endTime = $("input[name=\"daterange\"]").data("daterangepicker").endDate.format("YYYY-MM-DD HH:mm:ss");
+    var tableDataUrl = "/api/monitorlog/GetList?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime;
+
+    $("#table").bootstrapTable("refreshOptions", {
+        url: tableDataUrl
+    });
+
+    //var href = tableDataUrl.replace("GetList", "ExportToExcel") + "&order=asc&offset=0&limit=65500";
+    //$("#btn-excel").data("excel", href);
+    //console.log($("#btn-excel").data("excel"));
+    var href = "ExportExcel?tableName=" + monitorType + "&devicecode=" + $("select[name=\"devicecode\"]").val() + "&beginTime=" + beginTime + "&endTime=" + endTime + "&order=asc&offset=0&limit=65500";
+    $("#btn-excel").attr("href", href);
+}
+
+
+
+
+
+var ButtonHtmls = function () {
+    var arr2 = [], arr1 = [];
+    arr2.push("<button type=\"button\" data-mtp=\"TABBUOYECOLOGY0\">水质</button>", "<button type=\"button\" data-mtp=\"TABBUOYSTATUS0\">状态</button>", "<button type=\"button\" data-mtp=\"TABBUOYHYDROLOGY0\">波浪</button>", "<button type=\"button\" data-mtp=\"TABBUOYHYDROLOGY1\">海流</button>", "<button type=\"button\" data-mtp=\"TABBUOYQIXG0\">气象</button>", "<button type=\"button\" data-mtp=\"TABBUOYQIXG1\">风</button>", "<button type=\"button\" data-mtp=\"TABBUOYQIXG2\">气压</button>", "<button type=\"button\" data-mtp=\"TABBUOYQIXG3\">气温</button>", "<button type=\"button\" data-mtp=\"TABBUOYQIXG4\">湿度</button>");
+    arr1.push("<button type=\"button\" data-mtp=\"TABECOLOGY0\">水质</button>", "<button type=\"button\" data-mtp=\"TABSTATUS0\">状态</button>", "<button type=\"button\" data-mtp=\"TABHYDROLOGY0\">波浪</button>", "<button type=\"button\" data-mtp=\"TABHYDROLOGY1\">海流</button>", "<button type=\"button\" data-mtp=\"TABQIXG0\">气象</button>", "<button type=\"button\" data-mtp=\"TABQIXG1\">风</button>", "<button type=\"button\" data-mtp=\"TABQIXG2\">气压</button>", "<button type=\"button\" data-mtp=\"TABQIXG3\">气温</button>", "<button type=\"button\" data-mtp=\"TABQIXG4\">湿度</button>");
+    var rst = {
+        2: arr2.join("&nbsp;"),
+        1: arr1.join("&nbsp;")
+    };
+    return rst;
+}();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var QueryString = function () {
+    var query_string = {};
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (typeof query_string[pair[0]] === "undefined") {
+            query_string[pair[0]] = decodeURIComponent(pair[1]);
+        } else if (typeof query_string[pair[0]] === "string") {
+            var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+            query_string[pair[0]] = arr;
+        } else {
+            query_string[pair[0]].push(decodeURIComponent(pair[1]));
+        }
+    }
+    return query_string;
+}();
+
+Date.prototype.addDays = function (days) {
+    var dat = new Date(this.valueOf());
+    dat.setDate(dat.getDate() + days);
+    return dat;
+}

@@ -1,0 +1,55 @@
+
+ 
+记录时间：2017-05-05 15:18:56,875 
+线程ID:[132] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS: 连接超时
+
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 145select devicecode,devicename,devicetype from DEVICEINFO where devicetype = (select DEVICETYPE from deviceinfo where devicecode=:devicecode) order by laytime desc,devicecode asc 
+ 
+
+ 
+记录时间：2017-05-05 15:19:23,263 
+线程ID:[22] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS: 连接超时
+
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 145select devicecode,devicename,devicetype from DEVICEINFO where devicetype = (select DEVICETYPE from deviceinfo where devicecode=:devicecode) order by laytime desc,devicecode asc 
+ 
+
+ 
+记录时间：2017-05-05 15:21:53,880 
+线程ID:[139] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-03113: 通信通道的文件结尾
+进程 ID: 34548
+会话 ID: 69 序列号: 5804
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 145SELECT t."DATETIME" "日期时间", t."CURRENTTEM" "海浪水温", t."WATERTEM" "独立水温", t."CTDTEM" "CTD水温", t."SALINITY" "盐度", t."CONDUCTIVITY" "电导率", t."OXYGEN" "溶解氧(DO)", t."PH" "PH值", t."TURBIDITY" "浊度", t."YLS" "叶绿素", t."YLSTEM" "叶绿素温度", t."UNDERWATERCO2" "水下二氧化碳", t."OXYGENCHEMICAL" "化学需氧量COD", t."MNO4" "高锰酸盐指数", t."OXYGENBIOLOGY" "生化需氧量", t."NH3N" "氨氮(铵盐)", t."NO3" "硝酸盐-氮", t."NO2" "亚硝酸盐-氮", t."PO4" "活性磷酸盐", t."SIO3" "硅酸盐", t."PAHS" "多环芳烃", t."P" "总磷", t."N" "总氮", t."C" "总有机碳", t."S" "硫", t."ALKALINITY" "总碱度", t."SUSPENSION" "悬浮物", t."CYANIDE" "氰化物", t."HG" "汞", t."CD" "镉", t."CD6" "六价铬", t."PB" "铅", t."AS" "砷", t."YLSA" "叶绿素-a", t."PHYCOCY" "藻蓝素", t."PHYCOER" "藻红素", t."COLIFORM" "粪大肠菌群", t."POTENTIAL" "氧化还原电位", t."TOTALY" "总γ", t."K40" "40K", t."CS134" "134Cs", t."CS137" "137Cs", t."CO60" "60Co", t."CU" "铜", t."ZN" "锌", t."PHENOL" "挥发酚", t."BOD5" "BOD5", t."ORGANIC" "挥发性有机物", t."DETERGENTS" "阴离子洗涤剂", t."OIL" "油类", t."VIRUS" "细菌总数", t."PETRO" "石油烃", t."DDT" "DDT", t."PCBS" "PCBs", t."BENZOL" "多氯联苯", t."CHLO" "氯霉素", t."ANTIBIOTIC" "抗生素", t."POISONA" "腹泻性贝毒", t."POISONB" "麻痹性贝毒" FROM TABBUOYECOLOGY t left join deviceinfo d on t.devicecode = d.devicecode where t.devicecode=:devicecode and t.DATETIME between to_date(:beginTime, 'YYYY-MM-DD HH24:MI:SS') and to_date(:endTime, 'YYYY-MM-DD HH24:MI:SS') order by t.DATETIME desc
+ 

@@ -1,0 +1,250 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="/css/buoyDetail.css" rel="stylesheet">
+
+    <title></title>
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+  	<script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/echarts.min.js" type="text/javascript" charset="utf-8">    </script>
+    <script src="/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/buoyDetail.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+ <script>
+     function GetDataOnTime() {
+         var id = GetQueryString("id");
+         $(".hideData").load("/Manager/BuoyDataShishi?id=000000");
+     }
+     setInterval('GetDataOnTime()', 60000); //指定1分钟局部刷新一次      
+        setTimeout('setLDT()', 1);
+        setTimeout('setBXT()', 1);
+        
+        //clickTreeMenu(mapdata);
+       </script>
+</head>
+<body style="height:1000px;">
+     <div class="hideData">
+        @{Html.RenderAction("BuoyDataShishi");}
+    </div>  
+           <div style="height:30px;float:left;" >
+              <ul>
+                   <li style="float:left;text-align:left;width:200px;">浮标1 &nbsp;&nbsp;&nbsp;&nbsp;观测时间：20170425</li>
+              </ul>
+            </div>
+            <div class="tab-content" style="height:auto;float:left;">
+              
+                <div class="a" style="height:auto;float:left;">
+                    <div class="box-shadow-2" style="height:auto;float:left;">
+                        <div class="title">水质监测参数</div>
+                        <div style="display: inline-block; width:100%; ">
+                           
+                            <div class="content" >
+                                <ul data-wheel="continer" style="width:100%; padding:0;">
+                               <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+                                <li><span>25</span><span>水温</span></li>
+
+                                    </ul>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div style=" margin:0 18px 0 18px;float:left;">
+                        <ul  style="float:left;width:40%; padding:0;">
+                            
+                            <li id="bjts">
+                                <div class="atitle">报警显示</div>
+                                <div>
+                                   <ul>
+                                       <li><span>经度：</span>120.217100</li>
+                                       <li><span>纬度：</span>35.983200</li>
+                                       <li><span>GPS报警：</span></li>
+                                       <li><span>锚灯：</span>--</li>
+                                       <li><span>水警：</span>--</li>
+                                       <li><span>门警：</span>--</li>
+                                       <li><span>电压：</span>--</li>
+                                       <li><span>内存：</span>--</li>
+                                       <li><span>传感器状态：</span>--</li>
+                                       
+                                       
+                                   </ul>
+                                    <ul  id="leidatu" style="height:180px;">
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul style="float:left;width:60%;padding:0 0 0 18px; ">
+                            <li id="bl">
+                                <div class="atitle">波浪</div>
+                                <div>
+                                   <ul>
+                                       <li>&nbsp;</li>
+                                       <li>波高（m）</li>
+                                       <li>波周期（s）</li>
+                                       <li>时间</li>
+                                       <li>最大</li>
+                                       <li>1.000</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                       <li>1/10</li>
+                                       <li>1.000</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                       <li>平均</li>
+                                       <li>1.000</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                       <li>有效</li>
+                                       <li>1.000</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                   </ul>
+                                    <ul  class="boxiangtu" >
+                                        <div id="boxiangtu" ></div>
+                                        <div style="text-align:center; width:162px;">波向：360</div>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id="qwqy">
+                                <div class="atitle">气温气压</div>
+                                <div>
+                                   <ul>
+                                       <li>&nbsp;</li>
+                                       <li>平均</li>
+                                       <li>最大</li>
+                                       <li>最小</li>
+                                       <li>最大出现时刻</li>
+                                       <li>最小出现时刻</li>
+                                       <li>气温</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                       <li>4</li>
+                                       <li>20170405</li>
+                                        <li>20170306</li>
+                                        <li>气压</li>
+                                       <li>2</li>
+                                       <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                       <li>6</li>
+                                       <li>湿度</li>
+                                        <li>2.000</li>
+                                        <li>3.000</li>
+                                       <li>4</li>
+                                        <li>5</li>
+                                       <li>6</li>
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div style=" padding:0 18px 0 18px;float:left;width:100%;">
+                        <ul style="float:left;width:50%; padding:0;">
+                            <li id="hl">
+                                <div class="atitle">海流</div>
+                                <div>
+                                   <ul>
+                                       <li>层数：</li>
+                                       <li>表层</li>
+                                       <li>流速：</li>
+                                       <li>15.7</li>
+                                       <li>流向：</li>
+                                       <li>
+                                           <div id="liuxiangtu" ></div>
+                                       
+                                       </li>
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                           
+                        </ul>
+                        <ul style="float:left;width:50%;padding:0 0 0 18px; ">
+                             <li id="qx">
+                                <div class="atitle">气象</div>
+                                <div>
+                                   <ul>
+                                       <li>能见度：222</li>
+                                       <li>实际雨量：55</li>
+                                       <li>测前雨量：555</li>
+                                       <li>雨量：2222</li>
+                                       <li>总辐射：55</li>
+                                       <li>红外辐射：44</li>
+                                        <li>日照时间：222</li>
+                                        <li>二氧化碳：44</li>
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--bbb-->
+                    <div style=" padding:0 18px 0 18px;float:left;width:100%;">
+                         <ul style="float:left;width:50%; padding:0;">
+                            <li id="fsfx">
+                                <div class="atitle">风速风向</div>
+                                <div>
+                                   <ul>
+                                       <li></li>
+                                       <li>两分钟平均</li>
+                                       <li>十分钟平均<li>
+                                       <li>最大</li>
+                                       <li>极大</li>
+                                       <li>瞬时</li>
+                                       <li>风速</li>
+                                       <li>22</li>
+                                       <li>22<li>
+                                       <li>22</li>
+                                       <li>22</li>
+                                       <li>22</li>
+                                       <li>风向</li>
+                                       <li>22</li>
+                                       <li>22<li>
+                                       <li>22</li>
+                                       <li>22</li>
+                                       <li>22</li>
+                                      
+                                   </ul>
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </li>
+                           
+                        </ul>
+                      </div>
+                </div>
+                   
+            </div> 
+
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+namespace Entity
+{
+    /// <summary>
+    /// 岸基站
+    /// </summary>
+    [Serializable]
+    [DataContract]
+    public class TAB
+    {
+        /// <summary>
+        /// 生态数据表:水质监测参数
+        /// </summary>
+        public TABECOLOGY ShuiZhi { get; set; }
+
+        /// <summary>
+        /// 生态数据表:水文
+        /// </summary>
+        public TABECOLOGY ShuiWen { get; set; }
+
+        /// <summary>
+        /// 气象数据表
+        /// </summary>
+        public TABQIXG QIXG { get; set; }
+
+        /// <summary>
+        /// 状态信息表
+        /// </summary>
+        public TABSTATUS STATUS { get; set; }
+    }
+}

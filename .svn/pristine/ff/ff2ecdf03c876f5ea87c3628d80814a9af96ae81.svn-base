@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>历史数据查询</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/css/daterangepicker.css" rel="stylesheet" />
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/daterangepicker.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/bootstrap-table-zh-CN.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>历史数据查询</h1>
+        <div id="toolbar">
+            <div>
+                <span id="lbl-fb">浮标号: </span>
+                <select name="devicecode" class="form-control"></select>
+            </div>
+            <div>
+                <span>时间: </span>
+                <input type="text" class="form-control" name="daterange" />
+            </div>
+            <div>
+                <button id="btn-query" class="btn btn-primary">查询</button>
+                <a id="btn-excel" class="btn btn-info" href="javascript::;" role="button">导出Excel</a>
+            </div>
+        </div>
+
+        <div id="btn-mtp"></div>
+        <table id="table"></table>
+
+    </div>
+
+</body>
+</html>
+<script src="~/js/MonitorLog/dataColumnConfigs.js"></script>
+<script src="~/js/MonitorLog/monitorLog.js"></script>

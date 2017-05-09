@@ -1,0 +1,317 @@
+﻿using System;
+using System.Text;
+using System.Data.OracleClient;
+using System.Collections.Generic;
+using System.Data;
+
+namespace Business.BN
+{
+    /// <summary>
+    /// 状态信息表(浮标)
+    /// </summary>
+    public class TABBUOYSTATUS_BN
+    {
+
+        public bool Exists()
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("select count(1) from TABBUOYSTATUS");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+            if (dbHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public void Add(Entity.TABBUOYSTATUS model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("insert into TABBUOYSTATUS(");
+            strSql.Append("DEVICECODE,DATETIME,SENDNUM,RECVNUM,LON,LAT,AZIMUTH,VOLTAGE,ANCHOR,WATERALARM,DOORALARM,GPSALARM,FREEMEMO,SENSERSTATUS,RESERV0,RESERV1,RESERV2,STATIONSTATUS");
+            strSql.Append(") values (");
+            strSql.Append(":DEVICECODE,:DATETIME,:SENDNUM,:RECVNUM,:LON,:LAT,:AZIMUTH,:VOLTAGE,:ANCHOR,:WATERALARM,:DOORALARM,:GPSALARM,:FREEMEMO,:SENSERSTATUS,:RESERV0,:RESERV1,:RESERV2,:STATIONSTATUS");
+            strSql.Append(") ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":DEVICECODE", OracleType.Char,6) ,            
+                        new OracleParameter(":DATETIME", OracleType.DateTime) ,            
+                        new OracleParameter(":SENDNUM", OracleType.Number,22) ,            
+                        new OracleParameter(":RECVNUM", OracleType.Number,22) ,            
+                        new OracleParameter(":LON", OracleType.Number,16) ,            
+                        new OracleParameter(":LAT", OracleType.Number,16) ,            
+                        new OracleParameter(":AZIMUTH", OracleType.Number,22) ,            
+                        new OracleParameter(":VOLTAGE", OracleType.Number,16) ,            
+                        new OracleParameter(":ANCHOR", OracleType.Number,22) ,            
+                        new OracleParameter(":WATERALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":DOORALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":GPSALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
+                        new OracleParameter(":SENSERSTATUS", OracleType.Number,22) ,            
+                        new OracleParameter(":RESERV0", OracleType.Number,16) ,            
+                        new OracleParameter(":RESERV1", OracleType.Number,16) ,            
+                        new OracleParameter(":RESERV2", OracleType.Number,16) ,            
+                        new OracleParameter(":STATIONSTATUS", OracleType.Number,22)             
+              
+            };
+
+            parameters[0].Value = model.DEVICECODE;
+            parameters[1].Value = model.DATETIME;
+            parameters[2].Value = model.SENDNUM;
+            parameters[3].Value = model.RECVNUM;
+            parameters[4].Value = model.LON;
+            parameters[5].Value = model.LAT;
+            parameters[6].Value = model.AZIMUTH;
+            parameters[7].Value = model.VOLTAGE;
+            parameters[8].Value = model.ANCHOR;
+            parameters[9].Value = model.WATERALARM;
+            parameters[10].Value = model.DOORALARM;
+            parameters[11].Value = model.GPSALARM;
+            parameters[12].Value = model.FREEMEMO;
+            parameters[13].Value = model.SENSERSTATUS;
+            parameters[14].Value = model.RESERV0;
+            parameters[15].Value = model.RESERV1;
+            parameters[16].Value = model.RESERV2;
+            parameters[17].Value = model.STATIONSTATUS;
+            dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+
+        }
+
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(Entity.TABBUOYSTATUS model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("update TABBUOYSTATUS set ");
+
+            strSql.Append(" DEVICECODE = :DEVICECODE , ");
+            strSql.Append(" DATETIME = :DATETIME , ");
+            strSql.Append(" SENDNUM = :SENDNUM , ");
+            strSql.Append(" RECVNUM = :RECVNUM , ");
+            strSql.Append(" LON = :LON , ");
+            strSql.Append(" LAT = :LAT , ");
+            strSql.Append(" AZIMUTH = :AZIMUTH , ");
+            strSql.Append(" VOLTAGE = :VOLTAGE , ");
+            strSql.Append(" ANCHOR = :ANCHOR , ");
+            strSql.Append(" WATERALARM = :WATERALARM , ");
+            strSql.Append(" DOORALARM = :DOORALARM , ");
+            strSql.Append(" GPSALARM = :GPSALARM , ");
+            strSql.Append(" FREEMEMO = :FREEMEMO , ");
+            strSql.Append(" SENSERSTATUS = :SENSERSTATUS , ");
+            strSql.Append(" RESERV0 = :RESERV0 , ");
+            strSql.Append(" RESERV1 = :RESERV1 , ");
+            strSql.Append(" RESERV2 = :RESERV2 , ");
+            strSql.Append(" STATIONSTATUS = :STATIONSTATUS  ");
+            strSql.Append(" where  ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":DEVICECODE", OracleType.Char,6) ,            
+                        new OracleParameter(":DATETIME", OracleType.DateTime) ,            
+                        new OracleParameter(":SENDNUM", OracleType.Number,22) ,            
+                        new OracleParameter(":RECVNUM", OracleType.Number,22) ,            
+                        new OracleParameter(":LON", OracleType.Number,16) ,            
+                        new OracleParameter(":LAT", OracleType.Number,16) ,            
+                        new OracleParameter(":AZIMUTH", OracleType.Number,22) ,            
+                        new OracleParameter(":VOLTAGE", OracleType.Number,16) ,            
+                        new OracleParameter(":ANCHOR", OracleType.Number,22) ,            
+                        new OracleParameter(":WATERALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":DOORALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":GPSALARM", OracleType.Number,22) ,            
+                        new OracleParameter(":FREEMEMO", OracleType.Number,22) ,            
+                        new OracleParameter(":SENSERSTATUS", OracleType.Number,22) ,            
+                        new OracleParameter(":RESERV0", OracleType.Number,16) ,            
+                        new OracleParameter(":RESERV1", OracleType.Number,16) ,            
+                        new OracleParameter(":RESERV2", OracleType.Number,16) ,                   
+                        new OracleParameter(":STATIONSTATUS", OracleType.Number,22) 
+              
+            };
+
+            parameters[0].Value = model.DEVICECODE;
+            parameters[1].Value = model.DATETIME;
+            parameters[2].Value = model.SENDNUM;
+            parameters[3].Value = model.RECVNUM;
+            parameters[4].Value = model.LON;
+            parameters[5].Value = model.LAT;
+            parameters[6].Value = model.AZIMUTH;
+            parameters[7].Value = model.VOLTAGE;
+            parameters[8].Value = model.ANCHOR;
+            parameters[9].Value = model.WATERALARM;
+            parameters[10].Value = model.DOORALARM;
+            parameters[11].Value = model.GPSALARM;
+            parameters[12].Value = model.FREEMEMO;
+            parameters[13].Value = model.SENSERSTATUS;
+            parameters[14].Value = model.RESERV0;
+            parameters[15].Value = model.RESERV1;
+            parameters[16].Value = model.RESERV2;
+            parameters[17].Value = model.STATIONSTATUS;
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete()
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("delete from TABBUOYSTATUS ");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 获取浮标的设备状态信息
+        /// </summary>
+        public Entity.TABBUOYSTATUS GetModel(string deviceCode)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append(" SELECT DATETIME, LON, LAT, AZIMUTH, VOLTAGE, ANCHOR, WATERALARM, DOORALARM, GPSALARM, FREEMEMO, SENSERSTATUS ");
+            strSql.Append(" FROM TABBUOYSTATUS ");
+            strSql.Append(" WHERE DEVICECODE=:DEVICECODE ");
+            strSql.Append(" AND DATETIME=(SELECT MAX(DATETIME) DATETIME FROM TABBUOYSTATUS WHERE DEVICECODE=:DEVICECODE) ");
+
+            OracleParameter[] parameters = {
+                    new OracleParameter(":DEVICECODE",deviceCode)
+			};
+
+            dbHelper.OpenConn("");
+            Entity.TABBUOYSTATUS model = new Entity.TABBUOYSTATUS();
+            DataTable ds = dbHelper.GetDataTable(strSql.ToString(), parameters);
+
+            dbHelper.CloseConn();
+            if (ds.Rows.Count > 0)
+            {
+                //model.DEVICECODE = ds.Rows[0]["DEVICECODE"].ToString();
+                if (ds.Rows[0]["DATETIME"].ToString() != "")
+                {
+                    model.DATETIME = DateTime.Parse(ds.Rows[0]["DATETIME"].ToString());
+                }
+                if (ds.Rows[0]["LON"].ToString() != "")
+                {
+                    model.LON = decimal.Parse(ds.Rows[0]["LON"].ToString());
+                }
+                if (ds.Rows[0]["LAT"].ToString() != "")
+                {
+                    model.LAT = decimal.Parse(ds.Rows[0]["LAT"].ToString());
+                }
+                if (ds.Rows[0]["AZIMUTH"].ToString() != "")
+                {
+                    model.AZIMUTH = decimal.Parse(ds.Rows[0]["AZIMUTH"].ToString());
+                }
+                if (ds.Rows[0]["VOLTAGE"].ToString() != "")
+                {
+                    model.VOLTAGE = decimal.Parse(ds.Rows[0]["VOLTAGE"].ToString());
+                }
+                if (ds.Rows[0]["ANCHOR"].ToString() != "")
+                {
+                    model.ANCHOR = decimal.Parse(ds.Rows[0]["ANCHOR"].ToString());
+                }
+                if (ds.Rows[0]["WATERALARM"].ToString() != "")
+                {
+                    model.WATERALARM = decimal.Parse(ds.Rows[0]["WATERALARM"].ToString());
+                }
+                if (ds.Rows[0]["DOORALARM"].ToString() != "")
+                {
+                    model.DOORALARM = decimal.Parse(ds.Rows[0]["DOORALARM"].ToString());
+                }
+                if (ds.Rows[0]["GPSALARM"].ToString() != "")
+                {
+                    model.GPSALARM = decimal.Parse(ds.Rows[0]["GPSALARM"].ToString());
+                }
+                if (ds.Rows[0]["FREEMEMO"].ToString() != "")
+                {
+                    model.FREEMEMO = decimal.Parse(ds.Rows[0]["FREEMEMO"].ToString());
+                }
+                if (ds.Rows[0]["SENSERSTATUS"].ToString() != "")
+                {
+                    model.SENSERSTATUS = decimal.Parse(ds.Rows[0]["SENSERSTATUS"].ToString());
+                }
+
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataTable GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            OracleParameter[] parameters = null;
+            strSql.Append("select * ");
+            strSql.Append(" FROM TABBUOYSTATUS ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return dbHelper.GetDataTable(strSql.ToString(), parameters);
+        }
+
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataTable GetList(int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            OracleParameter[] parameters = null;
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" * ");
+            strSql.Append(" FROM TABBUOYSTATUS ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            strSql.Append(" order by " + filedOrder);
+            return dbHelper.GetDataTable(strSql.ToString(), parameters);
+        }
+
+
+    }
+}
+
