@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+      <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="/css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <title></title>
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+  	<script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/echarts.min.js" type="text/javascript" charset="utf-8">    </script>
+    <script src="/js/deviceInfoList.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap-table.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap-table-zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/config.js" type="text/javascript" charset="utf-8"></script>
+     <script>
+        
+        // setTimeout('setLDT()', 1);
+        // setTimeout('setBXT()', 1);
+       </script>
+</head>
+<body>
+<div style="float:left;width:100%;margin:4px 0 4px 0;">
+    编号：<input type="text" id="bianhao" name="bianhao" value="" class="selInput"/> 
+    海区：
+    <select id="haiqu" class="selInput">
+      <option value="全部">全部</option>
+      <option value="渤海">渤海</option>
+      <option value="黄海">黄海</option>
+    </select>
+    省份：
+    <select id="shengfen" class="selInput">
+      <option value="全部">全部</option>
+      <option value="辽宁省">辽宁省</option>
+      <option value="河北省">河北省</option>
+      <option value="天津市">天津市</option>
+      <option value="山东省">山东省</option>
+      <option value="大连市">大连市</option>
+      <option value="青岛市">青岛市</option>
+    </select>
+    海湾：
+    <select id="haiwan" class="selInput">
+      <option value="全部">全部</option>
+      <option value="辽东湾">辽东湾</option>
+      <option value="渤海湾">渤海湾</option>
+      <option value="莱州湾">莱州湾</option>
+        <option value="大连湾">大连湾</option>
+        <option value="胶州湾">胶州湾</option>
+    </select>
+    局属设施：<select id="jushusheshi" class="selInput">
+  <option value="全部">全部</option>
+  <option value="北海监测中心">北海监测中心</option>
+  <option value="大连中心站">大连中心站</option>
+  <option value="秦皇岛中心站">秦皇岛中心站</option>
+  <option value="天津中心站">天津中心站</option>
+  <option value="烟台中心站">烟台中心站</option>
+  <option value="青岛中心站">青岛中心站</option>
+</select>
+    地方设施：
+    <select id="difangsheshi" class="selInput">
+  <option value="全部">全部</option>
+  <option value="辽宁省海洋与渔业局">辽宁省海洋与渔业局</option>
+  <option value="河北省海洋局">河北省海洋局</option>
+  <option value="天津市海洋局">天津市海洋局</option>
+  <option value="山东省海洋与渔业厅">山东省海洋与渔业厅</option>
+  <option value="大连市海洋与渔业局">大连市海洋与渔业局</option>
+  <option value="青岛市海洋与渔业局">青岛市海洋与渔业局</option>
+</select>
+    业务:
+    <select id="yewu" class="selInput">
+  <option value="全部">全部</option>
+  <option value="入海排污口">入海排污口</option>
+  <option value="入海江河">入海江河</option>
+  <option value="海洋工程">海洋工程</option>
+         <option value="环境风险">环境风险</option>
+        <option value="重点海湾">重点海湾</option>
+        <option value="海洋保护区">海洋保护区</option>
+        <option value="海洋生态红线">海洋生态红线</option>
+</select>
+    <button id="search_btn" class="blueBtn" data-loading-text="Loading..." onclick="searchBtnClick();" >查 询</button>
+    <button id="search_btn2" class="search_btn" data-loading-text="Loading..." onclick="getData();" style="display:none;">查 询</button>
+    
+</div>
+    <div><table id="mytab" class="table table-hover"></table></div>
+</body>
+</html>

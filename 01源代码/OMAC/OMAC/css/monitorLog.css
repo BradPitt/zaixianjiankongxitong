@@ -1,0 +1,51 @@
+﻿html,body {
+    margin:0;
+    padding:0;
+    font-size:16px;
+}
+#toolbar
+{
+    margin-top:20px
+}
+#btn-mtp
+{
+    margin-left:0px;
+}
+.input {
+    border: 1px #d2d6de solid;
+    border-radius: 3px;
+    height: 36px;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+    width:70%;
+    /*很关键：将默认的select选择框样式清除*/
+ 
+    /*在选择框的最右侧中间显示小箭头图片*/
+  
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+    .select::-ms-expand {
+        display: none;
+    }
+
+    .select option {
+        border: none;
+        height: 36px;
+        padding: 10px;
+    }
+
+    .select:focus {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
+
+    .select:hover {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
