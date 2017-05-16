@@ -1,0 +1,12 @@
+﻿<div class="modal fade" id="DataLoading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:130px;">  
+    <div class="modal-dialog" role="document">  
+        <div class="modal-content">  
+            <div class="modal-header" style="background-color:#0b83f3;border-radius:5px 5px 0 0;color:#ffffff;height:50px">  
+                <h4 class="modal-title" id="myModalLabel">提示</h4>  
+            </div>  
+            <div class="modal-body" style="display:inline">  
+                <span>数据加载中，请稍后......</span><img src="~/img/Loading.gif" height="50" width="50"/>
+            </div>  
+        </div>  
+    </div>  
+</div>  

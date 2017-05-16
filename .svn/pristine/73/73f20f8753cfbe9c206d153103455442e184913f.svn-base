@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/bootbox.min.js"></script>
+    <title>机构管理</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-sm-4">
+            <h2>操作</h2>
+            <div class="form-group">
+                <label for="input-search">当前选中节点:</label>
+                <input type="text" class="form-control" id="input-search" placeholder="搜索...">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="btn-add" disabled>新&nbsp;增</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-warning" id="btn-edit" disabled>修&nbsp;改</button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger" id="btn-delete" disabled>删&nbsp;除</button>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h2>列表</h2>
+            <div id="treeview1"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="~/js/department.js"></script>

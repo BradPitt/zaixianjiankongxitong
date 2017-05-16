@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="/css/buoyDetail.css" rel="stylesheet">
+
+    <title></title>
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+  	<script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/echarts.min.js" type="text/javascript" charset="utf-8">    </script>
+    <script src="/js/config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/buoyDetail.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+ <script>
+     $(document).ready(function () {
+         $('#DataLoading').modal({ backdrop: 'static', keyboard: false });
+         $("#DataLoading").modal('show');
+         setValue();
+         setInterval('setValue()', refesTime); //指定1分钟局部刷新一次      
+     });
+     function GetDataOnTime() {
+         var id = GetQueryString("id");
+         $(".hideData").load("/Manager/BuoyDataShishi?id=" + id);
+     }
+    
+     
+     setTimeout('setBXT()', 1);
+     
+       </script>
+</head>
+<body style="margin:0;">
+    @{Html.RenderAction("DataLoading");} 
+     <div class="hideData">
+        @{Html.RenderAction("BuoyDataShishi");}
+    </div>  
+           <div style="height:30px;float:left;" >
+              <ul>
+                   <li style="float:left;text-align:left;width:400px;"><span id="deviceName"></span> &nbsp;&nbsp;&nbsp;&nbsp;观测时间：<span id="guanceshijian"></span></li>
+              </ul>
+            </div>
+            <div class="tab-content" style="height:auto;float:left;width:100%;">
+              
+                <div class="a" style="width:100%;float:left; min-height:100px;">
+                    <div class="box-shadow-2" style="height:auto;float:left;">
+                        <div class="title">水质监测参数</div>
+                        <div style="display: inline-block; width:100%; ">
+                           
+                            <div class="content" >
+                                <ul id="ecology" data-wheel="continer" style="width:100%; padding:0;">
+                                </ul>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div style=" float:left;width:100%;height:378px;padding:10px 18px 0 18px;">
+                        <ul  style="float:left;width:40%; height:378px;">
+                            
+                            <li id="bjts">
+                                <div class="atitle">报警显示</div>
+                                <div style="width:100%;height:310px; background-color:#fff;">
+                                   <ul id="bjtsUl" style="float:left;">
+                                      
+                                   </ul>
+                                    <ul  id="leidatu" style="height:180px;float:left;">
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul style="float:left;width:60%;padding:0 0 0 18px;height:378px; ">
+                            <li id="bl">
+                                <div class="atitle">波浪</div>
+                                <div>
+                                   <ul id="blUl">
+                                       
+                                   </ul>
+                                    <ul  class="boxiangtu" >
+                                        <div id="boxiangtu" ></div>
+                                        <div id="WAVEDIR" style="text-align:center; width:162px;">波向：360</div>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li id="qwqy">
+                                <div class="atitle">气温气压</div>
+                                <div>
+                                   <ul id="qwqyUl">
+                                       
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div style=" padding:18px 18px 0 18px;float:left;width:100%;">
+                        <ul style="float:left;width:50%; padding:0;">
+                            <li id="hl" style="height:104px;">
+                                <div class="atitle">海流</div>
+                                <div>
+                                   <ul id="hlUl">
+                                      
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                           
+                        </ul>
+                        <ul style="float:left;width:50%;padding:0 0 0 18px; ">
+                             <li id="qx">
+                                <div class="atitle">气象</div>
+                                <div>
+                                   <ul id="qxUl">
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--bbb-->
+                    <div style=" padding:0 18px 0 18px;float:left;width:100%;">
+                         <ul style="float:left;width:100%; padding:0;">
+                            <li id="fsfx">
+                                <div class="atitle">风速风向</div>
+                                <div>
+                                   <ul id="fsfxUl1" style="width:70%;float:left;">
+                                       
+                                      
+                                   </ul>
+                                    <ul id="fsfxUl2" style="width:30%;float:left;">
+                                      
+                                    </ul>
+                                </div>
+                            </li>
+                           
+                        </ul>
+                      </div>
+                </div>
+                   
+            </div> 
+
+</body>
+</html>
+

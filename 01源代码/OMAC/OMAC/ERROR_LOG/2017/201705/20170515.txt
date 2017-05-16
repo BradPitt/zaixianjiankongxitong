@@ -1,0 +1,203 @@
+
+ 
+记录时间：2017-05-15 14:17:41,548 
+线程ID:[259] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS: 连接超时
+
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 145select *  FROM DEPARTMENTINFO
+ 
+
+ 
+记录时间：2017-05-15 14:18:09,247 
+线程ID:[259] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 14:28:47,744 
+线程ID:[148] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 14:29:29,795 
+线程ID:[280] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 14:30:02,251 
+线程ID:[148] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 14:30:53,662 
+线程ID:[274] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 14:31:03,131 
+线程ID:[259] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-15 15:46:38,201 
+线程ID:[280] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select *  FROM DEPARTMENTINFO where F_PARENT = '0'
+ 
+
+ 
+记录时间：2017-05-15 15:46:38,216 
+线程ID:[280] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：GetTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTree(String pid) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 242
+ 
+
+ 
+记录时间：2017-05-15 15:47:53,435 
+线程ID:[273] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select *  FROM DEPARTMENTINFO where F_PARENT = '0'
+ 
+
+ 
+记录时间：2017-05-15 15:48:20,340 
+线程ID:[273] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：GetTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTree(String pid) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 242
+ 
+
+ 
+记录时间：2017-05-15 15:49:24,009 
+线程ID:[285] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select *  FROM DEPARTMENTINFO where F_PARENT = '0'
+ 
+
+ 
+记录时间：2017-05-15 15:49:24,009 
+线程ID:[285] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：GetTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTree(String pid) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 242
+ 
