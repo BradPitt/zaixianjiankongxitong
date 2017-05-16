@@ -1,0 +1,418 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.OracleClient;
+using System.Data;
+using System.Data.Common;
+using System.Text;
+using System.IO;
+using System.Net;
+using System.Runtime.Serialization;
+using System.Configuration;
+namespace Business
+{
+    /// <summary>
+    /// 对数据库进行操作的公共类
+    /// </summary>
+    public class DbAPI
+    {
+
+        #region  数据库连接 数据库事务的操作
+        //数据库连接
+        OracleConnection pDbConn = null;
+        //事务
+        OracleTransaction pTrans = null;
+        OracleCommand pCommand = null;
+
+
+
+        /// <summary>
+        /// 开启数据库连接
+        /// </summary>
+        /// <param name="sConnStr"></param>
+        public void OpenConn(string HaiQu)
+        {
+            string sConnStr = ConfigurationManager.ConnectionStrings["BHsqlConnectionString"].ToString();
+            
+            switch (HaiQu)
+            {
+                case "N":
+                    sConnStr = ConfigurationManager.ConnectionStrings["BHsqlConnectionString"].ToString();
+                    break;
+                case "S":
+                    sConnStr = ConfigurationManager.ConnectionStrings["NHsqlConnectionString"].ToString();
+                    break;
+                case "E":
+                    sConnStr = ConfigurationManager.ConnectionStrings["DHsqlConnectionString"].ToString();
+                    break;
+            }
+
+            try
+            {
+
+                pDbConn = new OracleConnection(sConnStr);
+                pCommand = pDbConn.CreateCommand();
+                pDbConn.Open();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        /// <summary>
+        /// 关闭数据库连接
+        /// </summary>
+        /// <param name="sConnStr"></param>
+        public void CloseConn()
+        {
+            if (pDbConn != null)
+            {
+                if (pDbConn.State != System.Data.ConnectionState.Closed)
+                {
+                    pDbConn.Close();
+                }
+                pDbConn.Dispose();
+            }
+        }
+        /// <summary>
+        /// 开启事务
+        /// </summary>
+        public void OpenTrans()
+        {
+            pTrans = pDbConn.BeginTransaction();
+            if (pTrans != null)
+            {
+                pCommand.Transaction = pTrans;
+            }
+        }
+        /// <summary>
+        /// 关闭事务
+        /// </summary>
+        public void CloseTrans()
+        {
+            if (pTrans != null)
+            {
+                pTrans.Dispose();
+            }
+        }
+        /// <summary>
+        /// 事务提交
+        /// </summary>
+        public void CommitTrans()
+        {
+            if (pTrans != null)
+            {
+                pTrans.Commit();
+            }
+        }
+        /// <summary>
+        /// 回滚
+        /// </summary>
+        public void RollBack()
+        {
+            if (pTrans != null)
+            {
+                pTrans.Rollback();
+            }
+        }
+        #endregion
+
+        #region 数据库数据查询
+        /// <summary>
+        /// 执行SQL语句，获得查询结果表
+        /// </summary>
+        /// <param name="pDbConn"></param>
+        /// <param name="pTrans"></param>
+        /// <param name="sSql"></param>
+        /// <returns></returns>
+        public DataTable GetDataTable(string sSql, OracleParameter[] opc)
+        {
+            DataTable pDataTable = new DataTable();
+
+            try
+            {
+                pCommand.CommandText = sSql;
+                pCommand.Parameters.Clear();
+                if (opc != null)
+                {
+                    for (int i = 0; i < opc.Length; i++)
+                    {
+                        pCommand.Parameters.Add(opc[i]);
+                    }
+                }
+                OracleDataAdapter pDbAdapter = new OracleDataAdapter(pCommand);
+
+                pDbAdapter.Fill(pDataTable);
+                return pDataTable;
+            }
+            catch (Exception ep)
+            {
+                LogBN.WriteLog(typeof(DbAPI), "GetDataTable 程序段的异常" + ep + sSql);
+                //if (pTrans != null)
+                //{
+                //    pTrans.Rollback();
+                //}
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// 执行存储过程，获得查询结果表
+        /// </summary>
+        /// <param name="sSql">存储过程名称</param>
+        /// <param name="opc">参数数组</param>
+        /// <returns></returns>
+        public DataTable GetDataTableFromProcedure(string sSql, OracleParameter[] opc)
+        {
+            var pDataTable = new DataTable();
+
+            try
+            {
+                pCommand.CommandType=CommandType.StoredProcedure;
+                pCommand.CommandText = sSql;
+                pCommand.Parameters.Clear();
+                if (opc != null)
+                {
+                    foreach (var t in opc)
+                    {
+                        pCommand.Parameters.Add(t);
+                    }
+                }
+                var pDbAdapter = new OracleDataAdapter(pCommand);
+
+                pDbAdapter.Fill(pDataTable);
+                return pDataTable;
+            }
+            catch (Exception ep)
+            {
+                LogBN.WriteLog(typeof(DbAPI), "GetDataTableFromProcedure 程序段的异常" + ep + sSql);
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// 带参数
+        /// </summary>
+        /// <param name="pDbConn"></param>
+        /// <param name="sSql"></param>
+        /// <param name="pParams"></param>
+        /// <returns></returns>
+        public int ExecuteNonQuery(string sSql, OracleParameter[] opc)
+        {
+            try
+            {
+
+                pCommand.CommandText = sSql;
+                pCommand.Parameters.Clear();
+                if (opc != null)
+                {
+                    for (int i = 0; i < opc.Length; i++)
+                    {
+                        pCommand.Parameters.Add(opc[i]);
+                    }
+                }
+                return pCommand.ExecuteNonQuery();
+
+            }
+            catch (Exception ep)
+            {
+                LogBN.WriteLog(typeof(DbAPI), "ExecuteNonQuery 程序段的异常" + ep + sSql);
+                return -1;
+            }
+
+        }
+
+        /// <summary>
+        /// 带参数
+        /// </summary>
+        /// <param name="pDbConn"></param>
+        /// <param name="sSql"></param>
+        /// <param name="pParams"></param>
+        /// <returns></returns>
+        public object ExecuteOracleScalar(string sSql, OracleParameter[] opc)
+        {
+            try
+            {
+
+                pCommand.CommandText = sSql;
+                pCommand.Parameters.Clear();
+                if (opc != null)
+                {
+                    for (int i = 0; i < opc.Length; i++)
+                    {
+                        pCommand.Parameters.Add(opc[i]);
+                    }
+                }
+                return pCommand.ExecuteOracleScalar();
+
+            }
+            catch (Exception ep)
+            {
+                LogBN.WriteLog(typeof(DbAPI), "ExecuteOracleScalar 程序段的异常" + ep + sSql);
+                return -1;
+            }
+
+        }
+        #endregion
+
+        #region 大对象 插入和读取操作
+        /// <summary>
+        /// 向数据库中插入blob大对象
+        /// </summary>
+        /// <param name="sConnStr">数据库连接字符串</param>
+        /// <param name="TableName">需要插入数据的表名</param>
+        /// <param name="PrinmaryKey">该表中的主键字段</param>
+        /// <param name="ColumnKey">大对象所在的列名</param>
+        /// <param name="FilePath">读取文件的全路径</param>
+        /// <returns></returns>
+        public byte[] InsertBlob(string FilePath)
+        {
+            FileInfo fileinfo = null;
+            FileStream filestream = null;
+            try
+            {
+                fileinfo = new FileInfo(FilePath);
+                filestream = fileinfo.OpenRead();
+                byte[] MyData = new byte[filestream.Length];
+                filestream.Read(MyData, 0, System.Convert.ToInt32(filestream.Length));
+                return MyData;
+            }
+            finally
+            {
+                filestream.Close();
+            }
+
+        }
+        /// <summary>
+        /// 读取数据库中的Blob数据
+        /// </summary>
+        /// <param name="sConnStr"></param>
+        /// <param name="TableName"></param>
+        /// <param name="PrimaryKey"></param>
+        /// <param name="ColumnKey"></param>
+        /// <param name="FilePath"></param>
+        /// <returns></returns>
+        public byte[] ReadBlob(string TableName, string PrimaryKey, string ColumnKey, string FilePath)
+        {
+            StringBuilder sql = new StringBuilder("SELECT  * " + TableName + "  SET WHERE  " + PrimaryKey + "=:PrinmaryKey");
+            pCommand.CommandText = sql.ToString();
+            pCommand.Parameters.Add(new OracleParameter(":PrinmaryKey", OracleType.VarChar));
+            OracleDataReader rs = pCommand.ExecuteReader();
+            byte[] File = (byte[])rs[PrimaryKey];
+            while (rs.Read())//读取数据，如果odr.Read()返回为false的话，就说明到记录集的尾部了
+            {
+                FileInfo fi = new FileInfo(FilePath);
+                FileStream fs = fi.OpenWrite();
+                fs.Write(File, 0, File.Length);
+                fs.Flush();
+                fs.Close();
+                return File;
+            }
+            rs.Close();
+            return File;
+
+        }
+
+        #endregion
+
+
+        #region
+        /// <summary>
+        /// 检查数据库Null
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public object CheckDBNull(object obj)
+        {
+            if (obj == null) return DBNull.Value;
+            if (obj.ToString() == DateTime.MinValue.ToString())
+            {
+                return DBNull.Value;
+            }
+            else
+            {
+                return obj;
+            }
+        }
+        /// <summary>
+        /// 检查数据库Null
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsDate(object obj)
+        {
+            if (obj == null) return false;
+            try
+            {
+                Convert.ToDateTime(obj);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// 检查日期
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public object CheckDBDTNull(object obj)
+        {
+            try
+            {
+                if (Convert.ToDateTime(obj) == DateTime.MinValue) obj = DBNull.Value;
+            }
+            catch
+            {
+                obj = DBNull.Value;
+            }
+            return obj;
+        }
+
+        /// <summary>
+        /// 产生一个新的ID 唯一值
+        /// </summary>
+        /// <returns></returns>
+        public string GUID()
+        {
+            System.Guid guid = System.Guid.NewGuid(); //Guid 类型
+            string strGUID = System.Guid.NewGuid().ToString(); //直接返回字符串类型
+            return strGUID;
+        }
+        #endregion
+
+        #region Paging with Oracle
+
+        /// <summary>
+        /// 生成分页的SQL语句
+        /// </summary>
+        /// <param name="sql">查询语句</param>
+        /// <param name="pageNumber">当前页码</param>
+        /// <param name="pageSize">每页记录数</param>
+        /// <returns></returns>
+        public static string GeneratePagingSql(string sql, int pageNumber, int pageSize)
+        {
+            var sb=new StringBuilder();
+            sb.Append("SELECT * FROM ");
+            sb.Append("( ");
+            sb.Append("SELECT a__.*, rownum r__ ");
+            sb.Append("FROM ");
+            sb.Append("( ");
+            sb.Append(sql);
+            sb.Append(") a__ ");
+            sb.AppendFormat("WHERE rownum < (({0} * {1}) + 1 ) ", pageNumber,pageSize);
+            sb.Append(") ");
+            sb.AppendFormat("WHERE r__ >= ((({0}-1) * {1}) + 1)", pageNumber, pageSize);
+            return  sb.ToString();
+        }
+
+
+        #endregion
+
+
+
+    }
+}

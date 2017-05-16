@@ -1,0 +1,212 @@
+﻿using System;
+using System.Text;
+using System.Data.OracleClient;
+using System.Collections.Generic;
+using System.Data;
+
+namespace Business.BN
+{
+    /// <summary>
+    /// 字典表
+    /// </summary>
+    public class DICTIONARY_BN
+    {
+
+        public bool Exists()
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("select count(1) from DICTIONARY");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+            if (dbHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public void Add(Entity.DICTIONARY model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("insert into DICTIONARY(");
+            strSql.Append("DICTIONARYID,CONTENT,BEIZHU");
+            strSql.Append(") values (");
+            strSql.Append(":DICTIONARYID,:CONTENT,:BEIZHU");
+            strSql.Append(") ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":DICTIONARYID", OracleType.NVarChar) ,            
+                        new OracleParameter(":CONTENT", OracleType.NVarChar) ,            
+                        new OracleParameter(":BEIZHU", OracleType.NVarChar)             
+              
+            };
+
+            parameters[0].Value = model.DICTIONARYID;
+            parameters[1].Value = model.CONTENT;
+            parameters[2].Value = model.BEIZHU;
+            dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+
+        }
+
+
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(Entity.DICTIONARY model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("update DICTIONARY set ");
+
+            strSql.Append(" DICTIONARYID = :DICTIONARYID , ");
+            strSql.Append(" CONTENT = :CONTENT , ");
+            strSql.Append(" BEIZHU = :BEIZHU  ");
+            strSql.Append(" where  ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":DICTIONARYID", OracleType.NVarChar) ,            
+                        new OracleParameter(":CONTENT", OracleType.NVarChar) ,            
+                        new OracleParameter(":BEIZHU", OracleType.NVarChar)             
+              
+            };
+
+            parameters[0].Value = model.DICTIONARYID;
+            parameters[1].Value = model.CONTENT;
+            parameters[2].Value = model.BEIZHU;
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete()
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("delete from DICTIONARY ");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public Entity.DICTIONARY GetModel()
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("select DICTIONARYID, CONTENT, BEIZHU  ");
+            strSql.Append("  from DICTIONARY ");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+
+            Entity.DICTIONARY model = new Entity.DICTIONARY();
+            DataTable ds = dbHelper.GetDataTable(strSql.ToString(), parameters);
+
+            if (ds.Rows.Count > 0)
+            {
+                model.DICTIONARYID = ds.Rows[0]["DICTIONARYID"].ToString();
+                model.CONTENT = ds.Rows[0]["CONTENT"].ToString();
+                model.BEIZHU = ds.Rows[0]["BEIZHU"].ToString();
+
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataTable GetList()
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            OracleParameter[] parameters = null;
+            strSql.Append(" SELECT * FROM DICTIONARY WHERE DICTIONARYID LIKE '9%' ");
+
+            try
+            {
+                dbHelper.OpenConn("");
+                DataTable dt = dbHelper.GetDataTable(strSql.ToString(), parameters);
+                dbHelper.CloseConn();
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                LogBN.WriteLog(typeof(DICTIONARY_BN), "GetList 程序段的异常" + ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataTable GetList(int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            OracleParameter[] parameters = null;
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" * ");
+            strSql.Append(" FROM DICTIONARY ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            strSql.Append(" order by " + filedOrder);
+            return dbHelper.GetDataTable(strSql.ToString(), parameters);
+        }
+
+
+    }
+}
+

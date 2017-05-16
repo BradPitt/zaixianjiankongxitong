@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>浮标环境评价</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/dist/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/css/dist/skins/_all-skins.min.css" rel="stylesheet" />
+    <link href="~/css/form-view.css" rel="stylesheet" />
+    <script src="~/js/echarts.min.js"></script>
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/css/datepicker3.css" rel="stylesheet" />
+    <script src="~/js/bootstrap-datepicker.js"></script>
+    <script src="~/js/bootstrap-datepicker.zh-CN.js"></script>
+    <link href="~/css/bootstrap.addtabs.css" rel="stylesheet" />
+    <script src="~/js/bootstrap.addtabs.js"></script>
+    <script src="~/js/dist/app.min.js"></script>
+    <link href="~/css/Analysis.css" rel="stylesheet" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="con">
+        <div class="row">
+            <label for="street" class="col-sm-2">设备编号：@ViewBag.deviceCode</label>
+            <label for="street" class="col-sm-2">设备名称：@ViewBag.deviceName</label>
+        </div>
+        <div class="query-panel">
+            <div class="form-group">
+                <label for="street" class="control-label col-sm-1">监测要素：</label>
+                <select id="street" class="col-sm-2 select">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name" class="control-label col-sm-1">时间段：</label>
+                <input class="col-sm-2 select datepicker" id="startDate" required="required" readonly="readOnly" placeholder="请选择日期" />
+                <label style="margin-left: -72px; margin-right: 11px">—</label>
+                <input class="col-sm-2 select datepicker" id="endDate" required="required" readonly="readOnly" placeholder="请选择日期" />
+            </div>
+            <button type="button" class="btn btn-blue" style="margin-left: 30px" onclick="query(this);">
+                查询
+            </button>
+        </div>
+        <div style="margin-left: 8px; background-color: white; ">
+            <ul id="myTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#dabiaolv" data-toggle="tab">达标率</a>
+                </li>
+                <li><a href="#qushi" data-toggle="tab">趋势分析</a></li>
+                <li>
+                    <a href="#tongbi" data-toggle="tab">同比分析</a>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="dabiaolv" style="margin-top: 20px; margin-left: 10px">
+                    <div id="main" style="width: 1024px; height: 450px;"></div>
+                </div>
+                <div class="tab-pane fade" id="qushi" style="margin-top: 20px; margin-left: 10px">
+                    <div id="QuShiFenXi" style="width: 1024px; height: 450px;"></div>
+                </div>
+                <div class="tab-pane fade" id="tongbi" style="margin-top: 20px; margin-left: 10px">
+                    <div id="TongBuFenXi" style="width: 1024px; height: 450px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="deviceCode" value="@ViewBag.deviceCode" />
+    <input type="hidden" id="deviceType" value="@ViewBag.type" />
+    <input type="hidden" id="flag" value="" />
+</body>
+</html>
+<script src="~/js/Analysis.js"></script>
+
