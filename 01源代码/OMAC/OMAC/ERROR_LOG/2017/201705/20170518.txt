@@ -1,0 +1,98 @@
+
+ 
+记录时间：2017-05-18 08:03:46,763 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-18 08:23:14,994 
+线程ID:[25] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-18 08:24:20,367 
+线程ID:[33] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216INSERT INTO ROLEINFO(F_ROLECODE, F_NAME, F_DESCRIPTION)VALUES(SYS_GUID(),:F_NAME,:F_DESCRIPTION)
+ 
+
+ 
+记录时间：2017-05-18 08:24:34,826 
+线程ID:[31] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216INSERT INTO ROLEINFO(F_ROLECODE, F_NAME, F_DESCRIPTION)VALUES(SYS_GUID(),:F_NAME,:F_DESCRIPTION)
+ 
+
+ 
+记录时间：2017-05-18 08:25:02,517 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216INSERT INTO ROLEINFO(F_ROLECODE, F_NAME, F_DESCRIPTION)VALUES(SYS_GUID(),:F_NAME,:F_DESCRIPTION)
+ 
+
+ 
+记录时间：2017-05-18 08:25:29,011 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216INSERT INTO ROLEINFO(F_ROLECODE, F_NAME, F_DESCRIPTION)VALUES(SYS_GUID(),:F_NAME,:F_DESCRIPTION)
+ 
+
+ 
+记录时间：2017-05-18 08:29:24,795 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 216INSERT INTO ROLEINFO(F_ROLECODE, F_NAME, F_DESCRIPTION)VALUES(SYS_GUID(),:F_NAME,:F_DESCRIPTION)
+ 

@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/map.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="~/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://192.168.1.31/arcgis_js_api/library/3.16/3.16/dijit/themes/tundra//tundra.css" />
+    <link rel="stylesheet" type="text/css" href="http://192.168.1.31/arcgis_js_api/library/3.16/3.16/esri/css/esri.css" />
+    <script type="text/javascript" src="http://192.168.1.31/arcgis_js_api/library/3.16/3.16/init.js"></script>
+    <script src="~/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-treeview.js"></script>   
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>   
+    <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="~/js/mapControl.js"></script>
+    <title>Map</title>
+</head>
+<body>    
+    @{Html.RenderAction("DataLoading");}    
+    <div id="MapDiv">
+        <div style="display:inline;min-height:35px;height:38px;background-color:#ffffff">
+            <div id="searchBox">
+                <div id="searchBoxItems">
+                    编号：<input type="text" id="DEVICECODE" class="input" name="DEVICECODE" value="" /> 
+                    <button id="search_btn" class="button_btn" data-loading-text="Loading..." onclick="GetExtent('DEVICECODE')">查 询</button>
+                    海区：
+                    <select id="SEAAREA" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="渤海">渤海</option>
+                        <option value="黄海">黄海</option>
+                    </select>
+                    省份：
+                    <select id="PROVINCE" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="辽宁省">辽宁省</option>
+                        <option value="河北省">河北省</option>
+                        <option value="天津市">天津市</option>
+                        <option value="山东省">山东省</option>
+                        <option value="大连市">大连市</option>
+                        <option value="青岛市">青岛市</option>
+                    </select>
+                    海湾：
+                    <select id="BAY" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="辽东湾">辽东湾</option>
+                        <option value="渤海湾">渤海湾</option>
+                        <option value="莱州湾">莱州湾</option>
+                        <option value="大连湾">大连湾</option>
+                        <option value="胶州湾">胶州湾</option>
+                    </select>
+                    局属设施：
+                    <select id="BUREAUDEVICE" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="北海监测中心">北海监测中心</option>
+                        <option value="大连中心站">大连中心站</option>
+                        <option value="秦皇岛中心站">秦皇岛中心站</option>
+                        <option value="天津中心站">天津中心站</option>
+                        <option value="烟台中心站">烟台中心站</option>
+                        <option value="青岛中心站">青岛中心站</option>
+                    </select>
+                    地方设施：
+                    <select id="LOCALDEVICE" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="辽宁省海洋与渔业局">辽宁省海洋与渔业局</option>
+                        <option value="河北省海洋局">河北省海洋局</option>
+                        <option value="天津市海洋局">天津市海洋局</option>
+                        <option value="山东省海洋与渔业厅">山东省海洋与渔业厅</option>
+                        <option value="大连市海洋与渔业局">大连市海洋与渔业局</option>
+                        <option value="青岛市海洋与渔业局">青岛市海洋与渔业局</option>
+                    </select>
+                    业务:
+                    <select id="SERVICE" class="select selInput" onchange="GetExtent(this.id)">
+                        <option value="全部">全部</option>
+                        <option value="入海排污口">入海排污口</option>
+                        <option value="入海江河">入海江河</option>
+                        <option value="海洋工程">海洋工程</option>
+                        <option value="环境风险">环境风险</option>
+                        <option value="重点海湾">重点海湾</option>
+                        <option value="海洋保护区">海洋保护区</option>
+                        <option value="海洋生态红线">海洋生态红线</option>
+                    </select>
+                    <button id="reset_btn" class="button_btn" data-loading-text="Loading..." onclick="Reset()">重 置</button>
+                </div>
+                
+            </div>          
+        </div>
+        <div id="LegendIcon" onclick="openLegendPanel()"><span class="glyphicon glyphicon-picture"></span></div>
+        <div id="Legend">
+            <div class="titlediv" onclick="closeLegendPanel()">图例</div>
+            <div id="legendtop"><table>
+                <tr>
+                    <td class="head">浮标：</td><td><img src="../img/buoy.png" /></td>
+                </tr>
+                <tr>
+                    <td class="head">岸基站：</td><td><img src="../img/station.png" /></td>
+                </tr>
+            </table></div>
+            <div id="legendscroll"><div id="legenddiv"></div></div>           
+        </div>
+        <div id="LayerIcon" onclick="openLayerPanel()"><span class="glyphicon glyphicon-th-list"></span></div>
+        <div id="LayerControl">
+            <div class="titlediv" onclick="closeLayerPanel()">图层管理</div>
+            <div id="layerscroll"><div id="layerTree"></div></div>    
+        </div>
+        <div id="ToolBar">
+            <ul>
+                <li><img id="zoomin" src="../img/icon-fd.png" alt="放大" onclick="ZoomIn()" /></li>
+                <li><img id="zoomout" src="../img/icon-sx.png" alt="缩小" onclick="ZoomOut()" /></li>
+                <li><img id="pan" src="../img/icon-py.png" alt="平移" onclick="Pan()" /></li>
+                <li><img id="full" src="../img/icon-qp.png" alt="全屏" onclick="Full()" /></li>
+                <li><img id="zoomprev" src="../img/d-icon-left.png" alt="上一视图" onclick="navToolbar.zoomToPrevExtent();" /></li>
+                <li><img id="zoomnext" src="../img/d-icon-right.png" alt="下一视图" onclick="navToolbar.zoomToNextExtent();" /></li>
+            </ul>               
+        </div>
+    </div>     
+</body>
+</html>

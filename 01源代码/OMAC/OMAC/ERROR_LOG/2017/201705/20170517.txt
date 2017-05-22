@@ -1,0 +1,184 @@
+
+ 
+记录时间：2017-05-17 09:48:19,085 
+线程ID:[53] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:27,234 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:34,368 
+线程ID:[54] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:40,933 
+线程ID:[54] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:43,356 
+线程ID:[53] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:44,052 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 09:53:48,928 
+线程ID:[53] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "A"."NH3NNO3NO2": 标识符无效
+ORA-06512: 在 "ORIGIN.GETDABIAOLV", line 54
+ORA-06512: 在 line 1
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 184Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-17 16:48:28,293 
+线程ID:[35] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select F_ROLECODE, F_NAME, F_DESCRIPTION    from ROLEINFO  where F_ROLECODE=:F_ROLECODE 
+ 
+
+ 
+记录时间：2017-05-17 16:49:08,755 
+线程ID:[34] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select F_ROLECODE, F_NAME, F_DESCRIPTION    from ROLEINFO  where F_ROLECODE=:F_ROLECODE 
+ 
+
+ 
+记录时间：2017-05-17 16:50:14,670 
+线程ID:[31] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select F_ROLECODE, F_NAME, F_DESCRIPTION    from ROLEINFO  where F_ROLECODE=:F_ROLECODE 
+ 
+
+ 
+记录时间：2017-05-17 16:50:26,863 
+线程ID:[29] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 134select F_ROLECODE, F_NAME, F_DESCRIPTION    from ROLEINFO  where F_ROLECODE=:F_ROLECODE 
+ 

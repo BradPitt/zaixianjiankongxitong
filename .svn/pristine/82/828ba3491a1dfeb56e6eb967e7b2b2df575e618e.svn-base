@@ -1,0 +1,316 @@
+﻿using System;
+using System.Text;
+using System.Data.OracleClient;
+using System.Collections.Generic;
+using System.Data;
+using Entity;
+
+namespace Business.BN
+{
+    /// <summary>
+    /// 系统日志
+    /// </summary>
+    public class SYSTEMLOG_BN
+    {
+
+        public bool Exists()
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("select count(1) from SYSTEMLOG");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+            if (dbHelper.ExecuteNonQuery(strSql.ToString(), parameters) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public bool Add(Entity.SYSTEMLOG model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("insert into SYSTEMLOG(");
+            strSql.Append("LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME");
+            strSql.Append(") values (");
+            strSql.Append(":LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME");
+            strSql.Append(") ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":LOG_ID", OracleType.VarChar,36) ,            
+                        new OracleParameter(":LOGNAME", OracleType.VarChar,256) ,            
+                        new OracleParameter(":TYPE", OracleType.VarChar,36) ,            
+                        new OracleParameter(":CONTENT", OracleType.VarChar,1000) ,            
+                        new OracleParameter(":F_ACCOUNT", OracleType.VarChar,36) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,128) ,            
+                        new OracleParameter(":DATETIME", OracleType.DateTime)             
+              
+            };
+
+            parameters[0].Value = dbHelper.GUID();
+            parameters[1].Value = model.LOGNAME;
+            parameters[2].Value = model.TYPE;
+            parameters[3].Value = model.CONTENT;
+            parameters[4].Value = model.F_ACCOUNT;
+            parameters[5].Value = model.REMARK;
+            parameters[6].Value = model.DATETIME;
+
+            try
+            {
+                dbHelper.OpenConn("");
+                int result = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+                dbHelper.CloseConn();
+
+                if (result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogBN.WriteLog(typeof(SYSTEMLOG_BN), "Add 程序段的异常" + ex);
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(Entity.SYSTEMLOG model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("update SYSTEMLOG set ");
+
+            strSql.Append(" LOG_ID = :LOG_ID , ");
+            strSql.Append(" LOGNAME = :LOGNAME , ");
+            strSql.Append(" TYPE = :TYPE , ");
+            strSql.Append(" CONTENT = :CONTENT , ");
+            strSql.Append(" F_ACCOUNT = :F_ACCOUNT , ");
+            strSql.Append(" REMARK = :REMARK , ");
+            strSql.Append(" DATETIME = :DATETIME  ");
+            strSql.Append(" where  ");
+
+            OracleParameter[] parameters = {
+			            new OracleParameter(":LOG_ID", OracleType.VarChar,36) ,            
+                        new OracleParameter(":LOGNAME", OracleType.VarChar,256) ,            
+                        new OracleParameter(":TYPE", OracleType.VarChar,36) ,            
+                        new OracleParameter(":CONTENT", OracleType.VarChar,1000) ,            
+                        new OracleParameter(":F_ACCOUNT", OracleType.VarChar,36) ,            
+                        new OracleParameter(":REMARK", OracleType.VarChar,128) ,            
+                        new OracleParameter(":DATETIME", OracleType.DateTime)             
+              
+            };
+
+            parameters[0].Value = model.LOG_ID;
+            parameters[1].Value = model.LOGNAME;
+            parameters[2].Value = model.TYPE;
+            parameters[3].Value = model.CONTENT;
+            parameters[4].Value = model.F_ACCOUNT;
+            parameters[5].Value = model.REMARK;
+            parameters[6].Value = model.DATETIME;
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete()
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("delete from SYSTEMLOG ");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+
+            int rows = dbHelper.ExecuteNonQuery(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public Entity.SYSTEMLOG GetModel()
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            strSql.Append("select LOG_ID, LOGNAME, TYPE, CONTENT, F_ACCOUNT, REMARK, DATETIME  ");
+            strSql.Append("  from SYSTEMLOG ");
+            strSql.Append(" where ");
+            OracleParameter[] parameters = {
+			};
+
+
+            Entity.SYSTEMLOG model = new Entity.SYSTEMLOG();
+            DataTable ds = dbHelper.GetDataTable(strSql.ToString(), parameters);
+
+            if (ds.Rows.Count > 0)
+            {
+                model.LOG_ID = ds.Rows[0]["LOG_ID"].ToString();
+                model.LOGNAME = ds.Rows[0]["LOGNAME"].ToString();
+                model.TYPE = ds.Rows[0]["TYPE"].ToString();
+                model.CONTENT = ds.Rows[0]["CONTENT"].ToString();
+                model.F_ACCOUNT = ds.Rows[0]["F_ACCOUNT"].ToString();
+                model.REMARK = ds.Rows[0]["REMARK"].ToString();
+                if (ds.Rows[0]["DATETIME"].ToString() != "")
+                {
+                    model.DATETIME = DateTime.Parse(ds.Rows[0]["DATETIME"].ToString());
+                }
+
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataTablesResult GetList(string logType, string dateTime, int pageNumber, int pageSize)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            List<OracleParameter> listParams = new List<OracleParameter>();
+            strSql.Append(" SELECT LOG_ID,LOGNAME,\"TYPE\",\"CONTENT\",REMARK,DATETIME FROM SYSTEMLOG S ");
+            strSql.Append(" LEFT JOIN USERINFO US ");
+            strSql.Append(" ON S.F_ACCOUNT=US.F_ACCOUNT ");
+            strSql.Append(" WHERE 1=1 ");
+
+            if (!string.IsNullOrEmpty(logType))
+            {
+                strSql.Append(" AND \"TYPE\" LIKE '%").Append(logType).Append("%' ");
+                //listParams.Add(new OracleParameter(":logType", logType));
+            }
+
+            if (!string.IsNullOrEmpty(dateTime))
+            {
+                //strSql.Append(" AND DATETIME BETWEEN TO_DATE(:startDate, 'YYYY-MM-DD HH24:MI:SS') AND TO_DATE(:endDate, 'YYYY-MM-DD HH24:MI:SS') ");
+                strSql.Append(" AND DATETIME >= TO_DATE(:dateTime, 'YYYY-MM-DD HH24:MI:SS') ");
+                listParams.Add(new OracleParameter("dateTime", dateTime));
+            }
+
+            strSql.Append(" ORDER BY DATETIME ");
+
+            try
+            {
+                dbHelper.OpenConn("");
+                DataTable dt = dbHelper.GetDataTable(DbAPI.GeneratePagingSql(strSql.ToString(), pageNumber, pageSize), listParams.ToArray());
+                dbHelper.CloseConn();
+
+                DataTablesResult result = new DataTablesResult();
+                result.aaData = dt;
+                result.sEcho = Convert.ToInt16(pageSize);
+                result.iTotalDisplayRecords = GetCount(logType, dateTime, pageNumber, pageSize);
+                result.iTotalRecords = GetCount(logType, dateTime, pageNumber, pageSize).ToString();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LogBN.WriteLog(typeof(SYSTEMLOG_BN), "GetList 程序段的异常" + ex);
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public int GetCount(string logType, string dateTime, int pageNumber, int pageSize)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            List<OracleParameter> listParams = new List<OracleParameter>();
+            strSql.Append(" SELECT COUNT(1) FROM SYSTEMLOG ");
+            strSql.Append(" WHERE 1=1 ");
+
+            if (!string.IsNullOrEmpty(logType))
+            {
+                strSql.Append(" AND \"TYPE\" LIKE '%").Append(logType).Append("%' ");
+                //listParams.Add(new OracleParameter(":logType", logType));
+            }
+
+            if (!string.IsNullOrEmpty(dateTime))
+            {
+                strSql.Append(" AND DATETIME >= TO_DATE(:dateTime, 'YYYY-MM-DD HH24:MI:SS') ");
+                listParams.Add(new OracleParameter("dateTime", dateTime));
+            }
+
+            try
+            {
+                dbHelper.OpenConn("");
+                object result = dbHelper.ExecuteOracleScalar(strSql.ToString(), listParams.ToArray());
+                dbHelper.CloseConn();
+
+                return Convert.ToInt32(result.ToString());
+            }
+            catch (Exception ex)
+            {
+                LogBN.WriteLog(typeof(SYSTEMLOG_BN), "GetList 程序段的异常" + ex);
+                return 0;
+            }
+
+        }
+
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataTable GetList(int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            DbAPI dbHelper = new DbAPI();
+            OracleParameter[] parameters = null;
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" * ");
+            strSql.Append(" FROM SYSTEMLOG ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            strSql.Append(" order by " + filedOrder);
+            return dbHelper.GetDataTable(strSql.ToString(), parameters);
+        }
+
+
+    }
+}
+

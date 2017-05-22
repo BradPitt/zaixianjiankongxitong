@@ -1,0 +1,492 @@
+
+ 
+记录时间：2017-05-19 09:25:36,792 
+线程ID:[25] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:25:42,843 
+线程ID:[26] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:25:43,337 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:25:54,892 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:26:16,510 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:26:19,599 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:22,294 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:23,066 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:27,504 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:32,313 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:34,684 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:42,148 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:50,692 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:27:52,344 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:28:39,036 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:28:41,263 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:29:40,977 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:29:44,354 
+线程ID:[16] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:31:38,398 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:31:38,561 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:32:27,337 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Specified cast is not valid.
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:32:29,767 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Specified cast is not valid.
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:32:34,780 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Specified cast is not valid.
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:33:07,597 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Specified cast is not valid.
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:33:07,620 
+线程ID:[21] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Specified cast is not valid.
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:36:42,043 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 09:36:42,043 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Business.BN.ROLEINFO_BN property: [(null)] - 
+错误描述：验证用户名是否存在ValidateUsername 程序段的异常System.InvalidCastException: Unable to cast object of type 'System.Data.OracleClient.OracleNumber' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Business.BN.USERROLE_BN.ValidateUsername(String userName) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\USERROLE_BN.cs:line 324
+ 
+
+ 
+记录时间：2017-05-19 17:19:42,310 
+线程ID:[87] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select A.F_ROLECODE, A.F_NAME, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERHAS" from ROLEINFO A LEFT JOIN (SELECT * FROM USERROLE WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_ROLECODE = B.F_ROLECODE
+ 
+
+ 
+记录时间：2017-05-19 17:19:42,363 
+线程ID:[88] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149SELECT A.*, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERIN" FROM DEPARTMENTINFO A LEFT JOIN (SELECT * FROM DEPARTMENTUSER WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_DEPARTMENTCODE = B.F_DEPARTMENTCODE ORDER BY A.f_departmentcode ASC
+ 
+
+ 
+记录时间：2017-05-19 17:19:42,366 
+线程ID:[88] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：递归获取树节点GetDepartmentTreeByUser 程序段的异常System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Data.DataTableExtensions.AsEnumerable(DataTable source)
+   at Business.BN.DEPARTMENTINFO_BN.GetTreeChildrenByUser(String groupId, DataTable dt) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 441
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTreeByUser(String userAccount) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 423
+ 
+
+ 
+记录时间：2017-05-19 17:21:01,221 
+线程ID:[91] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149SELECT A.*, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERIN" FROM DEPARTMENTINFO A LEFT JOIN (SELECT * FROM DEPARTMENTUSER WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_DEPARTMENTCODE = B.F_DEPARTMENTCODE ORDER BY A.f_departmentcode ASC
+ 
+
+ 
+记录时间：2017-05-19 17:21:01,222 
+线程ID:[91] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：递归获取树节点GetDepartmentTreeByUser 程序段的异常System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Data.DataTableExtensions.AsEnumerable(DataTable source)
+   at Business.BN.DEPARTMENTINFO_BN.GetTreeChildrenByUser(String groupId, DataTable dt) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 441
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTreeByUser(String userAccount) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 423
+ 
+
+ 
+记录时间：2017-05-19 17:21:01,226 
+线程ID:[92] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select A.F_ROLECODE, A.F_NAME, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERHAS" from ROLEINFO A LEFT JOIN (SELECT * FROM USERROLE WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_ROLECODE = B.F_ROLECODE
+ 
+
+ 
+记录时间：2017-05-19 17:21:25,521 
+线程ID:[87] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：执行事务RunOracleTransaction 程序段的异常ORA-01036: 非法的变量名/编号
+
+ 
+
+ 
+记录时间：2017-05-19 17:21:34,921 
+线程ID:[87] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149SELECT A.*, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERIN" FROM DEPARTMENTINFO A LEFT JOIN (SELECT * FROM DEPARTMENTUSER WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_DEPARTMENTCODE = B.F_DEPARTMENTCODE ORDER BY A.f_departmentcode ASC
+ 
+
+ 
+记录时间：2017-05-19 17:21:34,921 
+线程ID:[87] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：递归获取树节点GetDepartmentTreeByUser 程序段的异常System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Data.DataTableExtensions.AsEnumerable(DataTable source)
+   at Business.BN.DEPARTMENTINFO_BN.GetTreeChildrenByUser(String groupId, DataTable dt) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 441
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTreeByUser(String userAccount) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 423
+ 
+
+ 
+记录时间：2017-05-19 17:21:34,922 
+线程ID:[91] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select A.F_ROLECODE, A.F_NAME, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERHAS" from ROLEINFO A LEFT JOIN (SELECT * FROM USERROLE WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_ROLECODE = B.F_ROLECODE
+ 
+
+ 
+记录时间：2017-05-19 17:24:27,108 
+线程ID:[91] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：执行事务RunOracleTransaction 程序段的异常ORA-01036: 非法的变量名/编号
+
+ 
+
+ 
+记录时间：2017-05-19 17:24:55,962 
+线程ID:[88] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149SELECT A.*, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERIN" FROM DEPARTMENTINFO A LEFT JOIN (SELECT * FROM DEPARTMENTUSER WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_DEPARTMENTCODE = B.F_DEPARTMENTCODE ORDER BY A.f_departmentcode ASC
+ 
+
+ 
+记录时间：2017-05-19 17:24:55,993 
+线程ID:[88] 
+日志级别：  ERROR 
+出错类：Business.BN.DEPARTMENTINFO_BN property: [(null)] - 
+错误描述：递归获取树节点GetDepartmentTreeByUser 程序段的异常System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Data.DataTableExtensions.AsEnumerable(DataTable source)
+   at Business.BN.DEPARTMENTINFO_BN.GetTreeChildrenByUser(String groupId, DataTable dt) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 441
+   at Business.BN.DEPARTMENTINFO_BN.GetDepartmentTreeByUser(String userAccount) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEPARTMENTINFO_BN.cs:line 423
+ 
+
+ 
+记录时间：2017-05-19 17:24:56,065 
+线程ID:[93] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select A.F_ROLECODE, A.F_NAME, DECODE(B.F_ID, NULL, 0, 1) AS "ISUSERHAS" from ROLEINFO A LEFT JOIN (SELECT * FROM USERROLE WHERE F_ACCOUNT = :F_ACCOUNT) B ON A.F_ROLECODE = B.F_ROLECODE
+ 
+
+ 
+记录时间：2017-05-19 17:30:15,754 
+线程ID:[92] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：执行事务RunOracleTransaction 程序段的异常ORA-01036: 非法的变量名/编号
+
+ 
