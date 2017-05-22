@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>系统日志</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/form-view.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/css/Analysis.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+    <link href="~/css/datepicker3.css" rel="stylesheet" />
+    <script src="~/js/bootstrap-datepicker.js"></script>
+    <script src="~/js/bootstrap-datepicker.zh-CN.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/bootstrap-table-zh-CN.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="container">
+        <div class="query-panel">
+            <div class="form-group">
+                @*<span id="lbl-fb">日志类型： </span>*@
+                <label for="logType" class="control-label col-sm-1">日志类型：</label>
+                <select class="col-sm-2 select" name="logType" id="logType">
+                    <option value="">请选择</option>
+                    <option value="1">登录</option>
+                    <option value="2">退出</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-1">时间段: </label>
+                <input class="col-sm-2 select datepicker" id="startDate" required="required" readonly="readOnly" placeholder="请选择日期" />
+                <label style="margin-left: -72px; margin-right: 11px">—</label>
+                <input class="col-sm-2 select datepicker" id="endDate" required="required" readonly="readOnly" placeholder="请选择日期" />
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-blue" style="margin-left: 30px" onclick="Query()">
+                    查询
+                </button>
+            </div>
+        </div>
+
+        <table id="table"></table>
+    </div>
+</body>
+<script src="~/js/SystemLog.js"></script>
+</html>

@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>系统日志</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/css/daterangepicker.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/daterangepicker.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/bootstrap-table-zh-CN.min.js"></script>
+    <style>
+        .btn-blue {
+            color: #fff!important;
+            background: #2ea3f9!important;
+            border: 1px solid #057dd7!important;
+            background-color: #078ddb;
+            height: 34px;
+            width: 92px;
+            border-radius: 4px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+            .btn-blue:hover {
+                color: #fff!important;
+                background: #0c8beb!important;
+                border: 1px solid #046cba!important;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="toolbar" class="row">
+            <div class="form-group col-sm-4">
+                <span id="lbl-fb">日志类型： </span>
+                <select class="input select" name="logType"></select>
+            </div>
+            <div class="form-group col-sm-4">
+                <span>时间: </span>
+                <input class="input" type="text" name="daterange" />
+            </div>
+            <div class="form-group col-sm-4">
+                <button type="button" class="btn btn-blue" style="margin-left: 30px" onclick="Query()">
+                    查询
+                </button>
+            </div>
+        </div>
+
+        <table id="table"></table>
+    </div>
+</body>
+<script src="~/js/SystemLog.js"></script>
+</html>
