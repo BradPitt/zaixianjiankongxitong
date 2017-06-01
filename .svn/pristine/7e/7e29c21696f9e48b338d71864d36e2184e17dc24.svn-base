@@ -1,0 +1,842 @@
+﻿function GetPartTree(part) {
+    $(".nav").find("li").removeClass("activeLi");
+    $(".nav").find("li").addClass("disactive");
+    $(".nav").find("li").eq(part - 1).removeClass("disactive");
+    $(".nav").find("li").eq(part - 1).addClass("active");
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Api/System/GetFunctionTree2?part=" + part,
+        success: function (result) {
+            var data = JSON.parse(result);
+            $('#treeview1').treeview({
+                highlightSelected: false,
+                multiSelect: true,
+                levels: 1,
+                data: data,
+                onNodeSelected: function (event, data) {
+
+                    if (data.href.substr(0, 1) == "#") {
+                        if (data.parentId == undefined) {
+                            $('#treeview1').treeview('collapseAll', { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $('#treeview1').treeview('collapseNode', [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $('#treeview1').treeview('expandNode', [data.nodeId, { levels: 1, silent: true }]);
+                        }
+                    } else if (data.href == "" || data.href == "&=") {
+                        AlertNotification();
+                    } else if (data.href == "null") {
+                        AlertNoDevice();
+                    } else {
+                        clickTreeMenu(data);
+                    }
+                },
+                onNodeUnselected: function (event, data) {
+                    if (data.href.substr(0, 1) == "#") {
+                        if (data.parentId == undefined) {
+                            $('#treeview1').treeview('collapseAll', { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $('#treeview1').treeview('collapseNode', [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $('#treeview1').treeview('expandNode', [data.nodeId, { levels: 1, silent: true }]);
+                        }
+                    } else if (data.href == "" || data.href == "&=") {
+                        AlertNotification();
+                    } else if (data.href == "null") {
+                        AlertNoDevice();
+                    }
+                    else {
+
+                        clickTreeMenu(data);
+                    }
+                }
+
+            });
+        }
+    });
+
+}
+function clickTreeMenu(data) {
+    var parentNodeId; var strtab, contentLi;
+    if (data.nodeId) {
+        parentNodeId = $('#treeview1').treeview('getParent', data.nodeId).id;
+    }
+    if (data.id == '999999') {
+        strtab = '<li id="tab' + data.id + '" class="tab-2 active_tab" ><div onclick="clickTab(' + data.id + ')">' + data.text + '</div></li>';
+        contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+    }
+    if (parentNodeId) {
+        strtab = '<li id="tab' + data.id + '" class="tab-2 active_tab" ><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab(\'' + data.id + '\')">' + data.text + '</div></li>';
+
+
+        //   contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+        contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="' + GetUrlConfig(data.href, parentNodeId)[data.text] + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+
+
+
+    } else {
+        // "无法获取ID！"
+    }
+    var fid = "";
+    $('#nav> ul').find("li").each(function () {
+        if ($(this).attr('id') == ("tab" + data.id)) {
+            fid = "tab" + data.id;
+        }
+    });
+    if ("" === fid) {
+        //$("#navTitle").html(data.text);
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $('.tab-content').find("li").removeClass("activeLi");
+        $('.tab-content').find("li").addClass("disactiveLi");
+        $("#nav> ul").append(strtab);
+        $(".tab-content").append(contentLi);
+    } else if ("tab" + data.id == fid) {
+        var tabid = "tab" + data.id;
+        // tab样式的变化
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $("#" + tabid).removeClass("disactive_tab");
+        $("#" + tabid).addClass("active_tab");
+        // title
+        $("#navTitle").html($("#" + tabid).text());
+        // 每个tab对应的内容的变化tab-content  
+        //contentLi = '<iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe>';
+        contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="' + GetUrlConfig(data.href, parentNodeId)[data.text] + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+
+        $("#li" + data.id).html(contentLi);
+
+        $(".tab-content").find("li").removeClass("activeLi");
+        $(".tab-content").find("li").addClass("disactiveLi");
+        $("#li" + data.id).removeClass("disactiveLi");
+        $("#li" + data.id).addClass("activeLi");
+
+    } else {
+        clickTab("" + data.id + "");
+    }
+
+}
+
+function closeTab(button) {
+
+    //通过该button找到对应li标签的id
+    var tabid = $(button).parent().attr('id');
+    //如果关闭的是当前激活的TAB，激活他的前一个TAB    
+    if ($("li.active_tab").attr('id') == tabid) {
+        var prevId = $("li.active_tab").prev()[0].id;
+        var id = prevId.replace("tab", "");
+        clickTab(id);
+    }
+    $("#" + tabid).remove();
+};
+
+function clickTab(sid) {
+
+    var tabid = "tab" + sid;
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#" + tabid).removeClass("disactive_tab");
+    $("#" + tabid).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#" + tabid).text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#li" + sid).removeClass("disactiveLi");
+    $("#li" + sid).addClass("activeLi");
+}
+// 点击历史数据tab时
+function clickTab2(sid) {
+    sid = PrefixInteger(sid, 6);
+    var tabid = "tabHistroy" + sid;
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#" + tabid).removeClass("disactive_tab");
+    $("#" + tabid).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#" + tabid).text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liHistroy" + sid).removeClass("disactiveLi");
+    $("#liHistroy" + sid).addClass("activeLi");
+}
+// 点击实时数据tab时
+function clickTab3(dtype) {
+    console.log("clickTab3");
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#tabShishi" + dtype).removeClass("disactive_tab");
+    $("#tabShishi" + dtype).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#tabShishi").text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liShishi" + dtype).removeClass("disactiveLi");
+    $("#liShishi" + dtype).addClass("activeLi");
+}
+
+// 点击环境评价tab时
+function clickTab4(dtype) {
+    console.log("clickTab4");
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#tabAnalysis" + dtype).removeClass("disactive_tab");
+    $("#tabAnalysis" + dtype).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#tabAnalysis").text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liAnalysis" + dtype).removeClass("disactiveLi");
+    $("#liAnalysis" + dtype).addClass("activeLi");
+}
+
+// 添加历史数据tab
+function setHistoryData(id) {
+    var strtab = '<li id="tabHistroy' + id + '" class="tab-2 active_tab" ><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab2(' + id + ')">历史数据</div></li>';
+    var contentLi = '<li id="liHistroy' + id + '"  class="activeLi" ><iframe src="../../MonitorLog/Index?devicecode=' + id + '" frameborder="0" width="100%" height="100%"  scrolling="auto"></iframe></li>';
+
+    var fid = "";
+    $('#nav> ul').find("li").each(function () {
+        if ($(this).attr('id') == ("tabHistroy" + id)) {
+            fid = "tabHistroy" + id;
+        }
+    });
+    if ("" === fid) {
+        //$("#navTitle").html(data.text);
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $('.tab-content').find("li").removeClass("activeLi");
+        $('.tab-content').find("li").addClass("disactiveLi");
+        $("#nav> ul").append(strtab);
+        $(".tab-content").append(contentLi);
+    } else {
+        clickTab2(id);
+    }
+}
+
+// 添加实时数据tab
+function setShishiData(id, dtype, firstFlg) {
+    if (2 == dtype) {//浮标
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabShishi2")) {
+                fid = "tabShishi2";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabShishi2" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+            var contentLi = '<li id="liShishi2"  class="activeLi" ><iframe id="shishiIframe2" src="Manager/BuoyDetail?id=' + id + '" frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("shishiIframe2")></iframe></li>';
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab3(dtype);
+            }
+        } else {
+            document.getElementById("shishiIframe2").src = "Manager/BuoyDetail?id=" + id;
+            if ("" === fid) {
+                var strtab = '<li id="tabShishi2" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab3(dtype);
+        }
+    } else {// 岸基
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabShishi1")) {
+                fid = "tabShishi1";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabShishi1" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+            var contentLi = '<li id="liShishi1"  class="activeLi" ><iframe id="shishiIframe1" src="Manager/AnjiDetail?id=' + id + '" frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("shishiIframe1")></iframe></li>';
+
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab3(dtype);
+            }
+        } else {
+            document.getElementById("shishiIframe1").src = "Manager/AnjiDetail?id=" + id;
+            if ("" === fid) {
+                var strtab = '<li id="tabShishi1" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab3(dtype);
+        }
+    }
+
+}
+
+// 添加环境分析数据tab
+function setAnalysisData(id, dtype, firstFlg, url) {
+    if (2 == dtype) {//浮标
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabAnalysis2")) {
+                fid = "tabAnalysis2";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabAnalysis2" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+            var contentLi = '<li id="liAnalysis2"  class="activeLi" ><iframe id="FuBiaoAnalysisIframe1" src=' + url + ' frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("FuBiaoAnalysisIframe1")></iframe></li>';
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab4(dtype);
+            }
+        } else {
+            document.getElementById("FuBiaoAnalysisIframe1").src = url;
+            if ("" === fid) {
+                var strtab = '<li id="tabAnalysis2" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab4(dtype);
+        }
+    } else {// 岸基 分析
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabAnalysis1")) {
+                fid = "tabAnalysis1";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabAnalysis1" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+            var contentLi = '<li id="liAnalysis1"  class="activeLi" ><iframe id="AnJiZhanAnalysisIframe2" src=' + url + ' frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("AnJiZhanAnalysisIframe2")></iframe></li>';
+
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab4(dtype);
+            }
+        } else {
+            document.getElementById("AnJiZhanAnalysisIframe2").src = url;
+            if ("" === fid) {
+                var strtab = '<li id="tabAnalysis1" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab4(dtype);
+        }
+    }
+}
+function iframeLoad(iframeName) {
+
+    //var hh = document.getElementById("shishiIframe").contentWindow.document.documentElement.scrollHeight + 10;
+    if (document.getElementById(iframeName)) {
+        document.getElementById(iframeName).height = document.body.clientHeight - 130;
+    }
+}
+function Logout() {
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Manager/Logout",
+        success: function (response) {
+            window.location.reload();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            window.location.reload();
+        }
+    });
+}
+function GetTime() {
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + "年" + month + "月" + strDate + "日"
+            + " " + date.getHours() + ":" + date.getMinutes()
+            + ":" + date.getSeconds();
+    $("#currentTime")[0].innerHTML = currentdate;
+}
+
+function AlertNotification() {
+    bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>此功能正在开发中！</h4>" });
+}
+
+function AlertNoDevice() {
+    bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>暂无设备！</h4>" });
+}
+
+
+
+
+
+
+
+
+function GetUrlConfig(href, param) {
+    var rst = {
+        "设备详情": "/Manager/" + href + "?id=" + param,
+        "实时数据": "/Manager/" + href + "?id=" + param,
+        "历史数据": "../" + href + "?devicecode=" + param,
+        "环境评价": "/Manager/" + href + "?devicecode=" + param,
+        "系统操作日志": "/Manager/SystemLogList",
+        "机构管理": "/Manager/DepartmentList",
+        "角色管理": "/Manager/Role",
+        "用户管理": "/Manager/UserList"
+    }
+    return rst;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function GetPartTree(part) {
+    $(".nav").find("li").removeClass("activeLi");
+    $(".nav").find("li").addClass("disactive");
+    $(".nav").find("li").eq(part - 1).removeClass("disactive");
+    $(".nav").find("li").eq(part - 1).addClass("active");
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Api/System/GetFunctionTree2?part=" + part,
+        success: function (result) {
+            var data = JSON.parse(result);
+            $('#treeview1').treeview({
+                highlightSelected: false,
+                multiSelect:true,
+                levels: 1,
+                data: data,
+                onNodeSelected: function (event, data) {
+                    
+                    if (data.href.substr(0, 1) == "#") {
+                        if (data.parentId == undefined)
+                        {
+                            $('#treeview1').treeview('collapseAll', { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $('#treeview1').treeview('collapseNode', [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $('#treeview1').treeview('expandNode', [data.nodeId, { levels: 1, silent: true }]);
+                        }                       
+                    } else if (data.href == "") {
+                        AlertNotification();
+                    } else {
+                        clickTreeMenu(data);
+                    }                   
+                },
+                onNodeUnselected: function (event, data) {
+                    if (data.href.substr(0, 1) == "#") {
+                        if (data.parentId == undefined) {
+                            $('#treeview1').treeview('collapseAll', { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $('#treeview1').treeview('collapseNode', [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $('#treeview1').treeview('expandNode', [data.nodeId, { levels: 1, silent: true }]);
+                        }
+                    } else if (data.href == "") {
+                        AlertNotification();
+                    } else {
+                        
+                        clickTreeMenu(data);
+                    }
+                }
+
+            });
+        }
+    });
+   
+}
+function clickTreeMenu(data) {
+    var parentNodeId;var strtab, contentLi;
+    if (data.nodeId) {
+        parentNodeId = $('#treeview1').treeview('getParent', data.nodeId).id;
+    }
+    if (data.id == '999999') {
+        strtab = '<li id="tab' + data.id + '" class="tab-2 active_tab" ><div onclick="clickTab(' + data.id + ')">' + data.text + '</div></li>';
+        contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+    }
+    if (parentNodeId) {
+        strtab = '<li id="tab' + data.id + '" class="tab-2 active_tab" ><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab(\'' + data.id + '\')">' + data.text + '</div></li>';
+
+         contentLi = '<li id="li' + data.id + '"  class="activeLi" ><iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe></li>';
+
+    } else {
+        // "无法获取ID！"
+    }
+    var fid = "";
+    $('#nav> ul').find("li").each(function () {
+        if ($(this).attr('id') == ("tab" + data.id)) {
+            fid = "tab" + data.id;
+        }
+    });
+    if ("" === fid) {
+        //$("#navTitle").html(data.text);
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $('.tab-content').find("li").removeClass("activeLi");
+        $('.tab-content').find("li").addClass("disactiveLi");
+        $("#nav> ul").append(strtab);
+        $(".tab-content").append(contentLi);
+    } else if ("tab" + data.id == fid) {
+        var tabid = "tab" + data.id;
+        // tab样式的变化
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $("#" + tabid).removeClass("disactive_tab");
+        $("#" + tabid).addClass("active_tab");
+        // title
+        $("#navTitle").html($("#" + tabid).text());
+        // 每个tab对应的内容的变化tab-content  
+        contentLi = '<iframe src="/Manager/' + data.href + '?id=' + parentNodeId + '" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe>';
+        $("#li" + data.id).html(contentLi);
+
+        $(".tab-content").find("li").removeClass("activeLi");
+        $(".tab-content").find("li").addClass("disactiveLi");
+        $("#li" + data.id).removeClass("disactiveLi");
+        $("#li" + data.id).addClass("activeLi");
+
+    }else {
+        clickTab("" + data.id + "");
+    }
+    
+}
+
+function closeTab (button) {
+    
+    //通过该button找到对应li标签的id
+    var tabid = $(button).parent().attr('id');
+    //如果关闭的是当前激活的TAB，激活他的前一个TAB    
+    if ($("li.active_tab").attr('id') == tabid) {
+        var prevId = $("li.active_tab").prev()[0].id;
+        var id = prevId.replace("tab", "");
+        clickTab(id);
+    }
+    $("#" + tabid).remove();
+ };
+
+function clickTab(sid) {
+   
+    var tabid = "tab" + sid;
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#"+tabid).removeClass("disactive_tab");
+    $("#" + tabid).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#" + tabid).text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#li" + sid).removeClass("disactiveLi");
+    $("#li" + sid).addClass("activeLi");
+}
+// 点击历史数据tab时
+function clickTab2(sid) {
+    sid = PrefixInteger(sid, 6);
+    var tabid = "tabHistroy" + sid;
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#" + tabid).removeClass("disactive_tab");
+    $("#" + tabid).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#" + tabid).text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liHistroy" + sid).removeClass("disactiveLi");
+    $("#liHistroy" + sid).addClass("activeLi");
+}
+// 点击实时数据tab时
+function clickTab3(dtype) {
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#tabShishi" + dtype).removeClass("disactive_tab");
+    $("#tabShishi" + dtype).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#tabShishi").text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liShishi" + dtype).removeClass("disactiveLi");
+    $("#liShishi" + dtype).addClass("activeLi");
+}
+
+// 点击环境评价tab时
+function clickTab4(dtype) {
+    // tab样式的变化
+    $("#nav> ul").find("li").removeClass("active_tab");
+    $("#nav> ul").find("li").addClass("disactive_tab");
+    $("#tabAnalysis" + dtype).removeClass("disactive_tab");
+    $("#tabAnalysis" + dtype).addClass("active_tab");
+    // title
+    $("#navTitle").html($("#tabAnalysis").text());
+    // 每个tab对应的内容的变化tab-content  
+    $(".tab-content").find("li").removeClass("activeLi");
+    $(".tab-content").find("li").addClass("disactiveLi");
+    $("#liAnalysis" + dtype).removeClass("disactiveLi");
+    $("#liAnalysis" + dtype).addClass("activeLi");
+}
+
+// 添加历史数据tab
+function setHistoryData(id) {
+    var strtab = '<li id="tabHistroy' + id + '" class="tab-2 active_tab" ><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab2(' + id + ')">历史数据</div></li>';
+    var contentLi = '<li id="liHistroy' + id + '"  class="activeLi" ><iframe src="../../MonitorLog/Index?devicecode=' + id + '" frameborder="0" width="100%" height="100%"  scrolling="auto"></iframe></li>';
+   
+    var fid = "";
+    $('#nav> ul').find("li").each(function () {
+        if ($(this).attr('id') == ("tabHistroy" + id)) {
+            fid = "tabHistroy" + id;
+        }
+    });
+    if ("" === fid) {
+        //$("#navTitle").html(data.text);
+        $("#nav> ul").find("li").removeClass("active_tab");
+        $("#nav> ul").find("li").addClass("disactive_tab");
+        $('.tab-content').find("li").removeClass("activeLi");
+        $('.tab-content').find("li").addClass("disactiveLi");
+        $("#nav> ul").append(strtab);
+        $(".tab-content").append(contentLi);
+    } else {
+        clickTab2(id);
+    }
+}
+
+// 添加实时数据tab
+function setShishiData(id, dtype, firstFlg) {
+    if (2 == dtype) {//浮标
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabShishi2")) {
+                fid = "tabShishi2";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabShishi2" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+            var contentLi = '<li id="liShishi2"  class="activeLi" ><iframe id="shishiIframe2" src="Manager/BuoyDetail?id=' + id + '" frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("shishiIframe2")></iframe></li>';
+           
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab3(dtype);
+            }
+        } else {
+            document.getElementById("shishiIframe2").src = "Manager/BuoyDetail?id=" + id;
+            if ("" === fid) {
+                var strtab = '<li id="tabShishi2" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+                $("#nav> ul").append(strtab);
+            }             
+            clickTab3(dtype);
+        }
+    } else {// 岸基
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabShishi1")) {
+                fid = "tabShishi1";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabShishi1" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+            var contentLi = '<li id="liShishi1"  class="activeLi" ><iframe id="shishiIframe1" src="Manager/AnjiDetail?id=' + id + '" frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("shishiIframe1")></iframe></li>';
+
+            
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab3(dtype);
+            }
+        } else {
+            document.getElementById("shishiIframe1").src = "Manager/AnjiDetail?id=" + id;
+            if ("" === fid) {
+                var strtab = '<li id="tabShishi1" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab3(' + dtype + ')">实时数据</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab3(dtype);
+        }
+    }
+
+}
+
+// 添加环境分析数据tab
+function setAnalysisData(id, dtype, firstFlg,url) {
+    if (2 == dtype) {//浮标
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabAnalysis2")) {
+                fid = "tabAnalysis2";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabAnalysis2" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+            var contentLi = '<li id="liAnalysis2"  class="activeLi" ><iframe id="FuBiaoAnalysisIframe1" src=' + url + ' frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("FuBiaoAnalysisIframe1")></iframe></li>';
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab4(dtype);
+            }
+        } else {
+            document.getElementById("FuBiaoAnalysisIframe1").src =url;
+            if ("" === fid) {
+                var strtab = '<li id="tabAnalysis2" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab4(dtype);
+        }
+    } else {// 岸基 分析
+        var fid = "";
+        $('#nav> ul').find("li").each(function () {
+            if ($(this).attr('id') == ("tabAnalysis1")) {
+                fid = "tabAnalysis1";
+            }
+        });
+        if (firstFlg) {
+            var strtab = '<li id="tabAnalysis1" class="tab-2 active_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+            var contentLi = '<li id="liAnalysis1"  class="activeLi" ><iframe id="AnJiZhanAnalysisIframe2" src=' + url + ' frameborder="0" width="100%" scrolling="auto" onLoad=iframeLoad("AnJiZhanAnalysisIframe2")></iframe></li>';
+
+
+            if ("" === fid) {
+                //$("#navTitle").html(data.text);
+                $("#nav> ul").find("li").removeClass("active_tab");
+                $("#nav> ul").find("li").addClass("disactive_tab");
+                $('.tab-content').find("li").removeClass("activeLi");
+                $('.tab-content').find("li").addClass("disactiveLi");
+                $("#nav> ul").append(strtab);
+                $(".tab-content").append(contentLi);
+            } else {
+                clickTab4(dtype);
+            }
+        } else {
+            document.getElementById("AnJiZhanAnalysisIframe2").src = url;
+            if ("" === fid) {
+                var strtab = '<li id="tabAnalysis1" class="tab-2 disactive_tab"><button class="close closeTab" type="button" onclick="closeTab(this);">×</button><div onclick="clickTab4(' + dtype + ')">环境评价</div></li>';
+                $("#nav> ul").append(strtab);
+            }
+            clickTab4(dtype);
+        }
+    }
+}
+function iframeLoad(iframeName) {
+    
+    //var hh = document.getElementById("shishiIframe").contentWindow.document.documentElement.scrollHeight + 10;
+    if (document.getElementById(iframeName)) {
+        document.getElementById(iframeName).height = document.body.clientHeight - 130;
+    }
+}
+function Logout()
+{
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Manager/Logout",
+        success: function (response) {
+            window.location.reload();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            window.location.reload();
+        }
+    });
+}
+function GetTime() {
+    var date = new Date();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + "年" + month + "月" + strDate + "日"
+            + " " + date.getHours() + ":" + date.getMinutes()
+            + ":" + date.getSeconds();
+    $("#currentTime")[0].innerHTML = currentdate;
+}
+
+function AlertNotification() {
+    bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>此功能正在开发中！</h4>" });
+}*/

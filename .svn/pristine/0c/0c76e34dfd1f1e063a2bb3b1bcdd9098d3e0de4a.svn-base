@@ -1,0 +1,22 @@
+﻿<div class="modal fade" id="VideoFrame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:130px;">  
+    <div class="modal-dialog" role="document">  
+        <div class="modal-content" style='width:630px;'>  
+            <div class="modal-header" style="background-color:#0b83f3;border-radius:5px 5px 0 0;color:#ffffff;height:50px">  
+                <a class="close" data-dismiss="modal" style="float:right;">×</a>
+                <h4 class="modal-title" id="myModalLabel">视频</h4>  
+            </div>  
+            <div class="modal-body" style="display:inline">  
+                <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" height="400" width="600"
+                      poster="../photos/大乳山国家级海洋公园3.jpg"
+                      data-setup="{}">
+                    <source src="../photos/Video1.mp4" type='video/mp4' />
+                    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                    <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                </video>
+@*                <video src="../photos/Video1.mp4" controls="controls" height="400" width="600">
+                    您的浏览器不支持 video 标签。
+                </video>*@
+            </div>  
+        </div>  
+    </div>  
+</div> 

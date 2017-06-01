@@ -1,0 +1,2165 @@
+
+ 
+记录时间：2017-05-31 08:59:40,113 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEPARTMENTINFO
+ 
+
+ 
+记录时间：2017-05-31 09:00:22,974 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEPARTMENTINFO
+ 
+
+ 
+记录时间：2017-05-31 09:00:54,763 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEPARTMENTINFO
+ 
+
+ 
+记录时间：2017-05-31 09:01:29,017 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEPARTMENTINFO
+ 
+
+ 
+记录时间：2017-05-31 09:02:08,936 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:02:08,952 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:02:12,083 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:02:12,084 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:03:06,975 
+线程ID:[16] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = 2
+ 
+
+ 
+记录时间：2017-05-31 09:03:06,975 
+线程ID:[16] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetFunctionTree2(String part) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 416
+ 
+
+ 
+记录时间：2017-05-31 09:03:25,455 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:03:25,487 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:04:56,416 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:04:56,445 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:12:10,516 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:12:10,530 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:12:10,719 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:12:10,720 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:20:58,189 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = 2
+ 
+
+ 
+记录时间：2017-05-31 09:20:58,244 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetFunctionTree2(String part) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 416
+ 
+
+ 
+记录时间：2017-05-31 09:22:13,859 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:22:13,872 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:22:14,078 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:22:14,079 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:26:57,731 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:26:57,731 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:27:17,748 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:27:17,760 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:27:17,938 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:27:17,939 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:29:03,032 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:29:03,032 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:29:03,580 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:29:03,581 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:29:38,274 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:29:38,286 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:29:38,465 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:29:38,467 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 09:44:54,363 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 09:44:54,363 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 09:44:54,376 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 09:44:54,376 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 10:04:50,863 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 10:04:50,863 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 10:04:50,874 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 10:04:50,874 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 10:16:17,413 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: OCIEnvCreate failed with return code -1 but error message text was not available.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 10:16:17,441 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 10:54:08,736 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 10:54:08,773 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 10:54:08,936 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 10:54:08,938 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 10:59:04,525 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 10:59:04,537 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 10:59:04,875 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 10:59:04,877 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 11:02:07,989 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 11:02:08,004 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 11:02:08,070 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 11:02:08,072 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.InvalidOperationException: Attempt to load Oracle client libraries threw BadImageFormatException.  This problem will occur when running in 64 bit mode with the 32 bit Oracle client components installed. ---> System.BadImageFormatException: An attempt was made to load a program with an incorrect format. (Exception from HRESULT: 0x8007000B)
+   at System.Data.Common.UnsafeNativeMethods.OCILobCopy2(IntPtr svchp, IntPtr errhp, IntPtr dst_locp, IntPtr src_locp, UInt64 amount, UInt64 dst_offset, UInt64 src_offset)
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   --- End of inner exception stack trace ---
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 11:20:50,491 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 11:20:50,573 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 11:24:54,615 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 11:24:54,617 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 11:25:19,575 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 11:25:22,672 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 11:25:41,438 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 11:25:41,439 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 11:28:20,294 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 11:28:20,342 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 11:29:02,798 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 11:29:10,958 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 11:29:42,640 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 11:29:42,705 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 12:54:06,451 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 12:54:06,453 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 12:54:51,951 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 12:54:51,968 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 12:54:52,049 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 12:54:52,050 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 12:57:39,446 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 12:57:39,447 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 12:57:39,966 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 12:57:39,966 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:01:57,475 
+线程ID:[16] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:01:57,476 
+线程ID:[16] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:01:57,990 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:01:57,991 
+线程ID:[14] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:04:13,604 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:04:13,670 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:04:17,955 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:04:19,420 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:05:17,095 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:05:17,158 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:05:20,249 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:05:21,021 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:06:15,957 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:06:15,976 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:06:16,012 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:06:16,013 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:07:10,166 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:07:10,178 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:07:10,258 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:07:10,259 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:07:55,715 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:07:55,772 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:07:57,865 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:07:58,234 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:16:49,555 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:16:49,626 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:16:51,400 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:16:51,929 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:19:03,549 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:19:03,596 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:19:06,195 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:19:06,923 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:50:42,732 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:50:42,769 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:50:42,839 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:50:42,841 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:52:31,247 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:52:31,299 
+线程ID:[6] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:52:32,460 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:52:32,680 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:52:35,024 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:52:35,065 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:52:36,151 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:52:36,601 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:54:10,223 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:54:10,294 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:54:11,658 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:54:11,660 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:54:55,665 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:54:55,739 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:54:57,872 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:54:58,889 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 13:56:39,331 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.OracleClient.OCI.DetermineClientVersion()
+   at System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   at System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   at System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM FUNCTIONINFO  where F_PART = '1'
+ 
+
+ 
+记录时间：2017-05-31 13:56:39,346 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.BN.FUNCTIONINFO_BN property: [(null)] - 
+错误描述：GetFunctionTree 程序段的异常System.NullReferenceException: Object reference not set to an instance of an object.
+   at Business.BN.FUNCTIONINFO_BN.GetMinitorFunctionTree2(String parent, String type, String parentId) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\FUNCTIONINFO_BN.cs:line 445
+ 
+
+ 
+记录时间：2017-05-31 13:56:39,416 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 1
+ 
+
+ 
+记录时间：2017-05-31 13:56:39,419 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Exception: System.Data.OracleClient requires Oracle client software version 8.1.7 or greater.
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.OracleClient.OracleConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149select *  FROM DEVICEFULL  where DEVICETYPE = 2
+ 
+
+ 
+记录时间：2017-05-31 15:12:21,118 
+线程ID:[8] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: table or view does not exist
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-31 15:17:07,420 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: table or view does not exist
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-31 15:37:41,268 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: table or view does not exist
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-31 15:44:46,518 
+线程ID:[20] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01741: illegal zero-length identifier
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT DATETIME,ROUND(AVG(""),6) KEY,ROUND((SUM(NH3N)+SUM(NO3)+SUM(NO2)),6) WUJIDAN,STD_VALUE FROM TABBUOYECOLOGY TA  LEFT JOIN(  SELECT DEVICECODE,  CASE DEVICEATTACH.STDTYPE WHEN '1' THEN STD_VALUE_ONE WHEN '2' THEN STD_VALUE_TWO WHEN '3' THEN STD_VALUE_THREE WHEN '4' THEN STD_VALUE_FOUR ELSE NULL END STD_VALUE  FROM TABSTD,DEVICEATTACH  WHERE DEVICECODE=:DEVICECODE  AND STD_TYPE=''  )INFO ON TA.DEVICECODE=INFO.DEVICECODE  WHERE TA.DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY DATETIME,STD_VALUE  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-31 15:45:14,520 
+线程ID:[24] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01843: not a valid month
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("PH"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("PH"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("PH"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-31 16:02:17,021 
+线程ID:[22] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: table or view does not exist
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-31 16:17:00,009 
+线程ID:[28] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: table or view does not exist
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 

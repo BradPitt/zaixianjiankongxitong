@@ -1,0 +1,713 @@
+﻿var viewMap;
+var navToolbar;
+var initialExtent;
+var fullExtent;
+var BUOY_DATA;
+var STATION_DATA;
+var LivingMaps_List;
+var photoArr = new Array();
+var curIndex;
+
+$(function () {
+    //$("#searchBox").mCustomScrollbar({
+    //    axis: "x", // horizontal scrollbar
+    //    theme: "dark-thin"
+    //});
+    $("#MapDiv").height($(window).height() - $("#searchBox").height() - 4);
+    $(window).resize(function () {
+        $("#MapDiv").height($(window).height() - $("#searchBox").height() - 4);
+    });
+    $('#DataLoading').modal({ backdrop: 'static', keyboard: false });
+    $("#DataLoading").modal('show');
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Api/Map/GetMapInfo",
+        success: function (result) {
+            var mapdata = JSON.parse(result);
+            require([
+                "esri/map",
+                "esri/geometry/Extent",
+                "esri/SpatialReference",
+                "esri/layers/GraphicsLayer"
+            ], function (Map, Extent, SpatialReference, GraphicsLayer) {
+                
+                initialExtent = new Extent(parseFloat(mapdata.InitialExtent.xmin), parseFloat(mapdata.InitialExtent.ymin), parseFloat(mapdata.InitialExtent.xmax), parseFloat(mapdata.InitialExtent.ymax),
+                                new SpatialReference({ wkid: parseFloat(mapdata.InitialExtent.spatialReference) }));
+                fullExtent = new Extent(parseFloat(mapdata.FullExtent.xmin), parseFloat(mapdata.FullExtent.ymin), parseFloat(mapdata.FullExtent.xmax), parseFloat(mapdata.FullExtent.ymax),
+                                new SpatialReference({ wkid: parseFloat(mapdata.FullExtent.spatialReference) }));
+                var map = new Map("MapDiv", {
+                    extent: initialExtent,
+                    logo: false
+                });
+                viewMap = map;
+
+                $.each(mapdata.BaseMaps_List, function (i, val) {
+                    AddDynamicLayer(val.id, val.restUrl);
+                });
+
+                var layerTree = [];
+                LivingMaps_List = mapdata.LivingMaps_List;
+                $.each(mapdata.LivingMaps_List, function (i, val) {
+                    AddDynamicLayer(val.id, val.restUrl);
+                });
+
+                dojo.connect(viewMap, "onLoad", LoadMapComponents);
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: "/Api/Map/GetMapEquipment",
+                    success: function (result) {
+                        var data = JSON.parse(result);
+                        if (data[0] == null || data[1] == null) {
+                            parent.bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>设备数据加载失败！</h4>" });
+                        } else {
+                            BUOY_DATA = data[1];
+                            STATION_DATA = data[0];
+                            buoyLayer = new GraphicsLayer({ "id": "buoyLayer" });
+                            map.addLayer(buoyLayer, 1);
+                            buoyTextLayer = new GraphicsLayer({ "id": "buoyTextLayer" });
+                            map.addLayer(buoyTextLayer, 1);
+                            dojo.connect(buoyLayer, "onClick", doBuoyIdentify);
+
+                            stationLayer = new GraphicsLayer({ "id": "stationLayer" });
+                            map.addLayer(stationLayer, 1);
+                            stationTextLayer = new GraphicsLayer({ "id": "stationTextLayer" });
+                            map.addLayer(stationTextLayer, 1);
+                            dojo.connect(stationLayer, "onClick", doStationIdentify);
+
+                            dojo.connect(viewMap, "onClick", doIdentify);
+                        }                                                
+                        addDevice(BUOY_DATA, "../img/buoy.png", buoyLayer, buoyTextLayer);
+                        addDevice(STATION_DATA, "../img/station.png", stationLayer, stationTextLayer);                        
+                        $("#DataLoading").modal('hide');
+                    }
+                });             
+
+            });
+        }
+    });
+
+    
+
+});
+
+//添加浮标 
+function addDevice(data, path, layer, textLayer) {
+    require([
+        "esri/geometry/Point",
+        "esri/graphic",
+        "esri/symbols/PictureMarkerSymbol",
+        "esri/symbols/TextSymbol",
+        "esri/Color",
+        "esri/symbols/Font"
+    ], function (Point, Graphic, PictureMarkerSymbol, TextSymbol, Color, Font) {
+        for (var i = 0; i < data.length; i++) {
+            var pt = new Point(data[i].ELON, data[i].ELAT, viewMap.spatialReference);
+
+            var graphic = new Graphic(pt, new PictureMarkerSymbol(path, 34, 34), data[i]);
+
+            var textSymbol = new TextSymbol(data[i].DEVICENAME);
+            textSymbol.setColor(new Color([0, 0, 0]));
+            var font = new Font();
+            font.setSize("10pt");
+            font.setWeight(Font.WEIGHT_BOLD);
+            textSymbol.setFont(font);
+            textSymbol.setHaloSize(1);
+            textSymbol.setHaloColor(new Color([255, 255, 255]));
+            textSymbol.setOffset(0, -35);
+            var text = new Graphic(pt, textSymbol, data[i]);
+
+            layer.add(graphic);
+            textLayer.add(text);
+        }
+    });
+}
+
+function LoadMapComponents() {
+    require(["esri/toolbars/navigation"], function (Navigation) {
+        navToolbar = new Navigation(viewMap);
+        dojo.connect(navToolbar, "onExtentHistoryChange", extentHistoryChangeHandler);
+    });
+    var layerTree = [];
+    var legendLayers = [];
+    $.each(LivingMaps_List, function (i, val) {
+        viewMap.getLayer(val.id).setVisibility(val.visibility == "true" ? true : false);
+        var layerNames = [];
+        var layer = viewMap.getLayer(val.id);
+        var layerInfos = layer.layerInfos;
+        if (val.visibility == "true") {          
+            $.each(layerInfos, function (i, layerInfo) {
+                if (layerInfo.defaultVisibility) {
+                    layerNames.push({ text: layerInfo.name, state: { selected: true }, tags: [layerInfo.id] });
+                } else {
+                    layerNames.push({ text: layerInfo.name, state: { selected: false }, tags: [layerInfo.id] });
+                }
+            });
+            layerTree.push({ text: val.title, nodes: layerNames, state: { selected: true }, tags: [val.id] });
+        } else {
+            $.each(layerInfos, function (i, layerInfo) {
+                layerNames.push({ text: layerInfo.name, state: { selected: false }, tags: [layerInfo.id] });
+            });
+            layerTree.push({ text: val.title, nodes: layerNames, state: { selected: false }, tags: [val.id] });
+        }
+        
+        legendLayers.push({ layer: viewMap.getLayer(val.id), title: val.title });        
+    });
+
+    require(["esri/dijit/Legend"], function (Legend) {
+        legend = new Legend({
+            map: viewMap,
+            layerInfos: legendLayers
+        }, "legenddiv");
+        legend.startup();
+        $("#legendscroll").mCustomScrollbar({
+            axis: "y", // horizontal scrollbar
+            theme: "dark-thin"
+        });
+    });
+
+    $('#layerTree').treeview({
+        multiSelect: true,
+        showBorder: false,
+        color: "#1090f3",
+        nodeIcon: "glyphicon glyphicon-remove",
+        selectedIcon: "glyphicon glyphicon-check",
+        highlightSelected: false,
+        levels: 2,
+        data: layerTree,
+        onNodeSelected: function (event, data) {
+            var isParent = false;
+            $.each(LivingMaps_List, function (i, val) {
+                if (data.tags[0] == val.id)
+                {
+                    viewMap.getLayer(data.tags[0]).setVisibility(true);
+                    $.each(data.nodes, function (n, node) {
+                        $('#layerTree').treeview('selectNode', [node.nodeId, { silent: true }]);
+                    });
+                    isParent = true;
+                }
+            });
+            if (!isParent) {
+                var parent = $('#layerTree').treeview('getParent', data);
+                var layer = viewMap.getLayer(parent.tags[0]);
+                var visibleLayers = layer.visibleLayers;
+                visibleLayers.push(data.tags[0]);
+                layer.setVisibleLayers(visibleLayers);
+                legend.refresh();
+            } else {
+                var layer = viewMap.getLayer(data.tags[0]);
+                var visibleLayers = new Array();
+                $.each(data.nodes, function (n, node) {
+                    visibleLayers.push(node.tags[0]);
+                });
+                layer.setVisibleLayers(visibleLayers);
+                legend.refresh();
+            }
+        },
+        onNodeUnselected: function (event, data) {
+            var isParent = false;
+            $.each(LivingMaps_List, function (i, val) {
+                if (data.tags[0] == val.id) {
+                    viewMap.getLayer(data.tags[0]).setVisibility(false);
+                    $.each(data.nodes, function (n, node) {
+                        $('#layerTree').treeview('unselectNode', [node.nodeId, { silent: true }]);
+                    });
+                    isParent = true;
+                }
+            });
+            if (!isParent) {
+                var parent = $('#layerTree').treeview('getParent', data);
+                var layer = viewMap.getLayer(parent.tags[0]);
+                var visibleLayers = layer.visibleLayers;
+                visibleLayers.remove(data.tags[0]);
+                layer.setVisibleLayers(visibleLayers);
+                legend.refresh();
+            } else {
+                var layer = viewMap.getLayer(data.tags[0]);
+                var visibleLayers = [];
+                layer.setVisibleLayers(visibleLayers);
+                legend.refresh();
+            }
+        }
+    });
+    $("#layerscroll").mCustomScrollbar({
+        axis: "y", // horizontal scrollbar
+        theme: "dark-thin"
+    });
+}
+
+function extentHistoryChangeHandler() {
+    if (!navToolbar.isFirstExtent()) {
+        dojo.byId("zoomprev").disabled = false;
+        dojo.byId("zoomprev").src = "../img/icon-left.png";
+    }
+    else {
+        dojo.byId("zoomprev").disabled = true;
+        dojo.byId("zoomprev").src = "../img/d-icon-left.png";
+    }
+
+    if (!navToolbar.isLastExtent()) {
+        dojo.byId("zoomnext").disabled = false;
+        dojo.byId("zoomnext").src = "../img/icon-right.png";
+    }
+    else {
+        dojo.byId("zoomnext").disabled = true;
+        dojo.byId("zoomnext").src = "../img/d-icon-right.png";
+    }
+}
+
+function doBuoyIdentify(evt) {
+    ResetSymbol();
+    require([
+        "esri/symbols/PictureMarkerSymbol"
+    ], function (PictureMarkerSymbol) {
+        var bigSymbol = new PictureMarkerSymbol("../img/buoy.png", 50, 50)
+        evt.graphic.setSymbol(bigSymbol);
+        viewMap.infoWindow.setTitle("浮标在线监测站");
+        var strpath = CheckPathNull(evt.graphic.attributes.PICTUREPATH);
+        photoArr = strpath.split(",");
+        curIndex = 0;
+        var con = "<div style='position:relative;width:450px;height:310px;'>"
+        + "<table class='dataTable'><tr><td class='head'>设备编号：</td><td>" + CheckNull(evt.graphic.attributes.DEVICECODE) + "</td></tr>"
+        + "<tr><td class='head'>设备名称：</td><td>" + CheckNull(evt.graphic.attributes.DEVICENAME) + "</td></tr>"
+        + "<tr><td class='head'>布放时间：</td><td>" + CheckNull(evt.graphic.attributes.LAYTIME) + "</td></tr>"
+        + "<tr><td class='head'>布放经度：</td><td>" + CheckNull(evt.graphic.attributes.ELON) + "</td></tr>"
+        + "<tr><td class='head'>布放纬度：</td><td>" + CheckNull(evt.graphic.attributes.ELAT) + "</td></tr>"
+        + "<tr><td class='head'>海域：</td><td>" + CheckNull(evt.graphic.attributes.SEAAREA) + "</td></tr>"
+        + "<tr><td class='head'>业务：</td><td>" + CheckNull(evt.graphic.attributes.SERVICE) + "</td></tr>"
+        + "<tr><td class='head'>设备详情：</td><td><button class='button_btn' onclick='AddTab(\"设备详情\",\"DeviceDetail\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>实时数据：</td><td><button class='button_btn' onclick='AddTab(\"实时数据\",\"BuoyDetail\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>历史数据：</td><td><button class='button_btn' onclick='AddTab(\"历史数据\",\"MonitorLog/Index\",\"" + evt.graphic.attributes.DEVICECODE + "\");' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>环境评价：</td><td><button class='button_btn' onclick='AddTab(\"环境评价\",\"FuBiaoAnalysis\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>视频监控：</td><td><button class='button_btn' onclick='ParentAlertNotification()' data-loading-text='Loading...' >查看</button></td></tr></table>"
+        +"<div class='photoContainer'>"
+        + "<img id='photo' style='height:300px;width:300px;' src='../photos/" + photoArr[0] + "' alt='大乳山国家级海洋公园' /></br>"
+        + "<div class='photobutton' style='top:135px;'><span class='glyphicon glyphicon-chevron-left photoleft' onclick='GetLeftPhoto()' ></span>"
+        + "<span class='glyphicon glyphicon-chevron-right photoright' onclick='GetRightPhoto()'></span></div>"
+        + "</div></div>"
+        viewMap.infoWindow.setContent(con);
+        viewMap.infoWindow.resize(480,400);
+        viewMap.infoWindow.show(evt.screenPoint, viewMap.getInfoWindowAnchor(evt.screenPoint));
+        viewMap.infoWindow.show();
+    });   
+}
+
+function doStationIdentify(evt) {
+    ResetSymbol();
+    require([
+        "esri/symbols/PictureMarkerSymbol"
+    ], function (PictureMarkerSymbol) {
+        var bigSymbol = new PictureMarkerSymbol("../img/station.png", 50, 50)
+        evt.graphic.setSymbol(bigSymbol);
+        viewMap.infoWindow.setTitle("岸基在线监测站");
+        var strpath = CheckPathNull(evt.graphic.attributes.PICTUREPATH);
+        photoArr = strpath.split(",");
+        curIndex = 0;
+        var con = "<div style='position:relative;width:450px;height:400px;overflow:hidden;'>"
+        + "<table class='dataTable'><tr><td class='head'>设备编号：</td><td>" + CheckNull(evt.graphic.attributes.DEVICECODE) + "</td></tr>"
+        + "<tr><td class='head'>设备名称：</td><td>" + CheckNull(evt.graphic.attributes.DEVICENAME) + "</td></tr>"
+        + "<tr><td class='head'>布放时间：</td><td>" + CheckNull(evt.graphic.attributes.LAYTIME) + "</td></tr>"
+        + "<tr><td class='head'>布放经度：</td><td>" + CheckNull(evt.graphic.attributes.ELON) + "</td></tr>"
+        + "<tr><td class='head'>布放纬度：</td><td>" + CheckNull(evt.graphic.attributes.ELAT) + "</td></tr>"
+        + "<tr><td class='head'>海域：</td><td>" + CheckNull(evt.graphic.attributes.SEAAREA) + "</td></tr>"
+        + "<tr><td class='head'>业务：</td><td>" + CheckNull(evt.graphic.attributes.SERVICE) + "</td></tr>"
+        + "<tr><td class='head'>设备详情：</td><td><button class='button_btn' onclick='AddTab(\"设备详情\",\"DeviceDetail\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>实时数据：</td><td><button class='button_btn' onclick='AddTab(\"实时数据\",\"AnjiDetail\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>历史数据：</td><td><button class='button_btn' onclick='AddTab(\"历史数据\",\"MonitorLog/Index\",\"" + evt.graphic.attributes.DEVICECODE + "\");' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>环境评价：</td><td><button class='button_btn' onclick='AddTab(\"环境评价\",\"AnJiZhanAnalysis\",\"" + evt.graphic.attributes.DEVICECODE + "\")' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>三维模型：</td><td><button class='button_btn' onclick='ParentAlertNotification()' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>工作流程：</td><td><button class='button_btn' onclick='ParentAlertNotification()' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>室内视频：</td><td><button class='button_btn' onclick='ParentAlertNotification()' data-loading-text='Loading...' >查看</button></td></tr>"
+        + "<tr><td class='head'>室外视频：</td><td><button class='button_btn' onclick='ParentAlertNotification()' data-loading-text='Loading...' >查看</button></td></tr></table>"
+        + "<div class='photoContainer'>"
+        + "<img id='photo' style='height:380px;width:300px;' src='../photos/" + photoArr[0] + "' alt='大乳山国家级海洋公园' /></br>"
+        + "<div class='photobutton' style='top:175px;'><span class='glyphicon glyphicon-chevron-left photoleft' onclick='GetLeftPhoto()' ></span>"
+        + "<span class='glyphicon glyphicon-chevron-right photoright' onclick='GetRightPhoto()'></span></div>"
+        + "</div></div>"
+        viewMap.infoWindow.setContent(con);
+        viewMap.infoWindow.resize(480, 500);
+        viewMap.infoWindow.show(evt.screenPoint, viewMap.getInfoWindowAnchor(evt.screenPoint));
+        viewMap.infoWindow.show();
+    });    
+}
+
+function doIdentify(evt)
+{
+    viewMap.graphics.clear();
+    $.each(viewMap.getLayersVisibleAtScale(), function (i, layer) {
+        var bl = false;
+        $.each(LivingMaps_List, function (i, LivingMap) {
+            if (layer.id == LivingMap.id)
+            {
+                switch (LivingMap.title)
+                {
+                    case "保护区":
+                        bl = true;
+                        break;
+                    case "变电站":
+                        bl = true;
+                        break;
+                    default:
+                        bl = false;
+                        break;
+                }
+                if (bl == true)
+                {
+                    return false;
+                }
+            }
+        });
+        if (layer.visible == true && bl == true) {
+            require([
+                "esri/tasks/IdentifyParameters",
+                "esri/tasks/IdentifyTask",
+                "esri/symbols/SimpleFillSymbol",
+                "esri/symbols/SimpleMarkerSymbol",
+                "esri/symbols/SimpleLineSymbol",
+                "esri/graphic",
+                "esri/Color"
+            ], function (IdentifyParameters, IdentifyTask, SimpleFillSymbol, SimpleMarkerSymbol, SimpleLineSymbol, Graphic, Color) {
+                identifyParams = new IdentifyParameters();
+                identifyParams.tolerance = 5; //容差范围  
+                identifyParams.returnGeometry = true; //是否返回图形  
+                identifyParams.layerOption = 'top'; //设置查询的图层  
+                //查询范围  
+                identifyParams.width = viewMap.width;
+                identifyParams.height = viewMap.height;                
+                identifyParams.geometry = evt.mapPoint;
+                identifyParams.mapExtent = viewMap.extent;
+                if (layer.visibleLayers != null) {
+                    identifyParams.layerIds = layer.visibleLayers;
+                    identifyTask = new IdentifyTask(layer.url);
+                    identifyTask.execute(identifyParams, function (results) {
+                        var feature;
+                        if (results.length > 0) {
+                            viewMap.graphics.clear();
+                            feature = results[0].feature;
+                            viewMap.infoWindow.setTitle(results[0].layerName);
+                            var contentHTML = CreateContent(results[0])
+                            viewMap.infoWindow.setContent(contentHTML);
+                            var graphic = CreateGraphic(feature);
+                            viewMap.graphics.add(graphic);
+                            viewMap.infoWindow.show(evt.screenPoint, viewMap.getInfoWindowAnchor(evt.screenPoint));
+                            viewMap.infoWindow.show();
+                        }
+                    });
+                }
+            });
+            
+        }
+    });
+    
+}
+
+function CreateContent(geo)
+{
+    content = '<table>';
+    for (var key in geo.feature.attributes) {
+        if (key == 'FID')
+        {
+            continue;
+        }
+        if (key == 'Shape') {
+            continue;
+        }
+        if (key == 'Id') {
+            continue;
+        }
+        content += '<tr><td class="head">' + key + '：</td><td>' + (geo.feature.attributes[key] == 'Null'?'':geo.feature.attributes[key]) + '</td></tr>';
+    }
+    content += '</table>';
+    return content;
+    //return JSON.stringify(geo.feature.attributes);
+}
+
+function CreateGraphic(feature) {
+    var type = feature.geometry.type;
+    var geometry = feature.geometry;
+    var symbol;
+    switch (type) {
+        case "point":
+            symbol = new esri.symbol.SimpleMarkerSymbol(esri.symbol.SimpleMarkerSymbol.STYLE_CIRCLE, 13, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new esri.Color([0, 255, 255, 0.5]), 10), new esri.Color([0, 255, 255, 0.9])); //.setColor(new esri.Color([0, 255, 255]));
+            break;
+        case "polygon":
+            symbol = new esri.symbol.SimpleFillSymbol(esri.symbol.SimpleFillSymbol.STYLE_SOLID, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new esri.Color([0, 255, 255, 0.9]), 4), new esri.Color([0, 255, 255, 0.5])); //.setColor(new esri.Color([0, 255, 255]));  
+            break;
+        case "polyline":
+            symbol = new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new esri.Color([0, 255, 255, 0.9]), 4);
+            break;
+    }
+
+    var graphic = new esri.Graphic(geometry, symbol);
+    return graphic;
+}
+
+function CheckNull(value)
+{
+    if (value == undefined) {
+        return "--";
+    } else {
+        return value;
+    }
+}
+
+function CheckPathNull(value)
+{
+    if (value == undefined) {
+        return "大乳山国家级海洋公园10.jpg";
+    } else {
+        return value;
+    }
+}
+
+function ResetSymbol()
+{
+    require([
+        "esri/symbols/PictureMarkerSymbol"
+    ], function (PictureMarkerSymbol) {
+        var buoy = viewMap.getLayer("buoyLayer");
+        $.each(buoy.graphics, function (i, val) {       
+            var smallSymbolb = new PictureMarkerSymbol("../img/buoy.png", 34, 34);
+            val.setSymbol(smallSymbolb);
+        });
+        var station = viewMap.getLayer("stationLayer");
+        $.each(station.graphics, function (i, val) {
+            var smallSymbols = new PictureMarkerSymbol("../img/station.png", 34, 34);
+            val.setSymbol(smallSymbols);       
+        });
+
+    });
+}
+
+function AddDynamicLayer(id, url) {
+    require([
+        "esri/layers/ArcGISDynamicMapServiceLayer"
+    ], function (ArcGISDynamicMapServiceLayer) {
+        var layer = new ArcGISDynamicMapServiceLayer(url);
+        layer.id = id;
+        viewMap.addLayer(layer);
+    });
+}
+
+function AddFeatureLayer(id, url) {
+    require([
+        "esri/layers/FeatureLayer",
+        "esri/InfoTemplate",
+    ], function (FeatureLayer, InfoTemplate) {
+        var featureLayer = new FeatureLayer(url);
+        featureLayer.id = id;
+        viewMap.addLayer(featureLayer);
+    });
+}
+
+function ZoomIn() {
+    viewMap.setCursor("crosshair");
+    navToolbar.activate(esri.toolbars.Navigation.ZOOM_IN);
+}
+
+function ZoomOut() {
+    viewMap.setCursor("crosshair");
+    navToolbar.activate(esri.toolbars.Navigation.ZOOM_OUT);
+}
+
+function Pan() {
+    viewMap.setCursor("move");
+    navToolbar.activate(esri.toolbars.Navigation.PAN);
+}
+
+function Full() {
+    viewMap.setExtent(fullExtent);
+}
+
+function GetExtent(type)
+{
+    ResetSymbol();
+    var RESULT_DATA;
+    value = {
+        DEVICECODE: $("#DEVICECODE").val(),
+        SEAAREA: encodeURI($("#SEAAREA option:selected").val(), "UTF-8"),
+        PROVINCE: encodeURI($("#PROVINCE option:selected").val(), "UTF-8"),
+        BAY: encodeURI($("#BAY option:selected").val(), "UTF-8"),
+        BUREAUDEVICE: encodeURI($("#BUREAUDEVICE option:selected").val(), "UTF-8"),
+        LOCALDEVICE: encodeURI($("#LOCALDEVICE option:selected").val(), "UTF-8"),
+        SERVICE: encodeURI($("#SERVICE option:selected").val(), "UTF-8"),
+        PICTUREPATH: null
+    }    
+    require([
+        "esri/geometry/Point",
+        "esri/geometry/Multipoint",
+        "esri/symbols/PictureMarkerSymbol"
+    ], function (Point, Multipoint, PictureMarkerSymbol) {
+        $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url: "/Api/Map/SearchEquipment?type=" + type + "&value=" + JSON.stringify(value),
+            success: function (result) {               
+                if (result == "[]") {
+                    parent.bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>没有符合查询条件的设备！</h4>" });
+                } else {
+                    var data = JSON.parse(result);
+                    RESULT_DATA = data;
+                    var multiPoint = new Multipoint();
+
+                    for (i = 0; i < RESULT_DATA.length; i++) {
+                        multiPoint.addPoint(new Point(RESULT_DATA[i].ELON, RESULT_DATA[i].ELAT, viewMap.spatialReference));
+                        var buoy = viewMap.getLayer("buoyLayer");
+                        $.each(buoy.graphics, function (n, val) {
+                            if (val.attributes.DEVICECODE == RESULT_DATA[i].DEVICECODE) {
+                                var bigSymbolb = new PictureMarkerSymbol("../img/buoy.png", 50, 50);
+                                val.setSymbol(bigSymbolb);
+                            }
+                        });
+                        var station = viewMap.getLayer("stationLayer");
+                        $.each(station.graphics, function (n, val) {
+                            if (val.attributes.DEVICECODE == RESULT_DATA[i].DEVICECODE) {
+                                var bigSymbols = new PictureMarkerSymbol("../img/station.png", 50, 50);
+                                val.setSymbol(bigSymbols);
+                            }
+                        });
+                    }
+                    viewMap.setExtent(multiPoint.getExtent().expand(1.5));
+                }
+                
+            }
+        });
+        
+    });
+}
+
+function Reset()
+{
+    $("#DEVICECODE").val("");
+    $('#SEAAREA')[0].selectedIndex = 0;
+    $('#PROVINCE')[0].selectedIndex = 0;
+    $('#BAY')[0].selectedIndex = 0;
+    $('#BUREAUDEVICE')[0].selectedIndex = 0;
+    $('#LOCALDEVICE')[0].selectedIndex = 0;
+    $('#SERVICE')[0].selectedIndex = 0;
+    ResetSymbol();
+    viewMap.setExtent(initialExtent);
+}
+
+function closeLayerPanel()
+{
+    $("#LayerControl").hide();
+    $("#LayerIcon").show();
+}
+
+function openLayerPanel()
+{
+    $("#LayerControl").show();
+    $("#LayerIcon").hide();
+}
+
+function closeLegendPanel() {
+    $("#LegendIcon").show();
+    $("#Legend").hide();
+}
+
+function openLegendPanel() {
+    $("#Legend").show();
+    $("#LegendIcon").hide();
+}
+
+function GetLeftPhoto() {
+    if (curIndex == 0) {
+        curIndex = photoArr.length - 1;
+    } else {
+        curIndex -= 1;
+    }
+    document.getElementById("photo").src = "../photos/" + photoArr[curIndex];
+}
+function GetRightPhoto() {
+    if (curIndex == photoArr.length - 1) {
+        curIndex = 0;
+    } else {
+        curIndex += 1;
+    }
+    document.getElementById("photo").src = "../photos/" + photoArr[curIndex];
+}
+function ChangeSize() {
+    var obj = document.getElementById("photo");
+    if (obj.style.width == "300px") {
+        obj.style.width = "600px";
+        obj.style.height = "384px";
+        document.getElementById("controlButton").style.width = "600px";
+    } else {
+        obj.style.width = "300px";
+        obj.style.height = "200px";
+        document.getElementById("controlButton").style.width = "300px";
+    }
+}
+
+// 实时数据
+function btnEntry(id, dtype) {
+    id = PrefixInteger(id, 6);
+    if (2 == dtype) {
+        if ($("#shishiIframe2", window.parent.document).length > 0) {
+            parent.setShishiData(id, dtype, false);
+        } else {
+            parent.setShishiData(id, dtype, true);
+        }
+    } else {
+        if ($("#shishiIframe1", window.parent.document).length > 0) {
+            parent.setShishiData(id, dtype, false);
+        } else {
+            parent.setShishiData(id, dtype, true);
+        }
+    }
+
+    // window.open("BuoyDetail?id="+id);
+}
+
+function btnAddTab(id, name, dtype) {
+    var href;
+    if (dtype == "1") {
+        href = "Manager/AnJiZhanAnalysis?deviceCode=" + id + "&deviceName=" + name + "&type=" + dtype;
+        if ($("#AnJiZhanAnalysisIframe2", window.parent.document).length > 0) {
+            parent.setAnalysisData(id, dtype, false, href);
+        } else {
+            parent.setAnalysisData(id, dtype, true, href);
+        }
+
+    } else {
+        href = "Manager/FuBiaoAnalysis?deviceCode=" + id + "&deviceName=" + name + "&type=" + dtype;
+        if ($("#FuBiaoAnalysisIframe1", window.parent.document).length > 0) {
+            parent.setAnalysisData(id, dtype, false, href);
+        } else {
+            parent.setAnalysisData(id, dtype, true, href);
+        }
+    }
+}
+
+function ParentAlertNotification()
+{
+    parent.bootbox.alert({ buttons: { ok: { label: '关闭', className: 'btn btn-blue button_btn' } }, message: "<h4 style='text-align:center'>此功能正在开发中！</h4>" });
+}
+
+Array.prototype.indexOf = function(val) 
+{
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+    }
+    return -1;
+};
+Array.prototype.remove = function(val) 
+{
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+};
+
+function AddTab(tabid, href, devicecode)
+{
+    if (parent.myTabbar.tabs(tabid) == null) {
+        parent.myTabbar.addTab(tabid, tabid, null, null, true, true);
+    } else {
+        parent.myTabbar.tabs(tabid).setActive();
+    }
+    parent.myTabbar.tabs(tabid).attachURL(parent.GetUrlConfig(href, devicecode)[tabid]);
+}

@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+      <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="/css/deviceDetail.css" rel="stylesheet">
+
+    <title></title>
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+  	<script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/echarts.min.js" type="text/javascript" charset="utf-8">    </script>
+    <script src="/js/config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+    
+     
+ <script>
+     $(document).ready(function () {
+         var photoArr = new Array();
+         var curIndex;
+         $('#DataLoading').modal({ backdrop: 'static', keyboard: false });
+         $("#DataLoading").modal('show');
+         setValue();
+         getSheBeiXinXiData();
+         setInterval('setValue()', refesTime); //指定1分钟局部刷新一次      
+     });
+     function GetDataOnTime() {
+         var id = GetQueryString("id");
+         $(".hideData").load("/Manager/BuoyDataShishi?id=" + id);
+     }
+
+       </script>
+</head>
+<body style="margin:10px;min-width:1200px;">
+    @{Html.RenderAction("DataLoading");} 
+     <div class="hideData">
+        @{Html.RenderAction("BuoyDataShishi");}
+    </div>  
+           <div id="navDiv" style="height:40px;line-height:40px; float:left;display:none;" >
+              <ul>
+                   <li style="float:left;text-align:left;width:400px;"><span id="deviceName" style="float:left;"></span> &nbsp;&nbsp;&nbsp;&nbsp;</li>
+              </ul>
+            </div>
+            <div id="tab_content" class="tab-content" style="height:auto;float:left;width:100%;display:none;">
+              <div style=" padding:10px 18px 0 18px;float:left;width:100%;">
+                        <ul style="float:left;width:60%; padding:0 0 0 0;margin-top:0;">
+                            <li class="yinying" id="sheBeiXinXi" >
+                                <div class="atitle">设备基本信息</div>
+                                <div>
+                                   <ul id="sheBeiXinXiUl">
+                                      <li><span>设备编号：</span>--</li>
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                           
+                        </ul>
+                        <ul style="float:left;width:40%;padding:0 0 0 18px; ">
+                             <li class="yinying" id="sheBeiXinXi2">
+                                <div class="atitle">设备附属信息</div>
+                                <div>
+                                   <ul id="sheBeiXinXi2Ul">
+                                      
+                                   </ul>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <div class="a" style="width:100%;float:left; min-height:100px;">
+                   
+                    <div style=" float:left;width:100%;height:500px;padding:0px 18px 0 18px;">
+                        <ul  style="float:left;width:30%; ">
+                            
+                            <li id="bjts" class="yinying">
+                                <div class="atitle">设备状态</div>
+                                <div style="width:100%;height:400px; background-color:#fff;">
+                                   <ul id="bjtsUl" style="float:left;">
+                                      
+                                   </ul>
+                                    <ul  id="leidatu" style="height:180px;width:250px; float:left; margin:15px 0 0 90px;">
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul id="rightUl" style="float:left;width:70%;padding:10px 0 0 18px;height:378px; ">
+                            <li class="yinying" id="tuPianLiuLan">
+                                <div class="atitle">图片浏览</div>
+                                <div style="float:left;width:100%;">
+                                   <div id="tuPianLiuLanUl" style="height:90%;">
+                                       
+                                   </div>
+                                   
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                   
+            </div> 
+    <script src="/js/deviceDetail.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
