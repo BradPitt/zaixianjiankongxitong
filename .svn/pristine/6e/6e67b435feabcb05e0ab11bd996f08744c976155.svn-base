@@ -1,0 +1,453 @@
+﻿function setValue() {
+    var id = GetQueryString("id");
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Api/System/GetSSSJ?deviceCode=" + id + "&dType=2",
+        success: function (result) {
+            var data = eval('(' + result + ')');
+            if (!data) {
+                data = [];
+            }
+            newData = data;
+            // 设备名称
+            $("#deviceName").html(data.DEVICEROW[0].DEVICENAME);
+            if (data.DEVICEROW[0].DEVICETYPE == 1) {
+                setAnJiBaoJingXianShi(data.STATUS)
+            } else {
+                setFuBiaoBaoJingXianShi(data.STATUS);
+                if (data.STATUS) {
+                    setLDT(data);
+                }
+            }
+          
+            $("#DataLoading").modal('hide');
+            $("#navDiv").show();
+            $("#tab_content").show();
+
+        }
+    });
+}
+
+function setAnJiBaoJingXianShi(data) {
+    $("#bjtsUl").html("");
+    var sli;
+    if (data) {
+        if (data.HUMI == 1) {
+            sli = "<li class='anji'><span>湿度状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.GPSALARM == 2) {
+            sli = "<li class='anji'><span>湿度状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>湿度状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.POWERSTATUS == 1) {
+            sli = "<li class='anji'><span>供电状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.ANCHOR == 2) {
+            sli = "<li class='anji'><span>供电状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>供电状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+        if (data.FREEMEMO) {
+            sli = "<li class='anji'><span>存储空间：</span>" + data.FREEMEMO + "M</li>"
+        } else {
+            sli = "<li class='anji'><span>存储空间：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+        if (data.TEMPERATURE) {
+            sli = "<li class='anji'><span>舱温：</span>" + data.TEMPERATURE + "℃</li>"
+        } else {
+            sli = "<li class='anji'><span>舱温：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.WATERALARM == 1) {
+            sli = "<li class='anji'><span>水警：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.WATERALARM == 2) {
+            sli = "<li class='anji'><span>水警：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>水警：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.DOORALARM == 1) {
+            sli = "<li class='anji'><span>门警：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.DOORALARM == 2) {
+            sli = "<li class='anji'><span>门警：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>门警：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.SMOGALARM == 1) {
+            sli = "<li class='anji'><span>烟雾状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.SMOGALARM == 2) {
+            sli = "<li class='anji'><span>烟雾状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>烟雾状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.STATIONSTATUS == 1) {
+            sli = "<li class='anji'><span>岸基站状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.BUOYSTATUS == 2) {
+            sli = "<li class='anji'><span>岸基站状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else if (data.BUOYSTATUS == 3) {
+            sli = "<li class='anji'><span>岸基站状态：</span><img src='/img/icon_yellow.png'  alt='' /></li>"
+        } else {
+            sli = "<li class='anji'><span>岸基站状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+    } else {
+
+        sli = "<li class='anji'><span>湿度状态：</span>--</li><li><span>供电状态：</span>--</li><li><span>存储空间：</span>--M</li>"
+            + "<li class='anji'><span>舱温：</span>--</li><li><span>水警：</span>--</li><li><span>门警：</span>--</li><li><span>烟雾状态：</span>--</li>"
+            + "<li class='anji'><span>传感器状态：</span>--</li><li><span>岸基站状态：</span>--</li>"
+
+        $("#bjtsUl").append(sli);
+    }
+
+
+}
+function setFuBiaoBaoJingXianShi(data) {
+    $("#bjtsUl").html("");
+    var sli;
+    if (data) {
+        sli = "<li><span>经度：</span>" + data.LON + "°</li>"
+       + "<li><span>电压：</span>" + data.VOLTAGE + "V</li>"
+         + "<li><span>纬度：</span>" + data.LAT + "°</li>"
+        + "<li><span>内存：</span>" + data.FREEMEMO + "M</li>"
+        $("#bjtsUl").append(sli);
+        if (data.GPSALARM == 1) {
+            sli = "<li><span>GPS报警：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.GPSALARM == 2) {
+            sli = "<li><span>GPS报警：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>GPS报警：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.ANCHOR == 1) {
+            sli = "<li><span>锚灯：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.ANCHOR == 2) {
+            sli = "<li><span>锚灯：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>锚灯：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.WATERALARM == 1) {
+            sli = "<li><span>水警：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.WATERALARM == 2) {
+            sli = "<li><span>水警：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>水警：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.DOORALARM == 1) {
+            sli = "<li><span>门警：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.DOORALARM == 2) {
+            sli = "<li><span>门警：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>门警：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+       
+
+        if (data.SENSERSTATUS == 1) {
+            sli = "<li><span>传感器状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.SENSERSTATUS == 2) {
+            sli = "<li><span>传感器状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>传感器状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+
+        if (data.BUOYSTATUS == 1) {
+            sli = "<li><span>浮标状态：</span><img src='/img/icon_green.png'  alt='' /></li>"
+        } else if (data.BUOYSTATUS == 2) {
+            sli = "<li><span>浮标状态：</span><img src='/img/icon_red.png'  alt='' /></li>"
+        } else if (data.BUOYSTATUS == 3) {
+            sli = "<li><span>浮标状态：</span><img src='/img/icon_yellow.png'  alt='' /></li>"
+        } else {
+            sli = "<li><span>浮标状态：</span>--</li>"
+        }
+        $("#bjtsUl").append(sli);
+    } else {
+        sli = "<li><span>经度：</span>--°</li>"
+        + "<li><span>纬度：</span>--°</li>"
+        + "<li><span>GPS报警：</span>--</li>"
+        + "<li><span>锚灯：</span>--</li>" + "<li><span>水警：</span>--</li>" + "<li><span>门警：</span>--</li>"
+       + "<li><span>电压：</span>--V</li><li><span>内存：</span>--M</li>"
+       + "<li><span>传感器状态：</span>--</li>" + "<li><span>浮标状态：</span>--</li>";
+
+        $("#bjtsUl").append(sli);
+    }
+
+
+}
+function setLDT(data) {// 雷达图
+    var lat_o, lon_o, lat, lon;
+    lat_o = data.DEVICEROW[0].ELAT;
+    lon_o = data.DEVICEROW[0].ELON;
+    lat = data.STATUS.LAT;
+    lon = data.STATUS.LON;
+    var dis = GetDistance(lat_o, lon_o, lat, lon);
+    var myChart = echarts.init(document.getElementById('leidatu'));
+    option = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        polar: [
+           {
+               indicator: [
+                   { text: '偏离距离', max: 1000 }
+               ],
+               center: ['50%', '50%'],
+               radius: 90,
+               startAngle: 160,
+               splitNumber: 4,
+               name: {
+                   show: false,
+                   formatter: '{value}',
+                   textStyle: { color: 'red' },
+
+               },
+               scale: true,
+               type: 'circle',
+               axisLine: {            // 坐标轴线
+                   show: true,        // 默认显示，属性show控制显示与否
+                   lineStyle: {       // 属性lineStyle控制线条样式
+                       color: '#82b3de',
+                       width: 2,
+                       type: 'solid'
+                   }
+               },
+               axisLabel: {           // 坐标轴文本标签，详见axis.axisLabel
+                   show: true,
+                   // formatter: null,
+                   textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                       color: '#000'
+                   }
+               },
+               splitArea: {
+                   show: true,
+                   areaStyle: {
+                       color: ['rgba(13,146,239,1)', 'rgba(53,165,241,1)', 'rgba(125,194,247,1)', 'rgba(205,232,253,9)']
+                   }
+               },
+               splitLine: {
+                   show: true,
+                   lineStyle: {
+                       width: 2,
+                       color: ['rgba(245,245,245,1)', 'rgba(255,255,255,1)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.5)', 'rgba(225,225,225,0.7)']
+                   }
+               }
+           }
+        ],
+        calculable: true,
+        series: [
+            {
+                name: '偏离距离',
+                type: 'radar',
+                data: [
+                    {
+                        //symbol: 'image://../img/ok_fb3.png', 
+                        symbol: 'emptyCircle',
+                        symbolSize: 8,
+                        value: [dis],
+                        name: '偏离距离'
+                    }
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
+}
+
+function setSheBeiXinXi2(data) {
+    var sli = "";
+    $("#sheBeiXinXi2Ul").html("");
+    
+    if (data) {
+        if (data.SEAAREA) {
+            sli = sli + "<li><span>海区：</span>" + data.SEAAREA + "</li>";
+        } else {
+            sli = sli + "<li><span>海区：</span>--</li>";
+        }
+        if (data.SERVICE) {
+            sli = sli + "<li><span>业务：</span>" + data.SERVICE + "</li>";
+        } else {
+            sli = sli + "<li><span>业务：</span>--</li>";
+        }
+        if (data.PROVINCE) {
+            sli = sli + "<li><span>省份：</span>" + data.PROVINCE + "</li>";
+        } else {
+            sli = sli + "<li><span>省份：</span>--</li>";
+        }
+        if (data.BAY) {
+            sli = sli + "<li><span>海湾：</span>" + data.BAY + "</li>";
+        } else {
+            sli = sli + "<li><span>海湾：</span>--</li>";
+        }
+        if (data.BUREAUDEVICE) {
+            sli = sli + "<li><span>局属设施：</span>" + data.BUREAUDEVICE + "</li>";
+        } else {
+            sli = sli + "<li><span>局属设施：</span>--</li>";
+        }
+        if (data.LOCALDEVICE) {
+            sli = sli + "<li><span>地方设施：</span>" + data.LOCALDEVICE + "</li>";
+        } else {
+            sli = sli + "<li><span>地方设施：</span>--</li>";
+        }
+    } else {
+        sli = "<li><span>海区：</span>--</li><li><span>业务：</span>--</li><li><span>省份：</span>--</li><li><span>海湾：</span>--</li>"
+           + " <li><span>局属设施：</span>--</li><li><span>地方设施：</span>--</li>";
+    }
+
+    $("#sheBeiXinXi2Ul").append(sli);
+    var strpath = data.PICTUREPATH;
+    if (strpath) {
+        photoArr = strpath.split(",");
+        sli = "<div class='photoContainer' style='margin:auto;'>"
+        + "<img id='photo' style='width:100%;' src='../photos/" + photoArr[0] + "' alt='大乳山国家级海洋公园' /></br>"
+        + "<div class='photobutton' style='top:135px;width:100%;'><span class='glyphicon glyphicon-chevron-left photoleft' onclick='GetLeftPhoto()' ></span>"
+        + "<span class='glyphicon glyphicon-chevron-right photoright' onclick='GetRightPhoto()'></span></div>"
+        + "</div>"
+        $("#tuPianLiuLanUl").append(sli);
+      //  alert(body.width());
+        $("#photo").height($("#rightUl").height()-30);
+    }
+    
+    curIndex = 0;
+}
+function setSheBeiXinXi(data) {
+    var sli = '';
+    $("#sheBeiXinXiUl").html("");
+   
+    if (data) {
+        if (data.DEVICECODE) {
+            sli =sli+ "<li><span>设备编号：</span>" + data.DEVICECODE + "</li>";
+        }else{
+            sli =sli+ "<li><span>设备编号：</span>--</li>";
+        }
+        if (data.DEVICENAME) {
+            sli =sli+ "<li><span>设备名称：</span>" + data.DEVICENAME + "</li>";
+        }else{
+            sli =sli+ "<li><span>设备名称：</span>--</li>";
+        }
+        if (data.DEVICEUSER) {
+            sli = sli + "<li ><span>用户名：</span>" + data.DEVICEUSER + "</li>"
+        }else{
+            sli = sli + "<li><span>用户名：</span>--</li>";
+        }
+  
+        if (data.LAYTIME) {
+            sli = sli + "<li><span>布放时间：</span>" + data.LAYTIME + "</li>"
+        } else {
+            sli = sli + "<li><span>布放时间：</span>--</li>";
+        }
+        if (data.ELON) {
+            sli = sli + "<li><span>布放经度：</span>" + data.ELON + "</li>"
+        } else {
+            sli = sli + "<li><span>布放经度：</span>--</li>";
+        }
+        if (data.ELAT) {
+            sli = sli + "<li><span>布放纬度：</span>" + data.ELAT + "</li>"
+        } else {
+            sli = sli + "<li><span>布放纬度：</span>--</li>";
+        }
+
+        if (data.COMTYPE) {
+            sli = sli + "<li><span>通讯类型：</span>" + data.COMTYPE + "</li>"
+        } else {
+            sli = sli + "<li><span>通讯类型：</span>--</li>";
+        }
+        if (data.STRUCTTYPE) {
+            sli = sli + "<li><span>结构类型（浮标）：</span>" + data.STRUCTTYPE + "</li>"
+        } else {
+            sli = sli + "<li><span>结构类型（浮标）：</span>--</li>";
+        }
+        if (data.COMARRAY) {
+            sli = sli + "<li><span>压缩参数（浮标）：</span>" + data.COMARRAY + "</li>"
+        } else {
+            sli = sli + "<li><span>压缩参数（浮标）：</span>--</li>";
+        }
+ 
+        if (data.PACKNUM) {
+            sli = sli + "<li><span>分包数（卫星）：</span>" + data.PACKNUM + "</li>"
+        } else {
+            sli = sli + "<li><span>分包数（卫星）：</span>--</li>";
+        }
+        if (data.RUNNINGSTATUS) {
+            sli = sli + "<li><span>是否有效：</span>" + data.RUNNINGSTATUS + "</li>"
+        } else {
+            sli = sli + "<li><span>是否有效：</span>--</li>";
+        }
+        if (data.POSITION) {
+            sli = sli + "<li><span>站点位置：</span>" + data.POSITION + "</li>"
+        } else {
+            sli = sli + "<li><span>压站点位置：</span>--</li>";
+        }
+
+        if (data.PRODUCER) {
+            sli = sli + "<li><span>生产商：</span>" + data.PRODUCER + "</li>"
+        } else {
+            sli = sli + "<li><span>生产商：</span>--</li>";
+        }
+        if (data.MANAGER) {
+            sli = sli + "<li><span>维护商：</span>" + data.MANAGER + "</li>"
+        } else {
+            sli = sli + "<li><span>维护商：</span>--</li>";
+        }
+
+        $("#sheBeiXinXiUl").append(sli);
+
+
+    } else {
+        sli = "<li><span>设备编号：</span>--</li><li><span>设备名称：</span>--</li><li ><span>用户名：</span>--</li>"
+   + "<li><span>布放时间：</span>--</li><li><span>布放经度：</span>--</li><li><span>布放纬度：</span>--</li>"
+   + "<li><span>通讯类型：</span>--</li><li><span>结构类型（浮标）：</span>--</li><li ><span>压缩参数（浮标）：</span>--</li>"
+   + "<li><span>分包数（卫星）：</span>--</li><li><span>是否有效：</span>--</li><li ><span>站点位置：</span>--</li>"
+   + "<li><span>生产商：</span>--</li><li><span>维护商：</span>--</li>";
+        $("#sheBeiXinXiUl").append(sli);
+    }
+    
+
+}
+
+function getSheBeiXinXiData() {
+    var deviceCode;
+    deviceCode = GetQueryString("id");
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: "/Api/System/GetModel?deviceCode=" + deviceCode,
+        success: function (result) {
+            var data = result;
+            setSheBeiXinXi(data);
+            setSheBeiXinXi2(data);
+
+        }
+    });
+}
+function GetLeftPhoto() {
+    if (curIndex == 0) {
+        curIndex = photoArr.length - 1;
+    } else {
+        curIndex -= 1;
+    }
+    document.getElementById("photo").src = "../photos/" + photoArr[curIndex];
+}
+function GetRightPhoto() {
+    if (curIndex == photoArr.length - 1) {
+        curIndex = 0;
+    } else {
+        curIndex += 1;
+    }
+    document.getElementById("photo").src = "../photos/" + photoArr[curIndex];
+}

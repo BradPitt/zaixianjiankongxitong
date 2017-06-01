@@ -1,0 +1,56 @@
+
+ 
+记录时间：2017-05-27 15:44:27,094 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) 位置 g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:行号 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-27 15:48:42,146 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   在 System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   在 Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) 位置 g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:行号 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-27 15:50:45,203 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01008: 并非所有变量都已绑定
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) 位置 g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:行号 149 SELECT DI.*,DA.SEAAREA,DA.PROVINCE,DA.BAY,DA.BUREAUDEVICE,DA.LOCALDEVICE,DA.SERVICE,DA.PICTUREPATH FROM DEVICEINFO DI LEFT JOIN DEVICEATTACH DA ON DI.DEVICECODE=DA.DEVICECODE  WHERE 1=1  AND  DI.DEVICECODE=:DEVICECODE 
+ 
+
+ 
+记录时间：2017-05-27 15:50:45,205 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Business.BN.DEVICEINFO_BN property: [(null)] - 
+错误描述：GetDeviceInfo 程序段的异常System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Business.BN.DEVICEINFO_BN.GetModel(String deviceCode) 位置 g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\BN\DEVICEINFO_BN.cs:行号 224
+ 

@@ -1,0 +1,58 @@
+﻿<div id="Menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header nav-title ">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <a class="navbar-brand ">
+        <img src="~/img/logo.png" alt="LOGO" /></a>
+
+
+    <div class="collapse navbar-collapse navbar-left is-collapse">
+        <ul class="nav navbar-nav">
+            <li id="jcsd" onclick="GetPartTree(1)" class="active">
+                <div class="icn">
+                    <img src="~/img/pic_jcsd.png" alt="监测手段"/>
+                </div>
+                <div class="title">监测手段</div>
+            </li>
+            <li id="yw" onclick="GetPartTree(2)" class="disactive">
+                <div class="icn">
+                    <img src="~/img/pic_yw.png" alt="业务"/>
+                </div>
+                <div class="title">业务</div>
+            </li>
+            <li id="zgbm" onclick="GetPartTree(3)" class="disactive">
+                <div class="icn">
+                    <img src="~/img/pic_zgbm.png" alt="主管部门"/>
+                </div>
+                <div class="title">主管部门</div>
+            </li>
+            <li id="glqy" onclick="GetPartTree(4)" class="disactive">
+                <div class="icn">
+                    <img src="~/img/pic_glqy.png" alt="管理区域"/>
+                </div>
+                <div class="title">管理区域</div>
+            </li>
+            <li id="gn" onclick="GetPartTree(5)" class="disactive">
+                <div class="icn">
+                    <img src="~/img/pic_gn.png" alt="功能"/>
+                </div>
+                <div class="title">功能</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="small_menu">
+        <ul>
+            <li class="li5" onclick="Logout()"><span class="glyphicon glyphicon-off" style="font-size: 16px"></span>&nbsp;&nbsp;<span>退出</span></li>
+            <li class="li3"><span class="glyphicon glyphicon-user" style="font-size: 16px"></span>&nbsp;&nbsp;<span id="USER">@ViewBag.userName</span></li>
+            <li class="li1"><span id="currentTime"></span></li>
+        </ul>
+    </div>
+
+</div>

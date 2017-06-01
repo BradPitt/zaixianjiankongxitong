@@ -1,0 +1,16 @@
+﻿<div class="modal fade" id="PictureFrame" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:130px;">  
+    <div class="modal-dialog" role="document">  
+        <div class="modal-content" style='width:630px;'>  
+            <div class="modal-header" style="background-color:#0b83f3;border-radius:5px 5px 0 0;color:#ffffff;height:50px">  
+                <a class="close" data-dismiss="modal" style="float:right;">×</a>
+                <h4 class="modal-title" id="myModalLabel">图片</h4>  
+            </div>  
+            <div class="modal-body" style="display:inline"> @*http://10.9.8.101/2017排污口视频和图片/*@ 
+                <img id='photo' style='height:400px;width:600px;margin-top:15px;margin-bottom:15px;' src='../photos/" + photoArr[0] + "' alt='大乳山国家级海洋公园' />
+                <div style='width:600px;position:absolute;bottom:0px;left:15px;'><span class='glyphicon glyphicon-chevron-left photoleft' onclick='GetLeftPhoto()' ></span>
+                    <span class='glyphicon glyphicon-chevron-right photoright' onclick='GetRightPhoto()'></span>
+                </div>
+            </div>  
+        </div>  
+    </div>  
+</div> 

@@ -1,0 +1,392 @@
+
+ 
+记录时间：2017-05-26 17:02:31,449 
+线程ID:[144] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-26 17:04:38,287 
+线程ID:[146] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01741: 非法的零长度标识符
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT DATETIME,ROUND(AVG(""),6) KEY,ROUND((SUM(NH3N)+SUM(NO3)+SUM(NO2)),6) WUJIDAN,STD_VALUE FROM TABECOLOGY TA  LEFT JOIN(  SELECT DEVICECODE,  CASE DEVICEATTACH.STDTYPE WHEN '1' THEN STD_VALUE_ONE WHEN '2' THEN STD_VALUE_TWO WHEN '3' THEN STD_VALUE_THREE WHEN '4' THEN STD_VALUE_FOUR ELSE NULL END STD_VALUE  FROM TABSTD,DEVICEATTACH  WHERE DEVICECODE=:DEVICECODE  AND STD_TYPE=''  )INFO ON TA.DEVICECODE=INFO.DEVICECODE  WHERE TA.DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY DATETIME,STD_VALUE  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:04:38,446 
+线程ID:[133] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "DICTIONARYID": 标识符无效
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT * FROM DICTIONARY WHERE DICTIONARYID LIKE '9%' 
+ 
+
+ 
+记录时间：2017-05-26 17:04:40,240 
+线程ID:[145] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTableFromProcedure 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-06550: 第 1 行, 第 7 列: 
+PLS-00306: 调用 'GETDABIAOLV' 时参数个数或类型错误
+ORA-06550: 第 1 行, 第 7 列: 
+PL/SQL: Statement ignored
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTableFromProcedure(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 188Getdabiaolv
+ 
+
+ 
+记录时间：2017-05-26 17:10:05,436 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：ExecuteNonQuery 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-00942: 表或视图不存在
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQueryInternal(Boolean needRowid, OciRowidDescriptor& rowidDescriptor)
+   at System.Data.OracleClient.OracleCommand.ExecuteNonQuery()
+   at Business.DbAPI.ExecuteNonQuery(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 220insert into SYSTEMLOG(LOG_ID,LOGNAME,TYPE,CONTENT,F_ACCOUNT,REMARK,DATETIME) values (:LOG_ID,:LOGNAME,:TYPE,:CONTENT,:F_ACCOUNT,:REMARK,:DATETIME) 
+ 
+
+ 
+记录时间：2017-05-26 17:10:09,916 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01741: 非法的零长度标识符
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT DATETIME,ROUND(AVG(""),6) KEY,ROUND((SUM(NH3N)+SUM(NO3)+SUM(NO2)),6) WUJIDAN,STD_VALUE FROM TABECOLOGY TA  LEFT JOIN(  SELECT DEVICECODE,  CASE DEVICEATTACH.STDTYPE WHEN '1' THEN STD_VALUE_ONE WHEN '2' THEN STD_VALUE_TWO WHEN '3' THEN STD_VALUE_THREE WHEN '4' THEN STD_VALUE_FOUR ELSE NULL END STD_VALUE  FROM TABSTD,DEVICEATTACH  WHERE DEVICECODE=:DEVICECODE  AND STD_TYPE=''  )INFO ON TA.DEVICECODE=INFO.DEVICECODE  WHERE TA.DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY DATETIME,STD_VALUE  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:11:20,372 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01741: 非法的零长度标识符
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT DATETIME,ROUND(AVG(""),6) KEY,ROUND((SUM(NH3N)+SUM(NO3)+SUM(NO2)),6) WUJIDAN,STD_VALUE FROM TABBUOYECOLOGY TA  LEFT JOIN(  SELECT DEVICECODE,  CASE DEVICEATTACH.STDTYPE WHEN '1' THEN STD_VALUE_ONE WHEN '2' THEN STD_VALUE_TWO WHEN '3' THEN STD_VALUE_THREE WHEN '4' THEN STD_VALUE_FOUR ELSE NULL END STD_VALUE  FROM TABSTD,DEVICEATTACH  WHERE DEVICECODE=:DEVICECODE  AND STD_TYPE=''  )INFO ON TA.DEVICECODE=INFO.DEVICECODE  WHERE TA.DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY DATETIME,STD_VALUE  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:24,332 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:27,208 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:30,430 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:31,544 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:35,477 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:12:36,495 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:13:12,418 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("CR"),6) KEY FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("CR"),6) KEY2 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("CR"),6) KEY3 FROM TABBUOYECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:15:02,189 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01741: 非法的零长度标识符
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT DATETIME,ROUND(AVG(""),6) KEY,ROUND((SUM(NH3N)+SUM(NO3)+SUM(NO2)),6) WUJIDAN,STD_VALUE FROM TABECOLOGY TA  LEFT JOIN(  SELECT DEVICECODE,  CASE DEVICEATTACH.STDTYPE WHEN '1' THEN STD_VALUE_ONE WHEN '2' THEN STD_VALUE_TWO WHEN '3' THEN STD_VALUE_THREE WHEN '4' THEN STD_VALUE_FOUR ELSE NULL END STD_VALUE  FROM TABSTD,DEVICEATTACH  WHERE DEVICECODE=:DEVICECODE  AND STD_TYPE=''  )INFO ON TA.DEVICECODE=INFO.DEVICECODE  WHERE TA.DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY DATETIME,STD_VALUE  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:15:15,677 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:15:17,577 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:15:17,813 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:15:17,986 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:16:33,101 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 
+
+ 
+记录时间：2017-05-26 17:17:44,688 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Business.DbAPI property: [(null)] - 
+错误描述：GetDataTable 程序段的异常System.Data.OracleClient.OracleException (0x80131938): ORA-01861: 文字与格式字符串不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at Business.DbAPI.GetDataTable(String sSql, OracleParameter[] opc) in g:\Projects\zxjkxt\zaixianjiankongxitong\01源代码\OMAC\Business\DbAPI.cs:line 149 SELECT NVL(NVL(INFO.DATETIME,QU.DATETIME),QIAN.DATETIME) DATETIME,KEY,KEY2,KEY3 FROM(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:startDate,'yyyy-mm-dd hh24:mi:ss') AND to_date(:endDate,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )INFO FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY2 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QU ON INFO.DATETIME=QU.DATETIME FULL JOIN(  SELECT TO_CHAR(DATETIME,'mm-dd') DATETIME,ROUND(AVG("BOD5"),6) KEY3 FROM TABECOLOGY  WHERE DEVICECODE=:DEVICECODE  AND DATETIME BETWEEN to_date(:lastYearStart,'yyyy-mm-dd hh24:mi:ss') AND to_date(:lastYearEnd,'yyyy-mm-dd hh24:mi:ss')  GROUP BY TO_CHAR(DATETIME,'mm-dd')  )QIAN ON INFO.DATETIME=QIAN.DATETIME  ORDER BY DATETIME 
+ 

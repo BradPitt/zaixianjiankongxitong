@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-treeview.css" rel="stylesheet">
+    <link href="~/css/dhtmlXTabBar/dhtmlxtabbarterrace.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet">
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-treeview.js"></script>
+    <script src="~/js/bootboxEn.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/dhtmlxtabbar.js"></script>
+    <script src="~/js/mainBeta.js" charset="utf-8"></script>
+    <title>北海区海洋环境实时在线监控系统</title>
+    <script>
+        $(function () {
+            if ($(window).width() < 1170) {
+                $(".small_menu").css({
+                    "display": "none"
+                });
+            } else if ($(window).width() < 1350) {
+
+                $(".li1").css({
+                    "display": "none"
+                });
+            }
+        });
+       </script>
+</head>
+<body>
+
+    @{Html.RenderAction("Menu");}
+    <div class="container">
+        <div class="leftDiv">
+            <div id="treeview1"></div>
+        </div>
+        <div class="rightDiv">
+            <div id="mainContainer">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+﻿"use strict";
+
+var myTabbar;
+
+$(function () {
+
+    // 加载时间
+    setInterval(function () {
+        $("#currentTime").text(moment().format("YYYY年MM月DD日 HH:mm:ss"));
+    }, 1000);
+
+    // 加载地图标签页
+    myTabbar = new dhtmlXTabBar({
+        parent: "mainContainer",
+        close_button: true,
+        tabs: [{
+            id: "map",
+            text: "地图",
+            active: true,
+            close: false
+        }]
+    });
+    myTabbar.tabs("map").attachURL("/manager/Map");
+
+    // 加载左侧树
+    GetPartTree(1);
+
+    // 顶部导航菜单点击事件
+    $(".nav li").on("click", function () {
+        GetPartTree($(this).data("index"));
+    });
+
+});
+
+
+function GetPartTree(part) {
+    dialog.modal("show");
+    $.post(
+        "/Api/System/GetFunctionTreeV2?part=" + part,
+        function (rspData) {
+            $("#treeview1").treeview({
+                levels: 1,
+                data: rspData,
+                highlightSelected: false,
+                multiSelect: true,
+                onNodeSelected: function (event, data) {
+                    if (data.href.substr(0, 1) === "#") {
+                        if (data.parentId == undefined) {
+                            $("#treeview1").treeview("collapseAll", { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $("#treeview1").treeview("collapseNode", [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $("#treeview1").treeview("expandNode", [data.nodeId, { levels: 1, silent: true }]);
+                        }
+                    } else {
+                        switch (data.href) {
+                            case "null":
+                                {
+                                    AlertNoDevice();
+                                    break;
+                                }
+                            case "":
+                                {
+                                    AlertNotification();
+                                    break;
+                                }
+                            case "&=":
+                                {
+                                    AlertNotification();
+                                    break;
+                                }
+                            default:
+                                {
+                                    clickTreeMenu(data);
+                                    break;
+                                }
+                        }
+                    }
+                },
+                onNodeUnselected: function (event, data) {
+                    if (data.href.substr(0, 1) === "#") {
+                        if (data.parentId == undefined) {
+                            $("#treeview1").treeview("collapseAll", { silent: true });
+                        }
+                        if (data.state.expanded) {
+                            $("#treeview1").treeview("collapseNode", [data.nodeId, { silent: true, ignoreChildren: false }]);
+                        } else {
+                            $("#treeview1").treeview("expandNode", [data.nodeId, { levels: 1, silent: true }]);
+                        }
+                    } else {
+                        switch (data.href) {
+                            case "null":
+                                {
+                                    AlertNoDevice();
+                                    break;
+                                }
+                            case "&=":
+                                {
+                                    AlertNotification();
+                                    break;
+                                }
+                            case "":
+                                {
+                                    AlertNotification();
+                                    break;
+                                }
+                            default:
+                                {
+                                    clickTreeMenu(data);
+                                    break;
+                                }
+                        }
+                    }
+                }
+            });
+
+            dialog.modal("hide");
+
+            $(".nav").find(".active").removeClass("active");
+            $(".nav li[data-index=\"" + part + "\"]").addClass("active");
+
+        },
+        "json");
+}
+
+function clickTreeMenu(data) {
+    var tabid = data.text;
+    if (myTabbar.tabs(tabid) == null) {
+        myTabbar.addTab(tabid, data.text, null, null, true, true);
+    } else {
+        myTabbar.tabs(tabid).setActive();
+    }
+    var parent = $("#treeview1").treeview("getParent", data);
+    myTabbar.tabs(tabid).attachURL(GetUrlConfig(data.href, parent.id)[tabid]);
+}
+
+function AlertNotification() {
+    bootbox.alert({
+        message: "<h4>此功能正在开发中!</h4>",
+        size: "small",
+        buttons: {
+            ok: {
+                label: "确定",
+                className: "btn btn-info"
+            }
+        }
+    });
+}
+
+function AlertNoDevice() {
+    bootbox.alert({
+        message: "<h4>暂无设备!</h4>",
+        size: "small",
+        buttons: {
+            ok: {
+                label: "确定",
+                className: "btn btn-info"
+            }
+        }
+    });
+}
+
+function Logout() {
+    $.post("/Manager/Logout", function () {
+        location.reload();
+    });
+}
+
+var dialog = bootbox.dialog({
+    message: '<p><i class="fa fa-spin fa-spinner"></i> 数据加载中,请稍候...</p>',
+    closeButton: false,
+    show: false,
+    size: "small"
+});
+
+function GetUrlConfig(href, param) {
+    var rst = {
+        "设备详情": "/manager/" + href + "?id=" + param,
+        "实时数据": "/manager/" + href + "?id=" + param,
+        "历史数据": href + "?devicecode=" + param,
+        "环境评价": "/manager/" + href + "?devicecode=" + param,
+        "系统操作日志": "/manager/SystemLogList",
+        "机构管理": "/manager/DepartmentList",
+        "角色管理": "/manager/Role",
+        "用户管理": "/manager/UserList"
+    }
+    return rst;
+}

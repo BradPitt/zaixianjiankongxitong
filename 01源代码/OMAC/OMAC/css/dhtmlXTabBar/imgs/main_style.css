@@ -1,0 +1,399 @@
+.nav-tabs {
+    border-bottom: 1px solid #078edb;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 40px;
+    background: #fff;
+}
+.main-sidebar {
+    border-right:solid 1px #DDDDDD;
+}
+    .nav-tabs > li {
+        float: left;
+        margin-bottom: 1px;
+        padding-top: 10px;
+        position: relative;
+        display: block;
+        border: 0px;
+    }
+
+        .nav-tabs > li > a {
+            margin: 0 2px 0 2px;
+            line-height: 1.42857143;
+            border-radius: 4px 4px 0 0;
+            font-size: 14px;
+            background: #fff;
+            color: #666;
+            margin-bottom: 0px;
+            border-bottom: none;
+            border-top: 1px solid #d9d9d9;
+            border-right: 1px solid #d9d9d9;
+            border-left: 1px solid #d9d9d9;
+            border-bottom: 1px solid #078edb;
+            position: relative;
+            display: block;
+            padding: 5px 13px;
+            margin: 0px 3px 0px 3px;
+            height: 30px;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            color: #088ddc;
+            cursor: pointer !important;
+            background-color: #fff;
+            border: 1px solid #088ddc;
+            border-bottom-color: transparent;
+        }
+
+.navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.button_btn {
+    min-width: 80px;
+    width: auto;
+    height: 32px;
+    border: #52a552 1px solid;
+    border-radius: 3px;
+    line-height: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(center top,rgb(97, 194, 97), rgb(81, 164, 81));
+    background: -moz-linear-gradient(center top,rgb(97, 194, 97), rgb(81, 164, 81));
+    background: -o-linear-gradient(center top, rgb(97, 194, 97), rgb(81, 164, 81));
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(97, 194, 97)), to(rgb(81, 164, 81)));
+    background: linear-gradient(center top, rgb(97, 194, 97), rgb(81, 164, 81));
+    box-shadow: 0px 0px 1px #fff inset;
+    -webkit-box-shadow: 0px 0px 1px #fff inset;
+    -moz-box-shadow: 0px 0px 1px #fff inset;
+    -o-box-shadow: 0px 0px 1px #fff inset;
+    text-shadow: 1px 1px 0px #0a8810;
+    padding: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+    .button_btn:hover {
+        box-shadow: 0px 0px 3px #fff inset;
+        color: #fff;
+    }
+
+.button_btn2 {
+    width: 60px;
+    height: 24px;
+    border: 1px solid #078ddb;
+    border-radius: 3px;
+    line-height: 5px;
+    color: #fff;
+    background: -webkit-linear-gradient(center top, #22a2ec, #0580c7);
+    background: -moz-linear-gradient(center top, #22a2ec, #0580c7);
+    background: -o-linear-gradient(center top, #22a2ec, #0580c7);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#22a2ec), to(#0580c7));
+    background: linear-gradient(center top, #22a2ec, #0580c7);
+    box-shadow: 0px 0px 1px #fff inset;
+    box-shadow: 0px 0px 1px #fff inset;
+    -webkit-box-shadow: 0px 0px 1px #fff inset;
+    -moz-box-shadow: 0px 0px 1px #fff inset;
+    -o-box-shadow: 0px 0px 1px #fff inset;
+    text-shadow: 1px 1px 0px #0977b7;
+    cursor: pointer;
+}
+
+    .button_btn2:hover {
+        box-shadow: 0px 0px 3px #fff inset;
+        color: #fff;
+    }
+
+* {
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+.modal {
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-dialog {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.modal-content {
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
+
+    /*.modal-content div {
+        border-radius: 0;
+        border: none;
+    }*/
+
+        .modal-content div ul {
+            border-radius: 0;
+            border: none;
+        }
+
+/*自定义宽度*/
+.myOwnDdl {
+    display: inline-block;
+    width: 81%;
+}
+
+    /* 实现宽度自定义 */
+    .myOwnDdl .btn-group {
+        width: 100%;
+    }
+
+    .myOwnDdl .multiselect {
+        width: 100%;
+        text-align: right;
+        margin-top: -5px;
+        transition: all 0.3s;
+    }
+
+.btn-group .multiselect-container {
+    transition: all 0.3s;
+}
+
+.myOwnDdl ul {
+    width: 100%;
+}
+
+.myOwnDdl .multiselect-selected-text {
+    position: absolute;
+    left: 0;
+    right: 25px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.btn-group.open .dropdown-toggle {
+    -webkit-box-shadow: 0 3px 5px rgba(8,104,212,0.5);
+    box-shadow: 0 3px 5px rgba(8,104,212,0.5);
+}
+
+.btn-group .dropdown-toggle:active {
+    color: #0868d4;
+    background-color: #fff;
+    border-color: #0868d4;
+}
+
+.open > .dropdown-toggle.btn-default, .open > .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle.btn-default:focus {
+    color: #0868d4;
+    background-color: #fff;
+    border-color: #0868d4;
+}
+
+
+.select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: 1px #d2d6de solid;
+    border-radius: 3px;
+    height: 30px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+    cursor: pointer;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../../Models/images/select_bg.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+.input {
+     border: 1px #d2d6de solid;
+    border-radius: 3px;
+    height: 36px;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+width:100%;
+    /*很关键：将默认的select选择框样式清除*/
+ 
+    /*在选择框的最右侧中间显示小箭头图片*/
+  
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+    .select::-ms-expand {
+        display: none;
+    }
+
+    .select option {
+        border: none;
+        height: 36px;
+        padding: 10px;
+    }
+
+    .select:focus {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
+
+    .select:hover {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
+
+.margin20 {
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.label1 {
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.form_list {
+    width: 95%;
+    margin: 20px auto 20px auto;
+    overflow: hidden;
+}
+
+    .form_list .left {
+        float: left;
+        width: 50%;
+    }
+
+    .form_list .right {
+        float: right;
+        width: 50%;
+    }
+
+.left input, .left select, .right select {
+    width: 70%;
+}
+
+.left {
+    float: left;
+}
+
+    .left .lebel2 {
+        float: left;
+        width: 42px;
+        font-size: 14px;
+        color: #999;
+        line-height: 35px;
+    }
+
+    .left .input {
+        width: 80px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .left a {
+        float: left;
+        font-size: 14px;
+        line-height: 36px;
+        height: 36px;
+        color: #0868d4;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .left textarea {
+        width: 70%;
+        min-height: 60px;
+    }
+
+.right textarea {
+    width: 70%;
+    min-height: 60px;
+}
+
+.form_list > input {
+    width: 85.5%;
+}
+
+.form_list > select {
+    width: 85.5%;
+}
+
+@media screen and (max-width:1000px) {
+    .form_list .left {
+        float: left;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .form_list .right {
+        float: left;
+        width: 100%;
+        margin: 20px auto 0 auto;
+    }
+
+    .left input, .left select, .right select {
+        width: 80%;
+    }
+
+    .form_list > input {
+        width: 80%;
+    }
+
+    .form_list > select {
+        width: 80%;
+    }
+}
+
+.orange-panel {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    border-left-style: solid;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left-color: orange;
+}
+
+    .orange-panel > li {
+        margin-left: 10px;
+    }
+
+.red-panel {
+    background-color: #f9f9f9;
+    border-left-style: solid;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-left-color: red;
+}
+  .red-panel > li {
+        margin-left: 10px;
+    }
+.wid210 {
+    min-width:210px;
+}
+
+/*统计分析*/
+#main {
+    margin-top:20px
+}

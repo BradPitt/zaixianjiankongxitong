@@ -1,0 +1,357 @@
+﻿html, body 
+{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+#ToolBar
+{
+    position:absolute;
+    top:20px;
+    right:35px;
+    height:34px;
+    width:220px;
+    z-index:999;
+    background-color:White;  
+    border-radius:5px;  
+}
+#ToolBar ul
+{
+    list-style:none;
+    margin-top:0px;
+    margin-left:5px;
+    
+}
+#ToolBar li
+{
+    display:inline;
+    line-height:32px;
+}
+ul li img:hover
+{
+    background-color:#d2e7f9;
+    cursor:pointer;
+}
+ul li img:focus
+{
+    background-color:#c3e0f9;
+}
+#MapDiv
+{
+    position:relative;
+    width:100%;
+
+}
+/*#MapDiv_zoom_slider
+{
+    position:absolute;
+    top:20px;
+    left:20px;
+}*/
+.esriPopup .titleButton.maximize
+{
+    display:none;
+}
+.esriPopup .titlePane
+{
+    background-color:#0b83f3 !important;
+}
+.contentPane
+{
+    overflow:hidden;
+}
+#searchBox
+{
+    margin-left:0px;
+    height:64px;
+}
+
+#searchBoxItems
+{
+    /*height:30px;
+    margin:0;
+    padding:0;*/
+}
+.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #0b83f3 !important;}
+.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{ background-color: #0b83f3 !important;}
+.mCSB_scrollTools .mCSB_draggerContainer
+{
+    margin-top:3px;
+}
+#mCSB_3_container
+{
+    margin-right:16px;
+}
+#mCSB_2_container
+{
+    margin-right:16px;
+}
+#LayerControl
+{
+    z-index:99;
+    float: left; 
+    margin-top: 10px; 
+    background-color: white;
+    position: absolute;
+    left:35px;
+    bottom:20px;   
+    border-radius:5px 5px 0 0;
+    display:none;
+}
+
+#LayerIcon
+{
+    z-index:99;
+    position: absolute;
+    left:35px;
+    bottom:20px;  
+    color:#fff; 
+    background-color:#0b83f3;
+    height:36px;
+    width:36px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+    #LayerIcon span
+    {
+        margin:4px;
+        font-size:26px;
+    }
+
+#LegendIcon
+{
+    z-index:99;
+    position: absolute;
+    right:35px;
+    bottom:20px;  
+    color:#fff;  
+    background-color:#0b83f3;
+    height:36px;
+    width:36px;
+    border-radius:5px;   
+    cursor:pointer; 
+}
+    #LegendIcon span
+    {
+        margin:4px;
+        font-size:26px;
+    }
+
+#Legend
+{
+    z-index:99;
+    float: right; 
+    margin-top: 10px; 
+    background-color: white;
+    position: absolute;
+    right:35px;
+    bottom:20px;   
+    border-radius:5px 5px 0 0;
+    color:#1090f3;
+}
+
+#legendtop
+{
+    background: -webkit-linear-gradient(center top, #ffffff, #edebeb);
+    background: -moz-linear-gradient(center top, #ffffff, #edebeb);
+    background: -o-linear-gradient(center top, #ffffff, #edebeb);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#edebeb));
+    background: linear-gradient(center top, #ffffff, #edebeb);
+}
+
+    #legendtop table
+    {
+        margin-left:10px;
+    }
+    #legendtop td
+    {
+        padding:2px;
+    }
+
+#layerscroll
+{
+    margin-left:10px;
+    margin-top:10px;
+    width: 150px; 
+    max-height: 170px;
+    /*overflow:auto;*/
+}
+#layerTree span.indent
+{
+    margin:0;
+}
+#layerTree .node-layerTree
+{
+    padding:0;
+}
+#layerTree::-webkit-scrollbar{
+    width: 6px;
+    background-color: #e8e9ed;
+}
+#layerTree::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    background-color: #a2cff8;
+}
+#layerTree::-webkit-scrollbar-track{
+    border-radius: 6px;
+    background-color: #e8e9ed;
+}
+
+#legendscroll
+{
+    margin-left:12px;
+    margin-top:5px;
+    width: 148px; 
+    max-height: 100px;
+    /*overflow:auto;*/
+}
+#legenddiv_msg
+{
+    display:none;
+}
+#legenddiv::-webkit-scrollbar{
+    width: 6px;
+    background-color: #e8e9ed;
+}
+#legenddiv::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    background-color: #a2cff8;
+}
+#legenddiv::-webkit-scrollbar-track{
+    border-radius: 6px;
+    background-color: #e8e9ed;
+}
+.titlediv
+{
+    background-color:#0b83f3;
+    color:white;
+    height:30px;
+    width: 160px; 
+    line-height:30px;
+    text-align:center;
+    vertical-align:middle;
+    border-radius:5px 5px 0 0;
+    cursor:pointer;
+}
+.photoContainer
+{
+    position:absolute;
+    top:5px;
+    right:0px;
+}
+.photobutton
+{
+    position:absolute;
+    left:0px;
+    width:300px;
+}
+.photoleft
+{
+    float:left;
+    font-size:20px;
+    color:#0b83f3;
+}
+.photoright
+{
+    float:right;
+    font-size:20px;
+    color:#0b83f3;
+}
+.dataTable
+{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.dataTable td
+{
+	padding: 2px;    
+}
+.head
+{
+    font-weight:bold;
+}
+
+.button_btn {
+    width: 60px;
+    height: 24px;
+    border: 1px solid #078ddb;
+    border-radius: 3px;
+    line-height: 5px;
+    color: #fff;
+    background-color:#0b83f3;
+    box-shadow: 0px 0px 1px #fff inset;
+    box-shadow: 0px 0px 1px #fff inset;
+    -webkit-box-shadow: 0px 0px 1px #fff inset;
+    -moz-box-shadow: 0px 0px 1px #fff inset;
+    -o-box-shadow: 0px 0px 1px #fff inset;
+    text-shadow: 1px 1px 0px #0977b7;
+    cursor: pointer;
+}
+
+    .button_btn:hover {
+        box-shadow: 0px 0px 3px #fff inset;
+        color: #fff;
+    }
+
+.select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: 1px #d2d6de solid;
+    border-radius: 3px;
+    height: 30px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+    cursor: pointer;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../img/select_bg.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+    min-width:54px;
+    margin:1px;
+}
+.input {
+    border: 1px #d2d6de solid;
+    margin:1px;
+    border-radius: 3px;
+    height: 30px;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s;
+    /*很关键：将默认的select选择框样式清除*/
+ 
+    /*在选择框的最右侧中间显示小箭头图片*/
+  
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+    .select::-ms-expand {
+        display: none;
+    }
+
+    .select option {
+        border: none;
+        height: 25px;
+        padding: 2px;
+    }
+
+    .select:focus {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
+
+    .select:hover {
+        border: 1px solid #0868d4;
+        box-shadow: 0 0 8px rgba(8,104,212,0.5);
+        color: #0868d4;
+    }
